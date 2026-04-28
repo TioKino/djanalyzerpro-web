@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Analyzer - Professional DJ Music Analysis</title>
+<meta name="description" content="Analiza tu musica como un pro: BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. Disponible en Windows y Android.">
+<link rel="canonical" href="https://www.djanalyzerpro.com/">
+<link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/">
+<link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="DJ Analyzer - Professional DJ Music Analysis">
+<meta property="og:description" content="BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. La app definitiva para DJs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.djanalyzerpro.com/">
+<meta property="og:image" content="https://www.djanalyzerpro.com/img/library.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DJ Analyzer">
+<meta name="twitter:description" content="Professional DJ music analysis - BPM, Key, Energy & Session Planning">
+<meta name="twitter:image" content="https://www.djanalyzerpro.com/img/library.jpg">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DJ Analyzer",
+  "operatingSystem": "Windows, Android, iOS, macOS",
+  "applicationCategory": "MultimediaApplication",
+  "softwareVersion": "2.7.3",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "url": "https://www.djanalyzerpro.com/",
+  "description": "Professional DJ music analysis app: BPM, Key, Energy, Camelot Wheel, Flow Designer, Smart Collections.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DJ Analyzer",
+    "email": "djanalyzerpro@gmail.com"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg2:#0A0A0A;--bg3:#0E0E0E;--bg4:#141414;
+  --purple:#8B5CF6;--purple-dim:#6D45D0;--purple-light:#A78BFA;
+  --cyan:#06B6D4;--green:#22C55E;--amber:#F59E0B;--red:#EF4444;
+  --text:#E8E8E8;--text2:#AAAAAA;--text3:#777777;
+  --border:#1E1E1E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--purple-light);text-decoration:none}
+a:hover{color:var(--purple)}
+
+/* LANG TOGGLE */
+.lang-toggle{display:flex;gap:2px;background:var(--bg3);border-radius:8px;padding:2px;margin-left:1rem}
+.lang-btn{padding:.35rem .65rem;border-radius:6px;font-size:.75rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--text3);transition:all .2s}
+.lang-btn.active{background:var(--purple);color:#fff}
+[data-lang="en"]{display:none !important}
+body.en [data-lang="en"]{display:revert !important}
+body.en [data-lang="es"]{display:none !important}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:100;padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-size:1.1rem;font-weight:800;letter-spacing:1px}
+.nav-logo span{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--purple);color:#fff;padding:.5rem 1.25rem;border-radius:8px;font-size:.875rem;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--purple-light);color:#fff;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 30%,rgba(139,92,246,.08) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;color:var(--text2);margin-bottom:2rem}
+.hero-badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-1px}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2rem;color:var(--text2);max-width:600px;margin:0 auto 2.5rem}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.85rem 2rem;border-radius:12px;font-size:1rem;font-weight:600;border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-dim));color:#fff;box-shadow:0 4px 24px rgba(139,92,246,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(139,92,246,.4);color:#fff}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--purple);background:var(--bg4);color:#fff;transform:translateY(-2px)}
+
+/* STORE BADGES */
+.store-grid{display:grid;grid-template-columns:repeat(2,minmax(200px,240px));gap:1rem;justify-content:center;margin-top:2rem}
+@media(min-width:900px){.store-grid{grid-template-columns:repeat(4,minmax(180px,220px))}}
+.store-btn{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.1rem;border-radius:12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-align:left;transition:all .25s;position:relative}
+.store-btn:hover{border-color:var(--purple);background:var(--bg4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.15);color:#fff}
+.store-btn .store-icon{font-size:1.6rem;flex-shrink:0}
+.store-btn .store-text{display:flex;flex-direction:column;line-height:1.2}
+.store-btn .store-line1{font-size:.7rem;color:var(--text3);font-weight:500}
+.store-btn .store-line2{font-size:.95rem;font-weight:700}
+.store-btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
+.store-btn.disabled .badge-soon{position:absolute;top:-8px;right:8px;background:var(--amber);color:#000;font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;letter-spacing:.5px}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .label{font-size:.8rem;color:var(--text3);margin-top:.25rem}
+
+/* SECTIONS */
+section{padding:6rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--purple);margin-bottom:.75rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;letter-spacing:-.5px}
+.section-desc{color:var(--text2);font-size:1.05rem;max-width:600px}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;margin-top:3rem}
+.feature-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.feature-card:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.feature-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--cyan));opacity:0;transition:opacity .3s}
+.feature-card:hover::after{opacity:1}
+.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem}
+.feature-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.feature-card p{color:var(--text2);font-size:.9rem;line-height:1.6}
+.fi-purple{background:rgba(139,92,246,.15);color:var(--purple)}
+.fi-cyan{background:rgba(6,182,212,.15);color:var(--cyan)}
+.fi-green{background:rgba(34,197,94,.15);color:var(--green)}
+.fi-amber{background:rgba(245,158,11,.15);color:var(--amber)}
+.fi-red{background:rgba(239,68,68,.15);color:var(--red)}
+.fi-blue{background:rgba(59,130,246,.15);color:#3B82F6}
+
+/* SCREENSHOTS */
+.screenshots-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.screenshots-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.screenshot-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative}
+.screenshot-item:hover{border-color:var(--purple);transform:scale(1.02);box-shadow:0 12px 40px rgba(139,92,246,.15)}
+.screenshot-item img{width:100%;height:auto;display:block}
+.screenshot-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1.5rem 1rem .75rem;font-size:.85rem;font-weight:600;color:#fff}
+
+/* MOBILE SHOWCASE */
+.mobile-grid{display:flex;gap:1.5rem;margin-top:3rem;justify-content:center;flex-wrap:wrap}
+.mobile-item{width:220px;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative}
+.mobile-item:hover{border-color:var(--purple);transform:scale(1.03);box-shadow:0 12px 40px rgba(139,92,246,.15)}
+.mobile-item img{width:100%;height:auto;display:block}
+.mobile-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1.5rem .75rem .5rem;font-size:.8rem;font-weight:600;color:#fff;text-align:center}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+.step{text-align:center;padding:2rem}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-dim));color:#fff;font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;box-shadow:0 4px 20px rgba(139,92,246,.3)}
+.step h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.step p{color:var(--text2);font-size:.9rem}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto}
+.price-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative}
+.price-card.featured{border-color:var(--purple);box-shadow:0 0 40px rgba(139,92,246,.15)}
+.price-card.featured::before{content:'POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--cyan));color:#fff;font-size:.7rem;font-weight:700;padding:.3rem 1rem;border-radius:100px;letter-spacing:1px}
+.price-name{font-size:1rem;font-weight:600;color:var(--text2);margin-bottom:.5rem}
+.price-amount{font-size:2.5rem;font-weight:900;margin-bottom:.25rem}
+.price-amount span{font-size:1rem;font-weight:500;color:var(--text3)}
+.price-desc{color:var(--text3);font-size:.85rem;margin-bottom:2rem}
+.price-features{list-style:none;margin-bottom:2rem}
+.price-features li{padding:.5rem 0;font-size:.9rem;color:var(--text2);display:flex;align-items:center;gap:.5rem}
+.check{color:var(--green);font-weight:700}
+.price-btn{display:block;width:100%;padding:.85rem;border-radius:12px;font-size:.95rem;font-weight:600;border:none;cursor:pointer;text-align:center;transition:all .25s}
+.price-btn-primary{background:var(--purple);color:#fff}
+.price-btn-primary:hover{background:var(--purple-light);color:#fff}
+.price-btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.price-btn-secondary:hover{border-color:var(--purple);color:#fff}
+
+/* CTA */
+.cta-section{text-align:center}
+.cta-box{background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(6,182,212,.05));border:1px solid rgba(139,92,246,.2);border-radius:24px;padding:4rem 2rem;max-width:800px;margin:0 auto}
+.cta-box h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1rem}
+.cta-box p{color:var(--text2);margin-bottom:2rem;font-size:1.05rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap}
+.footer-links a{color:var(--text3);font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{color:var(--text3);font-size:.8rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero-stats{flex-direction:column;gap:1.5rem}
+  .features-grid{grid-template-columns:1fr}
+  .screenshots-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+  section{padding:4rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span>DJ Analyzer</span></div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#features" data-lang="es">Funciones</a><a href="#features" data-lang="en">Features</a></li>
+        <li><a href="#screenshots" data-lang="es">Capturas</a><a href="#screenshots" data-lang="en">Screenshots</a></li>
+        <li><a href="#pricing" data-lang="es">Precios</a><a href="#pricing" data-lang="en">Pricing</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#download" class="nav-cta" data-lang="es">Descargar Gratis</a>
+      <a href="#download" class="nav-cta" data-lang="en">Download Free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> v2.7.3 · Windows · Android · iOS · macOS</div>
+
+    <h1 data-lang="es">Analiza. Mezcla.<br><span class="gradient">Domina tu sesion.</span></h1>
+    <h1 data-lang="en">Analyze. Mix.<br><span class="gradient">Own your session.</span></h1>
+
+    <p data-lang="es">BPM, Key, Energy, Camelot, Waveform y Session Planning en una sola app. El arma secreta de los DJs que quieren ir un paso mas alla.</p>
+    <p data-lang="en">BPM, Key, Energy, Camelot, Waveform and Session Planning in one app. The secret weapon for DJs who want to go beyond.</p>
+
+    <div class="store-grid">
+      <a href="DJAnalyzerPro-Setup.exe" class="store-btn">
+        <span class="store-icon">&#127911;</span>
+        <span class="store-text">
+          <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+          <span class="store-line2">Windows</span>
+        </span>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" target="_blank" rel="noopener">
+        <span class="store-icon">&#9654;</span>
+        <span class="store-text">
+          <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Get it on</span>
+          <span class="store-line2">Google Play</span>
+        </span>
+      </a>
+      <a href="#" class="store-btn disabled" aria-disabled="true">
+        <span class="badge-soon" data-lang="es">PRONTO</span><span class="badge-soon" data-lang="en">SOON</span>
+        <span class="store-icon">&#63743;</span>
+        <span class="store-text">
+          <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
+          <span class="store-line2">App Store</span>
+        </span>
+      </a>
+      <a href="#" class="store-btn disabled" aria-disabled="true">
+        <span class="badge-soon" data-lang="es">PRONTO</span><span class="badge-soon" data-lang="en">SOON</span>
+        <span class="store-icon">&#63743;</span>
+        <span class="store-text">
+          <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
+          <span class="store-line2">Mac App Store</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">400+</div><div class="label" data-lang="es">Subgeneros</div><div class="label" data-lang="en">Subgenres</div></div>
+      <div class="hero-stat"><div class="num">24</div><div class="label">Camelot Keys</div></div>
+      <div class="hero-stat"><div class="num">12K</div><div class="label">Waveform Frames</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="label" data-lang="es">Plataformas</div><div class="label" data-lang="en">Platforms</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+
+    <div class="section-title" data-lang="es">Todo lo que necesitas para tu sesion perfecta</div>
+    <div class="section-title" data-lang="en">Everything you need for the perfect session</div>
+
+    <p class="section-desc" data-lang="es">Analisis profesional de audio con tecnologia de ultima generacion.</p>
+    <p class="section-desc" data-lang="en">Professional audio analysis with cutting-edge technology.</p>
+
+    <!-- ES features -->
+    <div class="features-grid" data-lang="es">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127925;</div>
+        <h3>BPM, Key & Energy</h3>
+        <p>Deteccion automatica de BPM, tonalidad, notacion Camelot y nivel de energia (1-10). Multiples fuentes: ID3, Beatport, Discogs, analisis local.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#127912;</div>
+        <h3>Camelot Wheel</h3>
+        <p>Rueda Camelot interactiva para mezcla armonica. Visualiza la compatibilidad de tus tracks al instante y planifica transiciones perfectas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127911;</div>
+        <h3>Spectral Waveform</h3>
+        <p>Waveform estilo Rekordbox con analisis FFT de 3 bandas. 12,000 frames de resolucion con colores espectrales por frecuencia.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128640;</div>
+        <h3>Flow Designer</h3>
+        <p>Planifica tus sesiones visualmente. Arrastra tracks, visualiza curvas de energia, evalua transiciones y exporta a Rekordbox, Serato o Traktor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-red">&#128293;</div>
+        <h3>Smart Collections</h3>
+        <p>Playlists dinamicas con reglas: BPM, key, energy, genero, tipo de track. Presets como "Peak Time Bangers" listos para usar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-blue">&#9729;</div>
+        <h3>Cloud Sync</h3>
+        <p>Sincroniza tu biblioteca entre desktop y mobile. Vincula dispositivos con un codigo de 6 caracteres. Analiza en PC, lleva tus datos al venue en el movil.</p>
+      </div>
+    </div>
+
+    <!-- EN features -->
+    <div class="features-grid" data-lang="en">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127925;</div>
+        <h3>BPM, Key & Energy</h3>
+        <p>Automatic BPM, key, Camelot notation and energy level (1-10) detection. Multiple sources: ID3, Beatport, Discogs, local analysis.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#127912;</div>
+        <h3>Camelot Wheel</h3>
+        <p>Interactive Camelot wheel for harmonic mixing. Instantly visualize track compatibility and plan perfect transitions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127911;</div>
+        <h3>Spectral Waveform</h3>
+        <p>Rekordbox-style waveform with 3-band FFT analysis. 12,000 frames of resolution with spectral colors by frequency.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128640;</div>
+        <h3>Flow Designer</h3>
+        <p>Visually plan your sessions. Drag tracks, view energy curves, evaluate transitions and export to Rekordbox, Serato or Traktor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-red">&#128293;</div>
+        <h3>Smart Collections</h3>
+        <p>Dynamic playlists with rules: BPM, key, energy, genre, track type. Presets like "Peak Time Bangers" ready to use.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-blue">&#9729;</div>
+        <h3>Cloud Sync</h3>
+        <p>Sync your library between desktop and mobile. Link devices with a 6-character code. Analyze on PC, take your data to the venue on your phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots-section" id="screenshots">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label" data-lang="es">Capturas</div>
+      <div class="section-label" data-lang="en">Screenshots</div>
+      <div class="section-title" data-lang="es">Interfaz profesional, sin compromiso</div>
+      <div class="section-title" data-lang="en">Professional interface, no compromise</div>
+      <p class="section-desc" style="margin:0 auto" data-lang="es">Workspace multi-panel, waveform espectral, flow designer y mas.</p>
+      <p class="section-desc" style="margin:0 auto" data-lang="en">Multi-panel workspace, spectral waveform, flow designer and more.</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-item">
+        <img src="img/library.jpg" alt="Library - Track Table" loading="lazy">
+        <div class="screenshot-label">Library & Track Analysis</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="img/camelot.png" alt="Camelot Wheel & Smart Suggest" loading="lazy">
+        <div class="screenshot-label">Camelot Wheel & Smart Suggest</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="img/flow.jpg" alt="Flow Designer" loading="lazy">
+        <div class="screenshot-label">Flow Designer - Session Planning</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="img/smart-collections.jpg" alt="Smart Collections" loading="lazy">
+        <div class="screenshot-label">Smart Collections</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APP -->
+<section id="mobile">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Mobile App</div>
+    <div class="section-title" data-lang="es">Tu biblioteca en el bolsillo</div>
+    <div class="section-title" data-lang="en">Your library in your pocket</div>
+    <p class="section-desc" style="margin:0 auto" data-lang="es">Sincroniza con desktop y lleva toda tu musica analizada al venue. Android ya disponible en Google Play. iOS proximamente.</p>
+    <p class="section-desc" style="margin:0 auto" data-lang="en">Sync with desktop and take all your analyzed music to the venue. Android available now on Google Play. iOS coming soon.</p>
+    <div class="mobile-grid">
+      <div class="mobile-item">
+        <img src="img/mobile-home.jpg" alt="Mobile Home Screen" loading="lazy">
+        <div class="mobile-label">Home</div>
+      </div>
+      <div class="mobile-item">
+        <img src="img/mobile-library.jpg" alt="Mobile Library" loading="lazy">
+        <div class="mobile-label">Library</div>
+      </div>
+      <div class="mobile-item">
+        <img src="img/mobile-session.jpg" alt="Mobile Session" loading="lazy">
+        <div class="mobile-label">Session</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container" style="text-align:center">
+    <div class="section-label" data-lang="es">Como funciona</div>
+    <div class="section-label" data-lang="en">How It Works</div>
+    <div class="section-title" data-lang="es">De tu carpeta a tu sesion en 3 pasos</div>
+    <div class="section-title" data-lang="en">From your folder to your session in 3 steps</div>
+
+    <!-- ES steps -->
+    <div class="steps" data-lang="es">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Importa tus tracks</h3>
+        <p>Arrastra carpetas o archivos (MP3, WAV, FLAC, M4A). Importa desde Rekordbox o Traktor con un click.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Analisis automatico</h3>
+        <p>BPM, Key, Energy, Genre, Structure y Waveform. Todo procesado en segundos con nuestro backend cloud.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Planifica y mezcla</h3>
+        <p>Usa el Flow Designer, Camelot Wheel y Smart Collections para crear la sesion perfecta. Exporta y pincha.</p>
+      </div>
+    </div>
+
+    <!-- EN steps -->
+    <div class="steps" data-lang="en">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Import your tracks</h3>
+        <p>Drag folders or files (MP3, WAV, FLAC, M4A). Import from Rekordbox or Traktor with one click.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Automatic analysis</h3>
+        <p>BPM, Key, Energy, Genre, Structure and Waveform. Everything processed in seconds with our cloud backend.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Plan and mix</h3>
+        <p>Use the Flow Designer, Camelot Wheel and Smart Collections to create the perfect session. Export and play.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="section-label" data-lang="es">Precios</div>
+    <div class="section-label" data-lang="en">Pricing</div>
+    <div class="section-title" data-lang="es">Empieza gratis, crece cuando quieras</div>
+    <div class="section-title" data-lang="en">Start free, upgrade when you're ready</div>
+    <p class="section-desc" style="margin:0 auto" data-lang="es">Sin trucos. Sin limites artificiales.</p>
+    <p class="section-desc" style="margin:0 auto" data-lang="en">No tricks. No artificial limits.</p>
+
+    <!-- ES pricing -->
+    <div class="pricing-grid" data-lang="es">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-amount">0 &euro;</div>
+        <div class="price-desc">Para siempre</div>
+        <ul class="price-features">
+          <li><span class="check">&#10003;</span> Analisis BPM, Key, Energy</li>
+          <li><span class="check">&#10003;</span> Camelot Wheel</li>
+          <li><span class="check">&#10003;</span> Smart Collections</li>
+          <li><span class="check">&#10003;</span> Waveform espectral</li>
+          <li><span class="check">&#10003;</span> Import/Export basico</li>
+          <li><span class="check">&#10003;</span> Cloud Sync (1 dispositivo)</li>
+        </ul>
+        <a href="#download" class="price-btn price-btn-secondary">Descargar Gratis</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Pro</div>
+        <div class="price-amount">4.99 &euro; <span>/ mes</span></div>
+        <div class="price-desc">Para DJs profesionales</div>
+        <ul class="price-features">
+          <li><span class="check">&#10003;</span> Todo lo de Free</li>
+          <li><span class="check">&#10003;</span> Flow Designer completo</li>
+          <li><span class="check">&#10003;</span> Export Rekordbox / Serato / Traktor</li>
+          <li><span class="check">&#10003;</span> Analytics avanzados</li>
+          <li><span class="check">&#10003;</span> Cloud Sync ilimitado</li>
+          <li><span class="check">&#10003;</span> Soporte prioritario</li>
+        </ul>
+        <a href="#download" class="price-btn price-btn-primary">Proximamente</a>
+      </div>
+    </div>
+
+    <!-- EN pricing -->
+    <div class="pricing-grid" data-lang="en">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-amount">0 &euro;</div>
+        <div class="price-desc">Forever</div>
+        <ul class="price-features">
+          <li><span class="check">&#10003;</span> BPM, Key, Energy analysis</li>
+          <li><span class="check">&#10003;</span> Camelot Wheel</li>
+          <li><span class="check">&#10003;</span> Smart Collections</li>
+          <li><span class="check">&#10003;</span> Spectral Waveform</li>
+          <li><span class="check">&#10003;</span> Basic Import/Export</li>
+          <li><span class="check">&#10003;</span> Cloud Sync (1 device)</li>
+        </ul>
+        <a href="#download" class="price-btn price-btn-secondary">Download Free</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Pro</div>
+        <div class="price-amount">4.99 &euro; <span>/ month</span></div>
+        <div class="price-desc">For professional DJs</div>
+        <ul class="price-features">
+          <li><span class="check">&#10003;</span> Everything in Free</li>
+          <li><span class="check">&#10003;</span> Full Flow Designer</li>
+          <li><span class="check">&#10003;</span> Export Rekordbox / Serato / Traktor</li>
+          <li><span class="check">&#10003;</span> Advanced Analytics</li>
+          <li><span class="check">&#10003;</span> Unlimited Cloud Sync</li>
+          <li><span class="check">&#10003;</span> Priority Support</li>
+        </ul>
+        <a href="#download" class="price-btn price-btn-primary">Coming Soon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download">
+  <div class="container">
+    <div class="cta-box">
+      <h2 data-lang="es">Listo para analizar tu musica?</h2>
+      <h2 data-lang="en">Ready to analyze your music?</h2>
+      <p data-lang="es">Descarga DJ Analyzer gratis y empieza a preparar sesiones como un profesional.</p>
+      <p data-lang="en">Download DJ Analyzer for free and start preparing sessions like a professional.</p>
+      <div class="store-grid">
+        <a href="DJAnalyzerPro-Setup.exe" class="store-btn">
+          <span class="store-icon">&#127911;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+            <span class="store-line2">Windows</span>
+          </span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" target="_blank" rel="noopener">
+          <span class="store-icon">&#9654;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Get it on</span>
+            <span class="store-line2">Google Play</span>
+          </span>
+        </a>
+        <a href="#" class="store-btn disabled" aria-disabled="true">
+          <span class="badge-soon" data-lang="es">PRONTO</span><span class="badge-soon" data-lang="en">SOON</span>
+          <span class="store-icon">&#63743;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
+            <span class="store-line2">App Store</span>
+          </span>
+        </a>
+        <a href="#" class="store-btn disabled" aria-disabled="true">
+          <span class="badge-soon" data-lang="es">PRONTO</span><span class="badge-soon" data-lang="en">SOON</span>
+          <span class="store-icon">&#63743;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
+            <span class="store-line2">Mac App Store</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#pricing" data-lang="es">Precios</a><a href="#pricing" data-lang="en">Pricing</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:djanalyzerpro@gmail.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 DJ Analyzer. Built with Flutter & FastAPI.</div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.body.className = lang === 'en' ? 'en' : '';
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  localStorage.setItem('lang', lang);
+}
+// 1) URL ?lang=en wins (hreflang-friendly)
+const urlLang = new URLSearchParams(location.search).get('lang');
+if (urlLang === 'en' || urlLang === 'es') {
+  setLang(urlLang);
+} else {
+  // 2) Saved preference
+  const saved = localStorage.getItem('lang');
+  if (saved) {
+    setLang(saved);
+  } else {
+    // 3) Browser default
+    const browser = (navigator.language || 'es').slice(0, 2);
+    if (browser === 'en') setLang('en');
+  }
+}
+</script>
+
+</body>
+</html>
