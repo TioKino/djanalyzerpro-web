@@ -42,13 +42,13 @@ body.en [data-lang="es"]{display:none}
 <!-- ES -->
 <div data-lang="es">
 <h1>Politica de Privacidad</h1>
-<p class="updated">Ultima actualizacion: 28 de abril de 2026</p>
+<p class="updated">Ultima actualizacion: 8 de mayo de 2026</p>
 
 <h2>1. Informacion que recopilamos</h2>
 <p>DJ Analyzer recopila los datos minimos necesarios para que la aplicacion funcione:</p>
 <ul>
 <li><strong>Identificador de dispositivo:</strong> un ID anonimo generado aleatoriamente que se usa para sincronizar tu biblioteca entre tus dispositivos. No esta vinculado a tu identidad personal.</li>
-<li><strong>Metadatos de audio:</strong> titulos de pista, artistas, BPM, key y otros datos de analisis que decides sincronizar. Los archivos de audio nunca se suben a la nube.</li>
+<li><strong>Metadatos de audio:</strong> titulos de pista, artistas, BPM, key y otros datos de analisis que decides sincronizar. Los archivos de audio completos nunca se suben a la nube.</li>
 <li><strong>Datos de uso:</strong> analiticas basicas de la app (plataforma, version) para mejorar el servicio. No se incluye informacion personal.</li>
 </ul>
 
@@ -68,12 +68,12 @@ body.en [data-lang="es"]{display:none}
 <h2>5. Servicios de terceros</h2>
 <p>La app utiliza los siguientes servicios externos para identificacion de audio y metadatos:</p>
 <ul>
-<li>AudD (reconocimiento de audio)</li>
-<li>Discogs (metadatos)</li>
-<li>MusicBrainz (metadatos)</li>
-<li>Last.fm (caratulas)</li>
+<li><strong>AudD</strong> (reconocimiento de audio): se usa de forma manual cuando pulsas "Identificar" en una pista o usas el modo de deteccion en vivo en movil. Adicionalmente, durante el analisis automatico (<code>/analyze</code>), si los metadatos ID3 del archivo no permiten identificar artista y titulo, el backend puede enviar automaticamente un fragmento de 20 segundos del audio a AudD para reconocimiento. Este disparo automatico esta limitado a 50 llamadas/dia globales y 7 dias de cooldown por pista para minimizar el envio de datos.</li>
+<li><strong>Discogs</strong> (metadatos de release y label).</li>
+<li><strong>MusicBrainz</strong> (metadatos abiertos).</li>
+<li><strong>Last.fm</strong> (caratulas como fallback).</li>
 </ul>
-<p>Cada servicio tiene su propia politica de privacidad. No se comparten datos personales con ellos, solo huellas de audio o metadatos de pista.</p>
+<p>Cada servicio tiene su propia politica de privacidad. No se comparten datos personales con ellos, solo huellas o fragmentos de audio cortos y metadatos de pista.</p>
 
 <h2>6. Permisos</h2>
 <ul>
@@ -101,13 +101,13 @@ body.en [data-lang="es"]{display:none}
 <!-- EN -->
 <div data-lang="en">
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: April 28, 2026</p>
+<p class="updated">Last updated: May 8, 2026</p>
 
 <h2>1. Information We Collect</h2>
 <p>DJ Analyzer collects minimal data necessary for the app to function:</p>
 <ul>
 <li><strong>Device identifier:</strong> A randomly generated anonymous ID used for cloud sync between your devices. This is not linked to your personal identity.</li>
-<li><strong>Audio metadata:</strong> Track titles, artists, BPM, key, and other analysis data that you choose to sync. Audio files are never uploaded.</li>
+<li><strong>Audio metadata:</strong> Track titles, artists, BPM, key, and other analysis data that you choose to sync. Full audio files are never uploaded.</li>
 <li><strong>Usage data:</strong> Basic app analytics (platform, app version) to improve the service. No personal information is included.</li>
 </ul>
 
@@ -127,12 +127,12 @@ body.en [data-lang="es"]{display:none}
 <h2>5. Third-Party Services</h2>
 <p>The app uses the following third-party services for audio identification and metadata:</p>
 <ul>
-<li>AudD (audio recognition)</li>
-<li>Discogs (metadata)</li>
-<li>MusicBrainz (metadata)</li>
-<li>Last.fm (artwork)</li>
+<li><strong>AudD</strong> (audio recognition): used manually when you press "Identify" on a track or use the live detection mode on mobile. Additionally, during automatic analysis (<code>/analyze</code>), if a file's ID3 metadata does not allow identifying artist and title, the backend may automatically send a 20-second audio snippet to AudD for recognition. This automatic trigger is rate-limited to 50 calls/day globally and a 7-day cooldown per track to minimize data sent.</li>
+<li><strong>Discogs</strong> (release and label metadata).</li>
+<li><strong>MusicBrainz</strong> (open metadata).</li>
+<li><strong>Last.fm</strong> (artwork fallback).</li>
 </ul>
-<p>Each service has its own privacy policy. No personal data is shared with them &mdash; only audio fingerprints or track metadata.</p>
+<p>Each service has its own privacy policy. No personal data is shared with them &mdash; only audio fingerprints or short audio snippets and track metadata.</p>
 
 <h2>6. Permissions</h2>
 <ul>
