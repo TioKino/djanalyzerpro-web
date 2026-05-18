@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
 <title>DJ Analyzer - Professional DJ Music Analysis</title>
-<meta name="description" content="Analiza tu música como un pro: BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. Disponible en Windows y Android.">
+<meta name="description" content="Analiza tu música como un pro: BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. Disponible en Windows, macOS, iOS y Android. Edición Pro con motor de análisis local para Windows y macOS.">
 <link rel="canonical" href="https://www.djanalyzerpro.com/">
 <link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/">
 <link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/?lang=en">
@@ -114,6 +114,17 @@ nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:b
 .store-btn .store-line2{font-size:.95rem;font-weight:700}
 .store-btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
 .store-btn.disabled .badge-soon{position:absolute;top:-8px;right:8px;background:var(--amber);color:#000;font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;letter-spacing:.5px}
+/* --- PRO EDITION (motor local Win/Mac DMG) --- */
+.pro-section{margin-top:3rem;padding:2rem 1.5rem;border-radius:18px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(34,211,238,.05));border:1px solid rgba(139,92,246,.25);max-width:680px;margin-left:auto;margin-right:auto}
+.pro-section .pro-label{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.6rem}
+.pro-section .pro-label::before{content:"";width:5px;height:5px;background:var(--purple);border-radius:50%}
+.pro-section .pro-title{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:.5rem;line-height:1.2}
+.pro-section .pro-sub{color:var(--text2);font-size:.95rem;margin-bottom:1.5rem;line-height:1.5}
+.pro-section .pro-grid{display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:600px){.pro-section .pro-grid{grid-template-columns:1fr 1fr}}
+.pro-section .pro-features{margin-top:1.25rem;display:flex;flex-direction:column;gap:.45rem}
+.pro-section .pro-feat{font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:.5rem}
+.pro-section .pro-feat::before{content:"\2713";color:var(--green);font-weight:700}
 .hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
 .hero-stat{text-align:center}
 .hero-stat .num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -269,6 +280,48 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
           <span class="store-line2">Mac App Store</span>
         </span>
       </a>
+    </div>
+
+    <!-- PRO EDITION: motor local para Windows + macOS DMG -->
+    <div class="pro-section">
+      <div class="pro-label" data-lang="es">Pro Edition · Motor local</div>
+      <div class="pro-label" data-lang="en">Pro Edition · Local engine</div>
+
+      <div class="pro-title" data-lang="es">Análisis instantáneo, sin esperas, offline</div>
+      <div class="pro-title" data-lang="en">Instant analysis, no waiting, offline</div>
+
+      <div class="pro-sub" data-lang="es">Versión completa para Windows y macOS con motor de análisis embebido. Pensado para librerías grandes y trabajo profesional sin depender de la nube.</div>
+      <div class="pro-sub" data-lang="en">Full Windows &amp; macOS edition with bundled analysis engine. Built for large libraries and pro workflows without depending on the cloud.</div>
+
+      <div class="pro-grid">
+        <a href="DJAnalyzerPro-Setup.exe" class="store-btn">
+          <span class="store-icon">&#127911;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+            <span class="store-line2">Windows · Pro</span>
+          </span>
+        </a>
+        <a href="DJAnalyzerPro.dmg" class="store-btn">
+          <span class="store-icon">&#63743;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+            <span class="store-line2">macOS · Pro</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="pro-features" data-lang="es">
+        <div class="pro-feat">Análisis local hasta 10× más rápido que la nube</div>
+        <div class="pro-feat">Funciona sin conexión a Internet</div>
+        <div class="pro-feat">Ideal para librerías de más de 1000 tracks</div>
+        <div class="pro-feat">Firmado y notarizado por Apple · Verificado por Microsoft</div>
+      </div>
+      <div class="pro-features" data-lang="en">
+        <div class="pro-feat">Local analysis up to 10× faster than cloud</div>
+        <div class="pro-feat">Works fully offline</div>
+        <div class="pro-feat">Perfect for libraries over 1000 tracks</div>
+        <div class="pro-feat">Signed &amp; notarized by Apple · Verified by Microsoft</div>
+      </div>
     </div>
 
     <div class="hero-stats">
@@ -579,6 +632,35 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
             <span class="store-line2">Mac App Store</span>
           </span>
         </a>
+      </div>
+
+      <!-- PRO EDITION en CTA inferior: misma seccion que en el hero -->
+      <div class="pro-section">
+        <div class="pro-label" data-lang="es">Pro Edition · Motor local</div>
+        <div class="pro-label" data-lang="en">Pro Edition · Local engine</div>
+
+        <div class="pro-title" data-lang="es">¿Necesitas más velocidad?</div>
+        <div class="pro-title" data-lang="en">Need more speed?</div>
+
+        <div class="pro-sub" data-lang="es">La edición Pro para Windows y macOS lleva el motor de análisis integrado, así que no esperas a la nube y funciona offline.</div>
+        <div class="pro-sub" data-lang="en">The Pro edition for Windows and macOS ships with the analysis engine embedded — no waiting on the cloud, fully offline.</div>
+
+        <div class="pro-grid">
+          <a href="DJAnalyzerPro-Setup.exe" class="store-btn">
+            <span class="store-icon">&#127911;</span>
+            <span class="store-text">
+              <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+              <span class="store-line2">Windows · Pro</span>
+            </span>
+          </a>
+          <a href="DJAnalyzerPro.dmg" class="store-btn">
+            <span class="store-icon">&#63743;</span>
+            <span class="store-text">
+              <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+              <span class="store-line2">macOS · Pro</span>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
