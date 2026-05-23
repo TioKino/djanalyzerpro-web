@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sparkle / WinSparkle appcast — feed de versiones disponibles para
+  auto-update de las builds desktop distribuidas desde djanalyzerpro.com:
+    - Windows: DJAnalyzerPro-Setup.zip
+    - macOS DMG: DJAnalyzerPro.dmg
+
+  El cliente (auto_updater package, lib/services/auto_update_service.dart)
+  lee este XML al inicio y cada 24h. Si encuentra una version mas alta
+  que la instalada (sparkle:version), muestra el dialog nativo de update.
+
+  IMPORTANTE — un solo feed cubre ambas plataformas. Sparkle/WinSparkle
+  selecciona el item correcto via el atributo `sparkle:os` del enclosure:
+    - sparkle:os="windows" -> windows
+    - sparkle:os="macos"   -> macOS DMG (NO MAS, la build MAS no consulta esto)
+
+  Para publicar una nueva version:
+    1. Subir DJAnalyzerPro-Setup.zip (Windows) y DJAnalyzerPro.dmg (macOS)
+       al hosting de djanalyzerpro.com con el numero de version en el nombre
+       (ej. DJAnalyzerPro-2.9.1-Setup.zip y DJAnalyzerPro-2.9.1.dmg) Y como
+       alias estable DJAnalyzerPro-Setup.zip / DJAnalyzerPro.dmg para que
+       el boton "Descarga directa" siga apuntando al ultimo.
+    2. Firmar cada binario con la clave EdDSA privada usando la tool de
+       Sparkle (`sign_update`) — produce sparkle:edSignature.
+    3. Añadir un <item> nuevo a este XML (arriba de los anteriores).
+       Mantener el historial entero — Sparkle no lo necesita pero ayuda
+       al user a ver el changelog completo.
+    4. Subir appcast.xml actualizado al hosting.
+    5. Los clientes existentes detectaran el cambio en el siguiente check
+       (al iniciar la app o pasadas 24h, lo que pase antes).
+
+  Ver RELEASE_PLAYBOOK.md seccion "Sparkle/WinSparkle" en el repo
+  TioKino/Analyzer para los comandos exactos.
+-->
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>DJ Analyzer Pro — Updates</title>
+    <link>https://www.djanalyzerpro.com/</link>
+    <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
+    <language>en</language>
+
+    <!--
+      EJEMPLO de item — borra estos comentarios y duplica el bloque cuando
+      publiques una version real. Mantener el orden: la mas nueva ARRIBA.
+
+      sparkle:version  = build number entero (ej. 27 = pubspec "+27")
+      sparkle:shortVersionString = version humano-readable (ej. "2.9.0")
+      sparkle:minimumSystemVersion = OS minimo (macOS: "11.0", Windows: "10.0.0")
+      sparkle:os = "windows" o "macos"
+      length = tamano del binario en bytes (real, no aproximado)
+      sparkle:edSignature = firma EdDSA del binario, generada con la tool
+                            sign_update (la herramienta de Sparkle 2)
+    -->
+
+    <!-- EJEMPLO: cuando publiques v2.9.1, descomenta y rellena ambos items.
+
+    <item>
+      <title>DJ Analyzer Pro 2.9.1</title>
+      <pubDate>Wed, 21 May 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>28</sparkle:version>
+      <sparkle:shortVersionString>2.9.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.1 — Fixes panel admin + auto-update</h3>
+        <ul>
+          <li>BORRADO TOTAL ahora limpia carpetas, play history y detecciones</li>
+          <li>Suspension de Mac durante analisis: aviso + reset de pausa</li>
+          <li>iPhone: aura "playing" en track cuando suena preview</li>
+          <li>Filtro "tracks sin artwork" para re-analyze masivo</li>
+          <li>Pantalla "Imports fallidos" con motivo human-readable</li>
+          <li>Historial de limpiezas con AudD (accepted / rejected / dismissed)</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-2.9.1-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="28"
+        sparkle:shortVersionString="2.9.1"
+        length="REPLACE_WITH_REAL_BYTES"
+        type="application/zip"
+        sparkle:edSignature="REPLACE_WITH_OUTPUT_OF_sign_update" />
+    </item>
+
+    <item>
+      <title>DJ Analyzer Pro 2.9.1</title>
+      <pubDate>Wed, 21 May 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>28</sparkle:version>
+      <sparkle:shortVersionString>2.9.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.1</h3>
+        <p>(mismo changelog que Windows)</p>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-2.9.1.dmg"
+        sparkle:os="macos"
+        sparkle:version="28"
+        sparkle:shortVersionString="2.9.1"
+        length="REPLACE_WITH_REAL_BYTES"
+        type="application/octet-stream"
+        sparkle:edSignature="REPLACE_WITH_OUTPUT_OF_sign_update" />
+    </item>
+
+    -->
+
+  </channel>
+</rss>
