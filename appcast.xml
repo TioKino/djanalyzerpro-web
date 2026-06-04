@@ -105,5 +105,30 @@
 
     -->
 
+    <item>
+      <title>DJ Analyzer Pro 2.9.3</title>
+      <pubDate>Wed, 04 Jun 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>30</sparkle:version>
+      <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.3</h3>
+        <ul>
+          <li>Sincronización incremental: solo se suben los tracks modificados (mucho más rápido en bibliotecas grandes)</li>
+          <li>Auto-update reactivado (Sparkle): la app avisa de nuevas versiones</li>
+          <li>Fix reproducción de audio en macOS (archivos locales)</li>
+          <li>Mejoras de estabilidad y firma/notarización del DMG</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro.dmg"
+        sparkle:os="macos"
+        sparkle:version="30"
+        sparkle:shortVersionString="2.9.3"
+        length="155609285"
+        type="application/octet-stream"
+        sparkle:edSignature="IxxpcywbkNoVTC1N3moGrGZDfieZ55LVOYCdYeOE88eFq8p+SFRaEr3IdqMWv2HbkrSIwn9hPpwWnSmz+BWEBQ==" />
+    </item>
+
   </channel>
 </rss>
