@@ -110,6 +110,30 @@
       <pubDate>Wed, 04 Jun 2026 12:00:00 +0000</pubDate>
       <sparkle:version>30</sparkle:version>
       <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.3</h3>
+        <ul>
+          <li>Sincronización incremental: solo se suben los tracks modificados (mucho más rápido en bibliotecas grandes)</li>
+          <li>Auto-update reactivado (WinSparkle): la app avisa de nuevas versiones</li>
+          <li>Mejoras de estabilidad y rendimiento</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="30"
+        sparkle:shortVersionString="2.9.3"
+        length="168172661"
+        type="application/zip"
+        sparkle:edSignature="mvNb2eJps5L9zOtlErqCNp+j/EVz6YzWEwoWcIlV+M2tHeBX1BOrPHhs8GnmA4RlbpPSnecjwPBW0oKcfOrDCA==" />
+    </item>
+
+    <item>
+      <title>DJ Analyzer Pro 2.9.3</title>
+      <pubDate>Wed, 04 Jun 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>30</sparkle:version>
+      <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
         <h3>v2.9.3</h3>
