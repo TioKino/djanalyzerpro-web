@@ -41,70 +41,33 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
-    <!--
-      EJEMPLO de item — borra estos comentarios y duplica el bloque cuando
-      publiques una version real. Mantener el orden: la mas nueva ARRIBA.
-
-      sparkle:version  = build number entero (ej. 27 = pubspec "+27")
-      sparkle:shortVersionString = version humano-readable (ej. "2.9.0")
-      sparkle:minimumSystemVersion = OS minimo (macOS: "11.0", Windows: "10.0.0")
-      sparkle:os = "windows" o "macos"
-      length = tamano del binario en bytes (real, no aproximado)
-      sparkle:edSignature = firma EdDSA del binario, generada con la tool
-                            sign_update (la herramienta de Sparkle 2)
-    -->
-
-    <!-- EJEMPLO: cuando publiques v2.9.1, descomenta y rellena ambos items.
-
+    <!-- 2.9.3+31 macOS DMG — 2026-06-05 -->
     <item>
-      <title>DJ Analyzer Pro 2.9.1</title>
-      <pubDate>Wed, 21 May 2026 12:00:00 +0000</pubDate>
-      <sparkle:version>28</sparkle:version>
-      <sparkle:shortVersionString>2.9.1</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <title>DJ Analyzer Pro 2.9.3</title>
+      <pubDate>Thu, 05 Jun 2026 14:32:00 +0000</pubDate>
+      <sparkle:version>31</sparkle:version>
+      <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
-        <h3>v2.9.1 — Fixes panel admin + auto-update</h3>
+        <h3>v2.9.3 — hotfix portadas y reproducción</h3>
         <ul>
-          <li>BORRADO TOTAL ahora limpia carpetas, play history y detecciones</li>
-          <li>Suspension de Mac durante analisis: aviso + reset de pausa</li>
-          <li>iPhone: aura "playing" en track cuando suena preview</li>
-          <li>Filtro "tracks sin artwork" para re-analyze masivo</li>
-          <li>Pantalla "Imports fallidos" con motivo human-readable</li>
-          <li>Historial de limpiezas con AudD (accepted / rejected / dismissed)</li>
+          <li>Fix: marcador de posición congelado en 0:00 al reproducir un track por primera vez</li>
+          <li>Fix: portadas no se cargaban en tracks identificados por AudD (metadata enriquecida sobreescrita)</li>
+          <li>Portadas descartadas ahora se reintentan automáticamente cada 7 días</li>
+          <li>Fix indicador de preview en playlist</li>
         </ul>
       ]]></description>
       <enclosure
-        url="https://www.djanalyzerpro.com/DJAnalyzerPro-2.9.1-Setup.zip"
-        sparkle:os="windows"
-        sparkle:version="28"
-        sparkle:shortVersionString="2.9.1"
-        length="REPLACE_WITH_REAL_BYTES"
-        type="application/zip"
-        sparkle:edSignature="REPLACE_WITH_OUTPUT_OF_sign_update" />
-    </item>
-
-    <item>
-      <title>DJ Analyzer Pro 2.9.1</title>
-      <pubDate>Wed, 21 May 2026 12:00:00 +0000</pubDate>
-      <sparkle:version>28</sparkle:version>
-      <sparkle:shortVersionString>2.9.1</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[
-        <h3>v2.9.1</h3>
-        <p>(mismo changelog que Windows)</p>
-      ]]></description>
-      <enclosure
-        url="https://www.djanalyzerpro.com/DJAnalyzerPro-2.9.1.dmg"
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro.dmg"
         sparkle:os="macos"
-        sparkle:version="28"
-        sparkle:shortVersionString="2.9.1"
-        length="REPLACE_WITH_REAL_BYTES"
+        sparkle:version="31"
+        sparkle:shortVersionString="2.9.3"
+        length="155614050"
         type="application/octet-stream"
-        sparkle:edSignature="REPLACE_WITH_OUTPUT_OF_sign_update" />
+        sparkle:edSignature="N1YrfrfrshMGiJCeFqbNdSau5XhreYImAJ8qao684Rw6I8wcArgMbg0hKIGfAXUaVQLp4r/keDXsPSUfkZS6Dw==" />
     </item>
 
-    -->
-
+    <!-- 2.9.3+30 Windows + macOS — 2026-06-04 -->
     <item>
       <title>DJ Analyzer Pro 2.9.3</title>
       <pubDate>Wed, 04 Jun 2026 12:00:00 +0000</pubDate>
