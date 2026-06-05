@@ -67,6 +67,32 @@
         sparkle:edSignature="N1YrfrfrshMGiJCeFqbNdSau5XhreYImAJ8qao684Rw6I8wcArgMbg0hKIGfAXUaVQLp4r/keDXsPSUfkZS6Dw==" />
     </item>
 
+    <!-- 2.9.3+31 Windows — 2026-06-06 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.3</title>
+      <pubDate>Fri, 06 Jun 2026 01:00:00 +0000</pubDate>
+      <sparkle:version>31</sparkle:version>
+      <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.3 — hotfix portadas y reproducción</h3>
+        <ul>
+          <li>Fix: marcador de posición congelado en 0:00 al reproducir un track por primera vez</li>
+          <li>Fix: portadas no se cargaban en tracks identificados por AudD (metadata enriquecida sobreescrita)</li>
+          <li>Portadas descartadas ahora se reintentan automáticamente cada 7 días</li>
+          <li>Fix indicador de preview en playlist</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="31"
+        sparkle:shortVersionString="2.9.3"
+        length="168198002"
+        type="application/zip"
+        sparkle:edSignature="v1ypuvlerkNlNU+rMyxnECXQIFNm2IqFthb0f1wEoLxDhoP5KHUEYWTugr/+eB/v/ITNVu2fLP1FdoZAk3JNCg==" />
+    </item>
+
     <!-- 2.9.3+30 Windows + macOS — 2026-06-04 -->
     <item>
       <title>DJ Analyzer Pro 2.9.3</title>
