@@ -93,11 +93,37 @@
         sparkle:edSignature="N1YrfrfrshMGiJCeFqbNdSau5XhreYImAJ8qao684Rw6I8wcArgMbg0hKIGfAXUaVQLp4r/keDXsPSUfkZS6Dw==" />
     </item>
 
+    <!-- 2.9.4 Windows — 2026-06-16 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.4</title>
+      <pubDate>Tue, 16 Jun 2026 19:00:00 +0000</pubDate>
+      <sparkle:version>2.9.4</sparkle:version>
+      <sparkle:shortVersionString>2.9.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.4</h3>
+        <ul>
+          <li>Compatibilidad con más formatos de audio al analizar (AIFF, Opus, WMA)</li>
+          <li>Mejoras en el reconocimiento de pistas, con mejor manejo de tracks cortos</li>
+          <li>Mayor estabilidad general y corrección de cierres inesperados</li>
+          <li>Mejor gestión de archivos dañados durante el análisis</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.9.4"
+        sparkle:shortVersionString="2.9.4"
+        length="169212470"
+        type="application/zip"
+        sparkle:edSignature="5OXX8gDTnX5ydI7tLuulVt+JU0Urac8+K0tXi/2ycWdjziV2QCzXYM2lvfw2RqD7FCvzpTERCetI3dEOANVZDA==" />
+    </item>
+
     <!-- 2.9.3+31 Windows — 2026-06-06 -->
     <item>
       <title>DJ Analyzer Pro 2.9.3</title>
       <pubDate>Fri, 06 Jun 2026 01:00:00 +0000</pubDate>
-      <sparkle:version>31</sparkle:version>
+      <sparkle:version>2.9.3</sparkle:version>
       <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
@@ -112,7 +138,7 @@
       <enclosure
         url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
         sparkle:os="windows"
-        sparkle:version="31"
+        sparkle:version="2.9.3"
         sparkle:shortVersionString="2.9.3"
         length="168198002"
         type="application/zip"
@@ -123,7 +149,7 @@
     <item>
       <title>DJ Analyzer Pro 2.9.3</title>
       <pubDate>Wed, 04 Jun 2026 12:00:00 +0000</pubDate>
-      <sparkle:version>30</sparkle:version>
+      <sparkle:version>2.9.3</sparkle:version>
       <sparkle:shortVersionString>2.9.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
@@ -137,7 +163,7 @@
       <enclosure
         url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
         sparkle:os="windows"
-        sparkle:version="30"
+        sparkle:version="2.9.3"
         sparkle:shortVersionString="2.9.3"
         length="168172661"
         type="application/zip"
