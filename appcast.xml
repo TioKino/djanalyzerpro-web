@@ -41,6 +41,32 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.4+32 macOS DMG — 2026-06-16 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.4</title>
+      <pubDate>Tue, 16 Jun 2026 06:36:00 +0000</pubDate>
+      <sparkle:version>32</sparkle:version>
+      <sparkle:shortVersionString>2.9.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.4</h3>
+        <ul>
+          <li>Soporte para más formatos de audio al analizar (AIFF, Opus, WMA)</li>
+          <li>Mejoras en el reconocimiento de tracks: mayor cuota diaria y mejor manejo de pistas cortas</li>
+          <li>Los archivos corruptos ya no se contabilizan como errores</li>
+          <li>Correcciones de estabilidad varias</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro.dmg"
+        sparkle:os="macos"
+        sparkle:version="32"
+        sparkle:shortVersionString="2.9.4"
+        length="155644641"
+        type="application/octet-stream"
+        sparkle:edSignature="noL+Cs+NQRQWI0BuZTbOLRvObynkPqXU9D1J+V+JTrvJNu9fDe4Aj3QnmEltmsbTKuq2n+QpR5jY7zUwkF1sDg==" />
+    </item>
+
     <!-- 2.9.3+31 macOS DMG — 2026-06-05 -->
     <item>
       <title>DJ Analyzer Pro 2.9.3</title>
