@@ -41,6 +41,32 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.5 Windows — 2026-07-05 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.5</title>
+      <pubDate>Sat, 05 Jul 2026 05:00:00 +0000</pubDate>
+      <sparkle:version>2.9.5</sparkle:version>
+      <sparkle:shortVersionString>2.9.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.5</h3>
+        <ul>
+          <li>Exportación e importación más fiables con Rekordbox y Traktor (rutas con acentos, espacios y símbolos)</li>
+          <li>Corregido un error al añadir pistas al pulsar el selector de archivos varias veces seguidas</li>
+          <li>Sincronización de la comunidad más estable (correcciones de beat grid)</li>
+          <li>Mejoras de rendimiento y estabilidad general</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.9.5"
+        sparkle:shortVersionString="2.9.5"
+        length="169242872"
+        type="application/zip"
+        sparkle:edSignature="r9Gq9xF8wdh4bIwHqfCZ46+VDcWbBRx0DkJHQY11IqAQHqS21cTOKZz90QKZYFYEohvL5HxXVXd7tVeAZ6xZCg==" />
+    </item>
+
     <!-- 2.9.4+32 macOS DMG — 2026-06-16 -->
     <item>
       <title>DJ Analyzer Pro 2.9.4</title>
