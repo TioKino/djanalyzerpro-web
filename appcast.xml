@@ -41,11 +41,11 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
-    <!-- 2.9.6 macOS DMG — 2026-07-20 -->
+    <!-- 2.9.6 build 35 macOS DMG — 2026-07-24 (re-release con fixes preview/AudD/backfill) -->
     <item>
       <title>DJ Analyzer Pro 2.9.6</title>
-      <pubDate>Mon, 20 Jul 2026 08:00:00 +0000</pubDate>
-      <sparkle:version>34</sparkle:version>
+      <pubDate>Fri, 24 Jul 2026 08:00:00 +0000</pubDate>
+      <sparkle:version>35</sparkle:version>
       <sparkle:shortVersionString>2.9.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
@@ -54,18 +54,19 @@
           <li>Importa bibliotecas de Rekordbox, Traktor, VirtualDJ e iTunes con toda su info (BPM, tonalidad, género, cues) aunque no tengas los archivos en local</li>
           <li>Elige qué pistas importar y a qué carpeta añadirlas</li>
           <li>Nuevo: importación desde VirtualDJ</li>
-          <li>Corregidos varios cierres inesperados (al borrar carpetas y con nombres de pista con caracteres especiales)</li>
-          <li>Reconocimiento y análisis más estables</li>
+          <li>Mejor calidad de metadata compartida entre tus copias del mismo tema</li>
+          <li>Corregida la previsualización de 6 segundos (se quedaba sonando de más)</li>
+          <li>Corregidos varios cierres inesperados y reconocimiento/análisis más estables</li>
         </ul>
       ]]></description>
       <enclosure
         url="https://www.djanalyzerpro.com/DJAnalyzerPro.dmg"
         sparkle:os="macos"
-        sparkle:version="34"
+        sparkle:version="35"
         sparkle:shortVersionString="2.9.6"
-        length="157082094"
+        length="157106854"
         type="application/octet-stream"
-        sparkle:edSignature="0/ERVePmpVSCRKCsy8yN8ZQ+TYdr5II+RASc/ECRg9R/2Z5n9EdmtPDIKEYWgeKrVQcm5dOhVhKC7I/WNfpTAg==" />
+        sparkle:edSignature="HD5TfPAadjV8aLnOheIGLgckjMBphZ7yUwo1824fUDXFP8YCPenp5Wkv1kWY9+jyS3s81FarEr1Q/cV4lw4cAw==" />
     </item>
 
     <!-- 2.9.5 macOS DMG — 2026-07-05 -->
