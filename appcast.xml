@@ -69,6 +69,33 @@
         sparkle:edSignature="HD5TfPAadjV8aLnOheIGLgckjMBphZ7yUwo1824fUDXFP8YCPenp5Wkv1kWY9+jyS3s81FarEr1Q/cV4lw4cAw==" />
     </item>
 
+    <!-- 2.9.6 Windows — 2026-07-24 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.6</title>
+      <pubDate>Fri, 24 Jul 2026 08:00:00 +0000</pubDate>
+      <sparkle:version>2.9.6</sparkle:version>
+      <sparkle:shortVersionString>2.9.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.6</h3>
+        <ul>
+          <li>Importa bibliotecas de Rekordbox, Traktor, VirtualDJ e iTunes con toda su info (BPM, tonalidad, género, cues), aunque no tengas los archivos en local</li>
+          <li>Elige qué pistas importar y a qué carpeta añadirlas</li>
+          <li>Nueva importación desde VirtualDJ</li>
+          <li>Mejor calidad de metadata compartida entre tus copias del mismo tema</li>
+          <li>Correcciones de estabilidad y reproducción</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.9.6"
+        sparkle:shortVersionString="2.9.6"
+        length="170465629"
+        type="application/zip"
+        sparkle:edSignature="EdZOLwDCl2EGXRDbnV36xyXrWIYTZGmWY92+s918+QQBrJrilXJzeYLm4o/7wCiL4jdvganeUu4tQiQFfZYIAA==" />
+    </item>
+
     <!-- 2.9.5 macOS DMG — 2026-07-05 -->
     <item>
       <title>DJ Analyzer Pro 2.9.5</title>
