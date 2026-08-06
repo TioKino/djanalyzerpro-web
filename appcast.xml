@@ -41,6 +41,30 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.7 build 36 macOS DMG — 2026-08-06 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.7</title>
+      <pubDate>Thu, 06 Aug 2026 15:36:00 +0000</pubDate>
+      <sparkle:version>36</sparkle:version>
+      <sparkle:shortVersionString>2.9.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.7</h3>
+        <ul>
+          <li>Mayor estabilidad y robustez con archivos dañados durante el análisis</li>
+          <li>Correcciones internas y mejoras de rendimiento</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://www.djanalyzerpro.com/DJAnalyzerPro.dmg"
+        sparkle:os="macos"
+        sparkle:version="36"
+        sparkle:shortVersionString="2.9.7"
+        length="157185139"
+        type="application/octet-stream"
+        sparkle:edSignature="xCt+jdRQrzTWP39teO1T6VkzThx32j7rZrlnO37Xy1cnULHnYZtjBrc8mzMz5qE1fdqzp+R8Zbvz6NCkGhRHAw==" />
+    </item>
+
     <!-- 2.9.7 Windows — 2026-08-06 -->
     <item>
       <title>DJ Analyzer Pro 2.9.7</title>
