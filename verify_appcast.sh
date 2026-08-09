@@ -22,19 +22,24 @@
 # "Descarga directa" de la web. Este script comprueba que se cumple y que cada
 # enclosure casa con el fichero real.
 #
+# COMPATIBILIDAD: bash 3.2, que es el que trae macOS. Nada de `mapfile` ni de
+# `declare -A` (bash 4+): en el Mac del owner reventaba con
+# "mapfile: command not found". Por eso aquí se usan ficheros temporales en
+# lugar de arrays asociativos.
+#
 # USO:
 #   ./verify_appcast.sh                  # verifica el appcast.xml local
 #   ./verify_appcast.sh https://www.djanalyzerpro.com/appcast.xml
 #
 # Salida distinta de 0 = NO publicar.
 
-set -uo pipefail
+set -eo pipefail
 
 APPCAST="${1:-appcast.xml}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-if [[ "$APPCAST" == http* ]]; then
+if [ "${APPCAST#http}" != "$APPCAST" ]; then
     echo "Descargando $APPCAST…"
     curl -fsSL "$APPCAST" -o "$TMP/appcast.xml" || { echo "ERROR: no se pudo descargar"; exit 1; }
     APPCAST="$TMP/appcast.xml"
@@ -45,33 +50,45 @@ fi
 echo "Verificando $APPCAST"
 echo ""
 
-# Extrae url|length|os de cada enclosure (una línea por enclosure).
-mapfile -t ENCLOSURES < <(
-    tr '\n' ' ' < "$APPCAST" \
-      | grep -oE '<enclosure[^>]*>' \
-      | while read -r tag; do
-            url=$(grep -oE 'url="[^"]*"' <<< "$tag" | head -1 | cut -d'"' -f2)
-            len=$(grep -oE 'length="[^"]*"' <<< "$tag" | head -1 | cut -d'"' -f2)
-            os=$(grep -oE 'sparkle:os="[^"]*"' <<< "$tag" | head -1 | cut -d'"' -f2)
-            echo "${url}|${len}|${os}"
-        done
-)
+# Extrae "url|length|os" de cada enclosure, una línea por enclosure.
+#
+# Se quitan primero los comentarios XML: el encabezado de appcast.xml habla de
+# "<enclosure>" en prosa y el grep lo tomaba por un tag real, dando una entrada
+# fantasma sin atributos que además tumbaba el script bajo `set -e`.
+# Y se exige `<enclosure ` con espacio, o sea con atributos.
+tr '\n' ' ' < "$APPCAST" \
+  | sed 's/<!--[^>]*\(-->\)*/ /g; s/<!--.*-->/ /g' \
+  | grep -oE '<enclosure [^>]*>' \
+  | while IFS= read -r tag; do
+        url=$(printf '%s' "$tag" | grep -oE 'url="[^"]*"' | head -1 | cut -d'"' -f2 || true)
+        len=$(printf '%s' "$tag" | grep -oE 'length="[^"]*"' | head -1 | cut -d'"' -f2 || true)
+        os=$(printf '%s' "$tag" | grep -oE 'sparkle:os="[^"]*"' | head -1 | cut -d'"' -f2 || true)
+        [ -z "$url" ] && continue
+        printf '%s|%s|%s\n' "$url" "$len" "${os:-?}"
+    done > "$TMP/enclosures.txt"
 
-total=${#ENCLOSURES[@]}
+total=$(wc -l < "$TMP/enclosures.txt" | tr -d ' ')
 echo "Enclosures encontrados: $total"
 echo ""
 
+if [ "$total" -eq 0 ]; then
+    echo "ERROR: no se encontró ningún <enclosure>. ¿Es este el appcast correcto?"
+    exit 1
+fi
+
 # ── 1. URLs mutables compartidas entre versiones ────────────────────────
 echo "── URLs duplicadas (alias mutables) ──"
+cut -d'|' -f1 < "$TMP/enclosures.txt" | sort | uniq -c | sort -rn > "$TMP/dupes.txt"
 dupes=0
 while read -r count url; do
+    [ -z "$url" ] && continue
     if [ "$count" -gt 1 ]; then
         echo "  AVISO: $count enclosures comparten $url"
         echo "         Solo uno puede casar con el fichero servido. Usa URLs"
         echo "         versionadas (…-2.9.7.dmg) en los enclosure."
         dupes=$((dupes + 1))
     fi
-done < <(printf '%s\n' "${ENCLOSURES[@]}" | cut -d'|' -f1 | sort | uniq -c | sort -rn)
+done < "$TMP/dupes.txt"
 [ "$dupes" -eq 0 ] && echo "  OK: cada enclosure tiene su URL propia."
 echo ""
 
@@ -79,20 +96,19 @@ echo ""
 echo "── Contraste contra el hosting ──"
 fails=0
 checked=0
-declare -A SEEN
-for row in "${ENCLOSURES[@]}"; do
-    url="${row%%|*}"
-    rest="${row#*|}"
-    declared="${rest%%|*}"
-    os="${rest##*|}"
+: > "$TMP/seen.txt"
+while IFS='|' read -r url declared os; do
+    [ -z "$url" ] && continue
 
     # Una URL repetida solo se comprueba una vez; el aviso ya salió arriba.
-    [ -n "${SEEN[$url]:-}" ] && continue
-    SEEN[$url]=1
+    if grep -Fqx "$url" "$TMP/seen.txt" 2>/dev/null; then
+        continue
+    fi
+    printf '%s\n' "$url" >> "$TMP/seen.txt"
     checked=$((checked + 1))
 
     actual=$(curl -fsSLI "$url" 2>/dev/null | tr -d '\r' \
-             | awk 'tolower($1) ~ /^content-length:/ {print $2}' | tail -1)
+             | awk 'tolower($1) ~ /^content-length:/ {print $2}' | tail -1 || true)
 
     if [ -z "$actual" ]; then
         echo "  FALLO  [$os] $url"
@@ -107,11 +123,12 @@ for row in "${ENCLOSURES[@]}"; do
     else
         echo "  OK     [$os] $(basename "$url") ($actual bytes)"
     fi
-done
+done < "$TMP/enclosures.txt"
 echo ""
 
 # ── 3. Firmas presentes ─────────────────────────────────────────────────
 sigs=$(grep -c 'sparkle:edSignature=' "$APPCAST" || true)
+sigs=${sigs:-0}
 echo "── Firmas ──"
 if [ "$sigs" -lt "$total" ]; then
     echo "  FALLO: $sigs firmas para $total enclosures — falta alguna."
