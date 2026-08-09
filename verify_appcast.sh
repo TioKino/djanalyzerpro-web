@@ -92,19 +92,27 @@ done < "$TMP/dupes.txt"
 [ "$dupes" -eq 0 ] && echo "  OK: cada enclosure tiene su URL propia."
 echo ""
 
-# ── 2. Cada enclosure casa con el fichero real ──────────────────────────
-echo "── Contraste contra el hosting ──"
+# ── 2. El item VIVO de cada plataforma casa con el fichero real ─────────
+#
+# Sparkle solo descarga el item MÁS NUEVO aplicable a la plataforma; los
+# anteriores son changelog y nunca se piden. Por eso el contraste duro se hace
+# solo sobre el primer enclosure de cada `sparkle:os` (el appcast se ordena con
+# lo nuevo arriba). Comprobar también los históricos daría rojo permanente
+# —comparten alias, así que sus `length` ya no casan— y una alerta que siempre
+# salta se acaba ignorando, que es justo lo que no queremos aquí.
+echo "── Item vivo de cada plataforma (lo que Sparkle descarga) ──"
 fails=0
 checked=0
-: > "$TMP/seen.txt"
+: > "$TMP/seen_os.txt"
+: > "$TMP/historicos.txt"
 while IFS='|' read -r url declared os; do
     [ -z "$url" ] && continue
 
-    # Una URL repetida solo se comprueba una vez; el aviso ya salió arriba.
-    if grep -Fqx "$url" "$TMP/seen.txt" 2>/dev/null; then
+    if grep -Fqx "$os" "$TMP/seen_os.txt" 2>/dev/null; then
+        printf '%s|%s|%s\n' "$url" "$declared" "$os" >> "$TMP/historicos.txt"
         continue
     fi
-    printf '%s\n' "$url" >> "$TMP/seen.txt"
+    printf '%s\n' "$os" >> "$TMP/seen_os.txt"
     checked=$((checked + 1))
 
     actual=$(curl -fsSLI "$url" 2>/dev/null | tr -d '\r' \
@@ -118,12 +126,17 @@ while IFS='|' read -r url declared os; do
         echo "  FALLO  [$os] $url"
         echo "         length declarado: $declared"
         echo "         tamaño real:      $actual"
-        echo "         Sparkle rechazará la actualización."
+        echo "         Sparkle RECHAZA la actualización. Auto-update roto."
         fails=$((fails + 1))
     else
         echo "  OK     [$os] $(basename "$url") ($actual bytes)"
     fi
 done < "$TMP/enclosures.txt"
+
+hist=$(wc -l < "$TMP/historicos.txt" | tr -d ' ')
+if [ "$hist" -gt 0 ]; then
+    echo "  ($hist items históricos no se comprueban: Sparkle nunca los descarga)"
+fi
 echo ""
 
 # ── 3. Firmas presentes ─────────────────────────────────────────────────
@@ -142,13 +155,16 @@ echo ""
 
 echo "════════════════════════════════════════════"
 if [ "$fails" -gt 0 ]; then
-    echo "NO PUBLICAR: $fails problema(s) en $checked URL(s) comprobadas."
+    echo "NO PUBLICAR: $fails de $checked item(s) vivos no casan con el hosting."
+    echo "El auto-update está roto AHORA MISMO para esa plataforma."
     exit 1
 fi
+echo "PUBLICABLE: los $checked item(s) vivos casan con el hosting."
 if [ "$dupes" -gt 0 ]; then
-    echo "PUBLICABLE con reservas: $dupes URL(s) compartidas entre versiones."
-    echo "Los items antiguos quedarán inconsistentes en cuanto subas la"
-    echo "siguiente versión al mismo alias."
-    exit 2
+    echo ""
+    echo "Recordatorio para el PRÓXIMO release: los enclosure apuntan a alias"
+    echo "mutables, así que en cuanto subas la versión nueva al mismo nombre el"
+    echo "item actual pasará a declarar un tamaño que ya no existe. Sube también"
+    echo "el fichero VERSIONADO (DJAnalyzerPro-<ver>.dmg) y apunta el <enclosure>"
+    echo "nuevo ahí; entonces cada item queda clavado a un fichero inmutable."
 fi
-echo "TODO OK: appcast consistente con el hosting."

@@ -35,6 +35,12 @@
            <- solo para el boton de descarga de la web
     2. Firmar el binario VERSIONADO con la clave EdDSA privada
        (`sign_update`) — produce sparkle:edSignature y length.
+       OJO (comprobado 2026-08-09): hoy en el hosting SOLO existen los alias.
+       DJAnalyzerPro-2.9.7.dmg, -2.9.7-Setup.zip y -2.9.6.dmg dan 404, o sea
+       que el paso "subir tambien el versionado" no se estaba haciendo. Por eso
+       los enclosure siguen apuntando al alias: cambiarlos ahora los dejaria
+       apuntando a un 404 y romperia el auto-update de golpe. La migracion se
+       hace en el proximo release, cuando el fichero versionado exista.
     3. Añadir un <item> nuevo a este XML (arriba de los anteriores) apuntando
        a la URL VERSIONADA. Mantener el historial entero.
     4. Correr `./verify_appcast.sh` — comprueba que cada enclosure existe y
