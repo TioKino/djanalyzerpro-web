@@ -14,20 +14,42 @@
     - sparkle:os="windows" -> windows
     - sparkle:os="macos"   -> macOS DMG (NO MAS, la build MAS no consulta esto)
 
+  ATENCION — LOS <enclosure> DEBEN APUNTAR A URLs VERSIONADAS
+  (auditoria 2026-08-09). Hoy los 12 enclosures comparten solo DOS URLs
+  (DJAnalyzerPro.dmg y DJAnalyzerPro-Setup.zip), que son alias MUTABLES,
+  mientras cada item declara su propio `length` y su propia `edSignature`.
+  Sparkle valida ambos contra el fichero que descarga, asi que como mucho UN
+  item por plataforma puede ser consistente, y en cada release hay una ventana
+  en la que ninguno lo es:
+      subes el binario antes que el XML -> se verifica el nuevo con la firma vieja
+      subes el XML antes que el binario -> al reves
+  En ambos casos el auto-update falla EN SILENCIO (Sparkle descarta la
+  actualizacion sin avisar al usuario). El alias estable debe quedarse solo
+  para el boton "Descarga directa" de la web.
+
   Para publicar una nueva version:
-    1. Subir DJAnalyzerPro-Setup.zip (Windows) y DJAnalyzerPro.dmg (macOS)
-       al hosting de djanalyzerpro.com con el numero de version en el nombre
-       (ej. DJAnalyzerPro-2.9.1-Setup.zip y DJAnalyzerPro-2.9.1.dmg) Y como
-       alias estable DJAnalyzerPro-Setup.zip / DJAnalyzerPro.dmg para que
-       el boton "Descarga directa" siga apuntando al ultimo.
-    2. Firmar cada binario con la clave EdDSA privada usando la tool de
-       Sparkle (`sign_update`) — produce sparkle:edSignature.
-    3. Añadir un <item> nuevo a este XML (arriba de los anteriores).
-       Mantener el historial entero — Sparkle no lo necesita pero ayuda
-       al user a ver el changelog completo.
-    4. Subir appcast.xml actualizado al hosting.
-    5. Los clientes existentes detectaran el cambio en el siguiente check
+    1. Subir los binarios al hosting con DOS nombres:
+         - VERSIONADO e inmutable: DJAnalyzerPro-2.9.8.dmg /
+           DJAnalyzerPro-2.9.8-Setup.zip  <- es el que va en el <enclosure>
+         - alias estable: DJAnalyzerPro.dmg / DJAnalyzerPro-Setup.zip
+           <- solo para el boton de descarga de la web
+    2. Firmar el binario VERSIONADO con la clave EdDSA privada
+       (`sign_update`) — produce sparkle:edSignature y length.
+       OJO (comprobado 2026-08-09): hoy en el hosting SOLO existen los alias.
+       DJAnalyzerPro-2.9.7.dmg, -2.9.7-Setup.zip y -2.9.6.dmg dan 404, o sea
+       que el paso "subir tambien el versionado" no se estaba haciendo. Por eso
+       los enclosure siguen apuntando al alias: cambiarlos ahora los dejaria
+       apuntando a un 404 y romperia el auto-update de golpe. La migracion se
+       hace en el proximo release, cuando el fichero versionado exista.
+    3. Añadir un <item> nuevo a este XML (arriba de los anteriores) apuntando
+       a la URL VERSIONADA. Mantener el historial entero.
+    4. Correr `./verify_appcast.sh` — comprueba que cada enclosure existe y
+       que su `length` casa con el Content-Length real. Si falla, NO publicar.
+    5. Subir appcast.xml actualizado al hosting.
+    6. Los clientes existentes detectaran el cambio en el siguiente check
        (al iniciar la app o pasadas 24h, lo que pase antes).
+    7. Volver a correr `./verify_appcast.sh https://www.djanalyzerpro.com/appcast.xml`
+       para confirmar lo que se esta sirviendo de verdad.
 
   Ver RELEASE_PLAYBOOK.md seccion "Sparkle/WinSparkle" en el repo
   TioKino/Analyzer para los comandos exactos.

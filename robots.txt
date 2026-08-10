@@ -1,0 +1,9 @@
+# djanalyzerpro.com
+User-agent: *
+Allow: /
+
+# El appcast es el feed de auto-update de Sparkle/WinSparkle, no contenido
+# para buscadores: indexarlo solo genera resultados basura.
+Disallow: /appcast.xml
+
+Sitemap: https://www.djanalyzerpro.com/sitemap.xml

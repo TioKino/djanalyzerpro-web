@@ -68,12 +68,21 @@ body.en [data-lang="es"]{display:none}
 <h2>5. Servicios de terceros</h2>
 <p>La app utiliza los siguientes servicios externos para identificacion de audio y metadatos:</p>
 <ul>
-<li><strong>AudD</strong> (reconocimiento de audio): se usa de forma manual cuando pulsas "Identificar" en una pista o usas el modo de deteccion en vivo en movil. Adicionalmente, durante el analisis automatico (<code>/analyze</code>), si los metadatos ID3 del archivo no permiten identificar artista y titulo, el backend puede enviar automaticamente un fragmento de 20 segundos del audio a AudD para reconocimiento. Este disparo automatico esta limitado a 50 llamadas/dia globales y 7 dias de cooldown por pista para minimizar el envio de datos.</li>
+<li><strong>AudD</strong> (reconocimiento de audio): se usa de forma manual cuando pulsas "Identificar" en una pista o usas el modo de deteccion en vivo en movil. Adicionalmente, durante el analisis automatico (<code>/analyze</code>), si los metadatos ID3 del archivo no permiten identificar artista y titulo, el backend puede enviar automaticamente un fragmento de 20 segundos del audio a AudD para reconocimiento. Este disparo automatico esta limitado a 100 llamadas/dia globales y 7 dias de cooldown por pista para minimizar el envio de datos.</li>
 <li><strong>Discogs</strong> (metadatos de release y label).</li>
 <li><strong>MusicBrainz</strong> (metadatos abiertos).</li>
 <li><strong>Last.fm</strong> (caratulas como fallback).</li>
+<li><strong>Google Fonts</strong>: esta web (no la app) carga la tipografia Inter desde los servidores de Google, que reciben tu direccion IP al servirla.</li>
 </ul>
 <p>Cada servicio tiene su propia politica de privacidad. No se comparten datos personales con ellos, solo huellas o fragmentos de audio cortos y metadatos de pista.</p>
+
+<h2>5b. Diagnostico y uso de la app</h2>
+<p>Para detectar fallos y entender que funciones se usan, la app envia a nuestro servidor:</p>
+<ul>
+<li><strong>Errores</strong>: tipo de error, mensaje y traza de la pila (truncados), plataforma y version de la app. Los nombres de archivo se envian ya hasheados; nunca se guardan rutas ni nombres legibles.</li>
+<li><strong>Eventos de uso</strong>: acciones anonimas como abrir la app, completar el onboarding o terminar una importacion, con la plataforma y la version.</li>
+</ul>
+<p>Ambos se asocian unicamente a tu ID de dispositivo anonimo, nunca a tu identidad. Los eventos de uso se borran automaticamente a los 90 dias y los errores resueltos a los 180. No usamos analitica de terceros ni publicidad.</p>
 
 <h2>6. Permisos</h2>
 <ul>
@@ -127,12 +136,21 @@ body.en [data-lang="es"]{display:none}
 <h2>5. Third-Party Services</h2>
 <p>The app uses the following third-party services for audio identification and metadata:</p>
 <ul>
-<li><strong>AudD</strong> (audio recognition): used manually when you press "Identify" on a track or use the live detection mode on mobile. Additionally, during automatic analysis (<code>/analyze</code>), if a file's ID3 metadata does not allow identifying artist and title, the backend may automatically send a 20-second audio snippet to AudD for recognition. This automatic trigger is rate-limited to 50 calls/day globally and a 7-day cooldown per track to minimize data sent.</li>
+<li><strong>AudD</strong> (audio recognition): used manually when you press "Identify" on a track or use the live detection mode on mobile. Additionally, during automatic analysis (<code>/analyze</code>), if a file's ID3 metadata does not allow identifying artist and title, the backend may automatically send a 20-second audio snippet to AudD for recognition. This automatic trigger is rate-limited to 100 calls/day globally and a 7-day cooldown per track to minimize data sent.</li>
 <li><strong>Discogs</strong> (release and label metadata).</li>
 <li><strong>MusicBrainz</strong> (open metadata).</li>
 <li><strong>Last.fm</strong> (artwork fallback).</li>
+<li><strong>Google Fonts</strong>: this website (not the app) loads the Inter typeface from Google's servers, which receive your IP address when serving it.</li>
 </ul>
 <p>Each service has its own privacy policy. No personal data is shared with them &mdash; only audio fingerprints or short audio snippets and track metadata.</p>
+
+<h2>5b. Diagnostics and usage</h2>
+<p>To detect failures and understand which features are used, the app sends our server:</p>
+<ul>
+<li><strong>Errors</strong>: error type, message and stack trace (truncated), platform and app version. Filenames are hashed before being sent; readable names and paths are never stored.</li>
+<li><strong>Usage events</strong>: anonymous actions such as opening the app, completing onboarding or finishing an import, with platform and version.</li>
+</ul>
+<p>Both are tied only to your anonymous device ID, never to your identity. Usage events are deleted automatically after 90 days and resolved errors after 180. We use no third-party analytics and no advertising.</p>
 
 <h2>6. Permissions</h2>
 <ul>
