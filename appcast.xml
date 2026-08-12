@@ -76,6 +76,31 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.8 Windows — 2026-08-12 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.8</title>
+      <pubDate>Wed, 12 Aug 2026 14:36:26 +0000</pubDate>
+      <sparkle:version>2.9.8</sparkle:version>
+      <sparkle:shortVersionString>2.9.8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.8</h3>
+        <ul>
+          <li>Corregido: Escuchar ya no marca como tuyas canciones que no tienes</li>
+          <li>Refuerzos de seguridad y estabilidad en el servidor</li>
+          <li>Limpieza interna y mejoras de rendimiento</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.8-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.9.8"
+        sparkle:shortVersionString="2.9.8"
+        length="170538913"
+        type="application/zip"
+        sparkle:edSignature="93YRY3HVJDsUgS+RDwc9MOP9CnihOJoi5mH9/7wr+7oyasRJUnkMXEL5zgqA/o0Sa8031pTpZ939v7kLVIuBBA==" />
+    </item>
+
     <!-- 2.9.8 build 37 macOS DMG — 2026-08-12 -->
     <item>
       <title>DJ Analyzer Pro 2.9.8</title>
