@@ -35,12 +35,25 @@
            <- solo para el boton de descarga de la web
     2. Firmar el binario VERSIONADO con la clave EdDSA privada
        (`sign_update`) — produce sparkle:edSignature y length.
-       OJO (comprobado 2026-08-09): hoy en el hosting SOLO existen los alias.
-       DJAnalyzerPro-2.9.7.dmg, -2.9.7-Setup.zip y -2.9.6.dmg dan 404, o sea
-       que el paso "subir tambien el versionado" no se estaba haciendo. Por eso
-       los enclosure siguen apuntando al alias: cambiarlos ahora los dejaria
-       apuntando a un 404 y romperia el auto-update de golpe. La migracion se
-       hace en el proximo release, cuando el fichero versionado exista.
+
+       MIGRACION HECHA EN 2.9.8 (macOS). El item de 2.9.8 ya apunta a una URL
+       versionada e inmutable; los items 2.9.7 y anteriores se quedan en el
+       alias como historial (Sparkle nunca los descarga, solo lee el mas alto).
+       Windows migra en su proximo build.
+
+       OJO CON QUE URL VERSIONADA SE USA (medido 2026-08-12):
+       www.djanalyzerpro.com NO sirve nombres arbitrarios. El dominio tiene una
+       regla para el nombre EXACTO DJAnalyzerPro.dmg -> releases/latest/download;
+       cualquier otro nombre cae a GitHub Pages, donde el fichero no existe:
+           https://www.djanalyzerpro.com/DJAnalyzerPro-2.9.8.dmg  -> 404 seco
+       Eso explica los 404 de -2.9.7.dmg y -2.9.6.dmg del apunte anterior: no es
+       que no se subieran, es que el dominio no los enruta. La solucion NO es
+       subirlos otra vez, sino apuntar el enclosure a GitHub Releases directo:
+           https://github.com/TioKino/djanalyzerpro-web/releases/download/<tag>/DJAnalyzerPro-<ver>.dmg
+       Verificado en la 2.9.8: 302 -> 206 con content-range 157198215, y el HEAD
+       que usa verify_appcast.sh devuelve ese mismo Content-Length. Inmutable y
+       sin depender de ninguna regla de redireccion del dominio.
+       El alias se queda SOLO para el boton "Descarga directa" de la web.
     3. Añadir un <item> nuevo a este XML (arriba de los anteriores) apuntando
        a la URL VERSIONADA. Mantener el historial entero.
     4. Correr `./verify_appcast.sh` — comprueba que cada enclosure existe y
@@ -62,6 +75,31 @@
     <link>https://www.djanalyzerpro.com/</link>
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
+
+    <!-- 2.9.8 build 37 macOS DMG — 2026-08-12 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.8</title>
+      <pubDate>Wed, 12 Aug 2026 13:22:53 +0000</pubDate>
+      <sparkle:version>37</sparkle:version>
+      <sparkle:shortVersionString>2.9.8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.8</h3>
+        <ul>
+          <li>Corregido: Escuchar ya no marca como tuyas canciones que no tienes</li>
+          <li>Refuerzos de seguridad y estabilidad en el servidor</li>
+          <li>Limpieza interna y mejoras de rendimiento</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.8.dmg"
+        sparkle:os="macos"
+        sparkle:version="37"
+        sparkle:shortVersionString="2.9.8"
+        length="157198215"
+        type="application/octet-stream"
+        sparkle:edSignature="cH9dy0Mmngt1TFQVTB9gSs60qeqroARR3nrQqThE8u2IERD+9LD+fssrC8rIp5oIgW1HrfP//2Oy/kQEmQrdBw==" />
+    </item>
 
     <!-- 2.9.7 build 36 macOS DMG — 2026-08-06 -->
     <item>
