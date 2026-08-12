@@ -103,6 +103,7 @@ echo ""
 echo "── Item vivo de cada plataforma (lo que Sparkle descarga) ──"
 fails=0
 checked=0
+live_dupes=0
 : > "$TMP/seen_os.txt"
 : > "$TMP/historicos.txt"
 while IFS='|' read -r url declared os; do
@@ -114,6 +115,13 @@ while IFS='|' read -r url declared os; do
     fi
     printf '%s\n' "$os" >> "$TMP/seen_os.txt"
     checked=$((checked + 1))
+
+    # ¿Este item VIVO cuelga de una URL compartida con otros? Eso es lo unico
+    # que hace falta avisar. Que los historicos compartan el alias es normal y
+    # esperado desde la 2.9.8: Sparkle no los descarga nunca.
+    if [ "$(cut -d'|' -f1 < "$TMP/enclosures.txt" | grep -Fxc "$url" || true)" -gt 1 ]; then
+        live_dupes=$((live_dupes + 1))
+    fi
 
     actual=$(curl -fsSLI "$url" 2>/dev/null | tr -d '\r' \
              | awk 'tolower($1) ~ /^content-length:/ {print $2}' | tail -1 || true)
@@ -160,11 +168,16 @@ if [ "$fails" -gt 0 ]; then
     exit 1
 fi
 echo "PUBLICABLE: los $checked item(s) vivos casan con el hosting."
-if [ "$dupes" -gt 0 ]; then
+if [ "$live_dupes" -gt 0 ]; then
     echo ""
-    echo "Recordatorio para el PRÓXIMO release: los enclosure apuntan a alias"
-    echo "mutables, así que en cuanto subas la versión nueva al mismo nombre el"
-    echo "item actual pasará a declarar un tamaño que ya no existe. Sube también"
-    echo "el fichero VERSIONADO (DJAnalyzerPro-<ver>.dmg) y apunta el <enclosure>"
-    echo "nuevo ahí; entonces cada item queda clavado a un fichero inmutable."
+    echo "AVISO: $live_dupes item(s) VIVO(s) cuelgan de un alias mutable. En cuanto"
+    echo "subas la version nueva con ese mismo nombre, el item pasara a declarar un"
+    echo "tamano que ya no existe y el auto-update se rompera en silencio. Apunta el"
+    echo "<enclosure> a la URL VERSIONADA de GitHub Releases:"
+    echo "  https://github.com/TioKino/djanalyzerpro-web/releases/download/<tag>/DJAnalyzerPro-<ver>.dmg"
+elif [ "$dupes" -gt 0 ]; then
+    echo ""
+    echo "(Los avisos de URLs duplicadas de arriba son de items HISTORICOS, que se"
+    echo " quedan en el alias a proposito. Los vivos ya apuntan a URLs versionadas"
+    echo " e inmutables, que es como debe ser desde la 2.9.8.)"
 fi
