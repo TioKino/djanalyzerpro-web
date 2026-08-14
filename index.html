@@ -704,5 +704,75 @@ if (urlLang === 'en' || urlLang === 'es') {
 }
 </script>
 
+<script>
+// ============================================================================
+// MEDICION DEL EMBUDO WEB (visita -> descarga).
+// ============================================================================
+// Hasta ahora el embudo del producto empezaba en `app_opened`: TODO lo anterior
+// (visita a la web -> clic en descargar -> instalacion) era invisible. Con la
+// adquisicion como cuello de botella, ese tramo es justo el que hay que ver.
+//
+// Se manda al PROPIO backend (/client-event, el mismo pipe que usa la app), NO
+// a Google Analytics ni a ningun tercero. Consecuencias buenas de eso:
+//   - Sin cookies, sin identificadores, sin fingerprinting, sin PII.
+//   - Nada sale de la infraestructura propia -> sin transferencias a terceros
+//     que declarar.
+//   - Los datos caen en la misma tabla `events` y se leen con /admin/funnel.
+//
+// Solo se cuentan AGREGADOS: cuantas visitas y cuantos clics por tienda. No se
+// puede reconstruir quien hizo que (no se manda device_id).
+//
+// Fire-and-forget y defensivo: si el backend esta caido o el navegador bloquea
+// la peticion, la web funciona igual. Nunca bloquea ni rompe nada.
+//
+// OJO al interpretar: esto cuenta VISITAS DE NAVEGADOR, bots incluidos. Sirve
+// para tendencia y para la razon visita->clic, no como censo exacto.
+(function () {
+  var API = 'https://dj-analyzer-api.onrender.com/client-event';
+
+  function track(name, props) {
+    try {
+      var body = JSON.stringify({
+        event_name: name,
+        props: props || null,
+        platform: 'web'
+      });
+      // sendBeacon sobrevive a la navegacion (clave al pulsar un enlace que
+      // se lleva al usuario a otra pagina); fetch como respaldo.
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(API, new Blob([body], {type: 'application/json'}));
+      } else {
+        fetch(API, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: body,
+          keepalive: true
+        }).catch(function () {});
+      }
+    } catch (e) { /* la medicion jamas debe romper la web */ }
+  }
+
+  track('web_visit');
+
+  // Que tienda/fichero eligio. Deducido del href, sin tocar el HTML de cada
+  // boton (hay 20) para no ensuciar el marcado.
+  function storeOf(href) {
+    if (!href) return 'unknown';
+    if (href.indexOf('play.google.com') !== -1) return 'play';
+    if (href.indexOf('apps.apple.com') !== -1) return 'appstore';
+    if (href.indexOf('.dmg') !== -1) return 'dmg';
+    if (href.indexOf('.exe') !== -1 || href.indexOf('Setup') !== -1) return 'windows';
+    return 'other';
+  }
+
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    if (a.className && a.className.indexOf('store-btn') === -1) return;
+    track('web_download_click', {store: storeOf(a.getAttribute('href'))});
+  }, true);
+})();
+</script>
+
 </body>
 </html>
