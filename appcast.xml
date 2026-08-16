@@ -76,6 +76,33 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.9 build 38 macOS DMG — 2026-08-16 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.9</title>
+      <pubDate>Sun, 16 Aug 2026 17:46:14 +0000</pubDate>
+      <sparkle:version>38</sparkle:version>
+      <sparkle:shortVersionString>2.9.9</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.9</h3>
+        <ul>
+          <li>Mezclas del día: ideas de sesión nuevas cada día a partir de tu biblioteca</li>
+          <li>Aviso cuando termina de importarse una biblioteca grande</li>
+          <li>Novedades de la comunidad: qué han aportado otros DJs a tus temas</li>
+          <li>Corregido: algunas previsualizaciones no se generaban por carátulas dañadas</li>
+          <li>Preparada para futuras versiones de macOS</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.9.dmg"
+        sparkle:os="macos"
+        sparkle:version="38"
+        sparkle:shortVersionString="2.9.9"
+        length="158760231"
+        type="application/octet-stream"
+        sparkle:edSignature="Op4OwBnT5tZPO5C5OvDujWBSTTIcUcvtlbYNKl4YZVRaEOLQJ0LFOn0OeguikSbQY/joqITywx6vaHX/rQ71Ag==" />
+    </item>
+
     <!-- 2.9.8 Windows — 2026-08-12 -->
     <item>
       <title>DJ Analyzer Pro 2.9.8</title>
