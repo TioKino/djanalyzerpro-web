@@ -76,6 +76,62 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.10 build 39 macOS DMG — Fri, 28 Aug 2026 06:40:42 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.10</title>
+      <pubDate>Fri, 28 Aug 2026 06:40:42 +0000</pubDate>
+      <sparkle:version>39</sparkle:version>
+      <sparkle:shortVersionString>2.9.10</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.10</h3>
+        <ul>
+          <li>Duplicados: encuentra el mismo tema repetido en ficheros distintos comparando el sonido, no el nombre</li>
+          <li>«Limpiar metadata» vuelve a proponer resultados</li>
+          <li>Publicar esta biblioteca, con punto de restauración previo</li>
+          <li>El análisis se puede reanudar si cierras la app a mitad</li>
+          <li>La ficha de cada track dice de dónde sale cada dato</li>
+          <li>Arreglos de sincronización e importación</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.10.dmg"
+        sparkle:os="macos"
+        sparkle:version="39"
+        sparkle:shortVersionString="2.9.10"
+        length="159009330"
+        type="application/octet-stream"
+        sparkle:edSignature="gCf/99NVHhdNO2D6gR+ZiPmmIKamKNBSUueGUnmynKA7uMXmzWDUIof2I82SIXhGeFTfaY8g5Xwime8ZUNWFBQ==" />
+    </item>
+
+    <!-- 2.9.10 Windows — Fri, 28 Aug 2026 06:40:42 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.10</title>
+      <pubDate>Fri, 28 Aug 2026 06:40:42 +0000</pubDate>
+      <sparkle:version>2.9.10</sparkle:version>
+      <sparkle:shortVersionString>2.9.10</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.10</h3>
+        <ul>
+          <li>Duplicados: encuentra el mismo tema repetido en ficheros distintos comparando el sonido, no el nombre</li>
+          <li>«Limpiar metadata» vuelve a proponer resultados</li>
+          <li>Publicar esta biblioteca, con punto de restauración previo</li>
+          <li>El análisis se puede reanudar si cierras la app a mitad</li>
+          <li>La ficha de cada track dice de dónde sale cada dato</li>
+          <li>Arreglos de sincronización e importación</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.10-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.9.10"
+        sparkle:shortVersionString="2.9.10"
+        length="171360010"
+        type="application/zip"
+        sparkle:edSignature="+A4VvVtB9kAq5qySMa8ZxMfmCSkaaOwIyHl52T2BLuix+HV7yhTu2CbmGRyhWrY/+W5Y5eN/d7EPMa1vfdZmCg==" />
+    </item>
+
     <!-- 2.9.9 Windows — 2026-08-18 -->
     <item>
       <title>DJ Analyzer Pro 2.9.9</title>
