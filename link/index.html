@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincular tu móvil · DJ Analyzer</title>
+<meta name="description" content="Conecta tu móvil con DJ Analyzer del ordenador y lleva tu biblioteca en el bolsillo.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg3:#0E0E0E;--bg4:#141414;
+  --purple:#8B5CF6;--purple-light:#A78BFA;--cyan:#06B6D4;--green:#22C55E;
+  --text:#E8E8E8;--text2:#AAAAAA;--text3:#777777;--border:#1E1E1E;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem;line-height:1.6}
+.card{max-width:420px;width:100%;text-align:center}
+h1{font-size:1.6rem;font-weight:800;margin-bottom:.6rem;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--purple-light)}
+.sub{color:var(--text2);font-size:.95rem;margin-bottom:2rem}
+.code-box{background:var(--bg4);border:1px solid rgba(139,92,246,.3);border-radius:14px;
+  padding:1.25rem;margin-bottom:1.75rem}
+.code-label{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--purple-light);margin-bottom:.5rem}
+.code{font-size:2rem;font-weight:800;letter-spacing:.35em;color:#fff;
+  font-variant-numeric:tabular-nums;word-break:break-all;padding-left:.35em}
+.copy{margin-top:.75rem;background:none;border:1px solid var(--border);color:var(--text2);
+  font:inherit;font-size:.8rem;padding:.4rem .9rem;border-radius:100px;cursor:pointer}
+.copy:hover{border-color:var(--purple);color:var(--purple-light)}
+.btn{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;
+  background:linear-gradient(135deg,var(--purple),var(--purple-light));color:#fff;
+  font-weight:700;font-size:1rem;padding:.95rem 1rem;border-radius:12px;text-decoration:none;
+  margin-bottom:.75rem}
+.btn.ghost{background:var(--bg4);border:1px solid var(--border);color:var(--text2);font-weight:600;font-size:.9rem}
+.steps{text-align:left;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.step{display:flex;gap:.7rem;margin-bottom:.7rem;font-size:.88rem;color:var(--text2)}
+.step b{color:var(--purple-light);flex:0 0 1.1rem}
+.foot{margin-top:2rem;font-size:.78rem;color:var(--text3)}
+.foot a{color:var(--text3);text-decoration:underline}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <h1 data-lang="es">Tu biblioteca, en el móvil</h1>
+  <h1 data-lang="en">Your library, on your phone</h1>
+
+  <p class="sub" data-lang="es">Instala DJ Analyzer y escribe este código. Tus tracks, BPM, key y cues aparecen solos.</p>
+  <p class="sub" data-lang="en">Install DJ Analyzer and enter this code. Your tracks, BPM, key and cues show up on their own.</p>
+
+  <!-- El codigo va PRIMERO y grande. Es lo unico que el usuario necesita
+       conservar mientras pasa por la tienda: la app se instala en otra
+       pantalla y al volver aqui ya no se acuerda de seis caracteres. -->
+  <div class="code-box" id="caja-codigo" hidden>
+    <div class="code-label" data-lang="es">Tu código</div>
+    <div class="code-label" data-lang="en">Your code</div>
+    <div class="code" id="codigo">------</div>
+    <button class="copy" id="copiar" data-lang="es">Copiar</button>
+    <button class="copy" id="copiar-en" data-lang="en">Copy</button>
+  </div>
+
+  <!-- Sin `?code=` esto sigue siendo una pagina util: alguien puede llegar
+       aqui desde el movil sin haber escaneado nada. -->
+  <div class="code-box" id="sin-codigo" hidden>
+    <div data-lang="es" style="font-size:.9rem;color:var(--text2)">Genera un código en la app del ordenador:
+      <b style="color:var(--text)">Ajustes → Sincronización → Vincular dispositivo</b>.</div>
+    <div data-lang="en" style="font-size:.9rem;color:var(--text2)">Generate a code in the desktop app:
+      <b style="color:var(--text)">Settings → Sync → Link device</b>.</div>
+  </div>
+
+  <a class="btn" id="tienda" href="#" data-store="link_page" target="_blank" rel="noopener">
+    <span id="tienda-txt">App Store</span>
+  </a>
+
+  <a class="btn ghost" id="otra" href="#" data-store="link_page_otra" target="_blank" rel="noopener" hidden>
+    <span id="otra-txt"></span>
+  </a>
+
+  <div class="steps">
+    <div data-lang="es">
+      <div class="step"><b>1</b><span>Instala la app desde la tienda</span></div>
+      <div class="step"><b>2</b><span>Ábrela y toca <b style="color:var(--text)">Vincular con mi ordenador</b></span></div>
+      <div class="step"><b>3</b><span>Escribe el código de arriba</span></div>
+    </div>
+    <div data-lang="en">
+      <div class="step"><b>1</b><span>Install the app from the store</span></div>
+      <div class="step"><b>2</b><span>Open it and tap <b style="color:var(--text)">Link with my computer</b></span></div>
+      <div class="step"><b>3</b><span>Enter the code above</span></div>
+    </div>
+  </div>
+
+  <p class="foot">
+    <span data-lang="es">El código caduca en unos minutos. Si expira, genera otro en el ordenador.</span>
+    <span data-lang="en">The code expires in a few minutes. If it does, generate a new one on your computer.</span>
+    <br><a href="../">djanalyzerpro.com</a>
+  </p>
+
+</div>
+
+<script>
+(function () {
+  var IOS   = 'https://apps.apple.com/app/id6763842357';
+  var PLAY  = 'https://play.google.com/store/apps/details?id=com.djanalyzerpro.app';
+  var API   = 'https://dj-analyzer-api.onrender.com';
+
+  // Idioma: mismo criterio que el resto del sitio.
+  var es = (navigator.language || 'es').toLowerCase().indexOf('es') === 0;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-lang]'), function (el) {
+    if (el.getAttribute('data-lang') !== (es ? 'es' : 'en')) el.hidden = true;
+  });
+
+  // El codigo viene por query. Se sanea: va a la pantalla y al portapapeles,
+  // y no hay razon para aceptar nada que no sea lo que genera el servidor.
+  var code = (new URLSearchParams(location.search).get('code') || '')
+               .toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+  if (code) {
+    document.getElementById('codigo').textContent = code;
+    document.getElementById('caja-codigo').hidden = false;
+  } else {
+    document.getElementById('sin-codigo').hidden = false;
+  }
+
+  var ua = navigator.userAgent || '';
+  var esIOS = /iPad|iPhone|iPod/.test(ua) ||
+              (/Mac/.test(ua) && navigator.maxTouchPoints > 1); // iPad moderno
+  var esAndroid = /Android/i.test(ua);
+  var plataforma = esIOS ? 'ios' : (esAndroid ? 'android' : 'otro');
+
+  var tienda = document.getElementById('tienda');
+  var otra = document.getElementById('otra');
+  if (esAndroid) {
+    tienda.href = PLAY;  document.getElementById('tienda-txt').textContent = es ? 'Instalar desde Google Play' : 'Get it on Google Play';
+  } else if (esIOS) {
+    tienda.href = IOS;   document.getElementById('tienda-txt').textContent = es ? 'Instalar desde el App Store' : 'Download on the App Store';
+  } else {
+    // Ni iOS ni Android: casi seguro que abrio el enlace en el ordenador. NO se
+    // le esconden las tiendas —puede querer mandarselo— pero lo primero que lee
+    // es que esto se abre desde el telefono.
+    document.getElementById('tienda-txt').textContent = es ? 'Instalar desde el App Store' : 'Download on the App Store';
+    tienda.href = IOS;
+    otra.hidden = false; otra.href = PLAY;
+    document.getElementById('otra-txt').textContent = es ? 'Instalar desde Google Play' : 'Get it on Google Play';
+    document.querySelector('.sub').textContent = es
+      ? 'Abre esta página en tu móvil (escanea el QR desde la app del ordenador).'
+      : 'Open this page on your phone (scan the QR from the desktop app).';
+  }
+
+  function copiar() {
+    if (!code) return;
+    var ok = function () {
+      var b = document.getElementById(es ? 'copiar' : 'copiar-en');
+      b.textContent = es ? '¡Copiado!' : 'Copied!';
+    };
+    if (navigator.clipboard) { navigator.clipboard.writeText(code).then(ok, function(){}); return; }
+    // Sin Clipboard API (http, navegadores viejos): seleccionar es mejor que nada.
+    var r = document.createRange(); r.selectNode(document.getElementById('codigo'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    try { document.execCommand('copy'); ok(); } catch (e) {}
+  }
+  document.getElementById('copiar').addEventListener('click', copiar);
+  document.getElementById('copiar-en').addEventListener('click', copiar);
+
+  // TELEMETRIA. Sin esto no se puede distinguir «nadie escanea el QR» de
+  // «escanean pero no instalan» — dos causas con arreglos opuestos, y la unica
+  // señal que hay hoy (`device_linked`) esta al final del todo del embudo.
+  //
+  // Va sin device_id a proposito, como el resto de la web: son visitas
+  // anonimas y salen por `window_devices`.
+  function track(nombre, props) {
+    try {
+      var body = {event_name: nombre, platform: 'web'};
+      if (props) body.props = props;
+      fetch(API + '/client-event', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body), keepalive: true, mode: 'cors'
+      }).catch(function () {});
+    } catch (e) {}
+  }
+  track('link_page_opened', {platform: plataforma, con_codigo: code ? 1 : 0});
+
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[data-store]') : null;
+    if (!a) return;
+    track('link_page_store_click', {platform: plataforma});
+  }, true);
+})();
+</script>
+</body>
+</html>
