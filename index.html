@@ -113,6 +113,9 @@ nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:b
 .store-btn .store-line1{font-size:.7rem;color:var(--text3);font-weight:500}
 .store-btn .store-line2{font-size:.95rem;font-weight:700}
 .store-btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
+.store-note{max-width:620px;margin:1.1rem auto 0;font-size:.82rem;line-height:1.5;color:var(--text2);text-align:center}
+.store-note a{color:var(--text2);text-decoration:underline;text-underline-offset:2px}
+.store-note strong{color:var(--text)}
 .store-btn.disabled .badge-soon{position:absolute;top:-8px;right:8px;background:var(--amber);color:#000;font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;letter-spacing:.5px}
 /* --- PRO EDITION (motor local Win/Mac DMG) --- */
 .pro-section{margin-top:3rem;padding:2rem 1.5rem;border-radius:18px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(34,211,238,.05));border:1px solid rgba(139,92,246,.25);max-width:680px;margin-left:auto;margin-right:auto}
@@ -252,40 +255,50 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     <p data-lang="en">BPM, Key, Energy, Camelot, Waveform and Session Planning in one app. The secret weapon for DJs who want to go beyond.</p>
 
     <div class="store-grid">
-      <a href="DJAnalyzerPro-Setup.zip" class="store-btn">
+      <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows">
         <span class="store-icon">&#127911;</span>
         <span class="store-text">
           <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
           <span class="store-line2">Windows</span>
         </span>
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" target="_blank" rel="noopener">
+      <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" data-store="play" target="_blank" rel="noopener">
         <span class="store-icon">&#9654;</span>
         <span class="store-text">
           <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Get it on</span>
           <span class="store-line2">Google Play</span>
         </span>
       </a>
-      <a href="https://apps.apple.com/app/id6763842357" class="store-btn" target="_blank" rel="noopener">
+      <a href="https://apps.apple.com/app/id6763842357" class="store-btn" data-store="appstore_ios" target="_blank" rel="noopener">
         <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
         <span class="store-text">
           <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
           <span class="store-line2">App Store</span>
         </span>
       </a>
-      <a href="https://apps.apple.com/app/id6763842357" class="store-btn" target="_blank" rel="noopener">
+      <a href="DJAnalyzerPro.dmg" class="store-btn" data-store="dmg">
         <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
         <span class="store-text">
-          <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
-          <span class="store-line2">Mac App Store</span>
+          <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+          <span class="store-line2">macOS</span>
         </span>
       </a>
     </div>
+    <p class="store-note">
+      <span data-lang="es">¿Prefieres la App Store? También está en el
+        <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
+        pero esa versión <strong>no incluye el motor local</strong> (el sandbox de Apple no lo permite):
+        analiza en la nube y no puede calcular la huella de sonido de tu biblioteca.</span>
+      <span data-lang="en">Prefer the App Store? It's also on the
+        <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
+        but that build <strong>has no local engine</strong> (Apple's sandbox doesn't allow it):
+        it analyzes in the cloud and can't compute your library's sound fingerprint.</span>
+    </p>
 
     <!-- PRO EDITION: motor local para Windows + macOS DMG -->
     <div class="pro-section">
-      <div class="pro-label" data-lang="es">Pro Edition · Motor local</div>
-      <div class="pro-label" data-lang="en">Pro Edition · Local engine</div>
+      <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
+      <div class="pro-label" data-lang="en">Pro Edition · Local engine · Free for now</div>
 
       <div class="pro-title" data-lang="es">Análisis instantáneo, sin esperas, offline</div>
       <div class="pro-title" data-lang="en">Instant analysis, no waiting, offline</div>
@@ -294,14 +307,14 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <div class="pro-sub" data-lang="en">Full Windows &amp; macOS edition with bundled analysis engine. Built for large libraries and pro workflows without depending on the cloud.</div>
 
       <div class="pro-grid">
-        <a href="DJAnalyzerPro-Setup.zip" class="store-btn">
+        <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows_pro">
           <span class="store-icon">&#127911;</span>
           <span class="store-text">
             <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
             <span class="store-line2">Windows · Pro</span>
           </span>
         </a>
-        <a href="DJAnalyzerPro.dmg" class="store-btn">
+        <a href="DJAnalyzerPro.dmg" class="store-btn" data-store="dmg_pro">
           <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
           <span class="store-text">
             <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
@@ -314,12 +327,14 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         <div class="pro-feat">Análisis local hasta 10× más rápido que la nube</div>
         <div class="pro-feat">Funciona sin conexión a Internet</div>
         <div class="pro-feat">Ideal para librerías de más de 1000 tracks</div>
+        <div class="pro-feat">La única que calcula la huella de sonido de tu biblioteca — la que comparte cues y beat-grid con la comunidad</div>
         <div class="pro-feat">Mac firmado y notarizado por Apple. Windows en ZIP (extraer e instalar)</div>
       </div>
       <div class="pro-features" data-lang="en">
         <div class="pro-feat">Local analysis up to 10× faster than cloud</div>
         <div class="pro-feat">Works fully offline</div>
         <div class="pro-feat">Perfect for libraries over 1000 tracks</div>
+        <div class="pro-feat">The only build that computes your library's sound fingerprint — the one that shares cues and beat-grid with the community</div>
         <div class="pro-feat">macOS signed &amp; notarized by Apple. Windows as ZIP (extract and run)</div>
       </div>
     </div>
@@ -604,40 +619,50 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <p data-lang="es">Descarga DJ Analyzer gratis y empieza a preparar sesiones como un profesional.</p>
       <p data-lang="en">Download DJ Analyzer for free and start preparing sessions like a professional.</p>
       <div class="store-grid">
-        <a href="DJAnalyzerPro-Setup.zip" class="store-btn">
+        <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows">
           <span class="store-icon">&#127911;</span>
           <span class="store-text">
             <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
             <span class="store-line2">Windows</span>
           </span>
         </a>
-        <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" target="_blank" rel="noopener">
+        <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" data-store="play" target="_blank" rel="noopener">
           <span class="store-icon">&#9654;</span>
           <span class="store-text">
             <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Get it on</span>
             <span class="store-line2">Google Play</span>
           </span>
         </a>
-        <a href="https://apps.apple.com/app/id6763842357" class="store-btn" target="_blank" rel="noopener">
+        <a href="https://apps.apple.com/app/id6763842357" class="store-btn" data-store="appstore_ios" target="_blank" rel="noopener">
           <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
           <span class="store-text">
             <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
             <span class="store-line2">App Store</span>
           </span>
         </a>
-        <a href="https://apps.apple.com/app/id6763842357" class="store-btn" target="_blank" rel="noopener">
+        <a href="DJAnalyzerPro.dmg" class="store-btn" data-store="dmg">
           <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
           <span class="store-text">
-            <span class="store-line1" data-lang="es">Disponible en</span><span class="store-line1" data-lang="en">Download on the</span>
-            <span class="store-line2">Mac App Store</span>
+            <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
+            <span class="store-line2">macOS</span>
           </span>
         </a>
       </div>
+      <p class="store-note">
+        <span data-lang="es">¿Prefieres la App Store? También está en el
+          <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
+          pero esa versión <strong>no incluye el motor local</strong> (el sandbox de Apple no lo permite):
+          analiza en la nube y no puede calcular la huella de sonido de tu biblioteca.</span>
+        <span data-lang="en">Prefer the App Store? It's also on the
+          <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
+          but that build <strong>has no local engine</strong> (Apple's sandbox doesn't allow it):
+          it analyzes in the cloud and can't compute your library's sound fingerprint.</span>
+      </p>
 
       <!-- PRO EDITION en CTA inferior: misma seccion que en el hero -->
       <div class="pro-section">
-        <div class="pro-label" data-lang="es">Pro Edition · Motor local</div>
-        <div class="pro-label" data-lang="en">Pro Edition · Local engine</div>
+        <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
+        <div class="pro-label" data-lang="en">Pro Edition · Local engine · Free for now</div>
 
         <div class="pro-title" data-lang="es">¿Necesitas más velocidad?</div>
         <div class="pro-title" data-lang="en">Need more speed?</div>
@@ -646,14 +671,14 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         <div class="pro-sub" data-lang="en">The Pro edition for Windows and macOS ships with the analysis engine embedded — no waiting on the cloud, fully offline.</div>
 
         <div class="pro-grid">
-          <a href="DJAnalyzerPro-Setup.zip" class="store-btn">
+          <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows_pro">
             <span class="store-icon">&#127911;</span>
             <span class="store-text">
               <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
               <span class="store-line2">Windows · Pro</span>
             </span>
           </a>
-          <a href="DJAnalyzerPro.dmg" class="store-btn">
+          <a href="DJAnalyzerPro.dmg" class="store-btn" data-store="dmg_pro">
             <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
             <span class="store-text">
               <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
@@ -756,7 +781,13 @@ if (urlLang === 'en' || urlLang === 'es') {
 
   // Que tienda/fichero eligio. Deducido del href, sin tocar el HTML de cada
   // boton (hay 20) para no ensuciar el marcado.
-  function storeOf(href) {
+  function storeOf(a) {
+    // `data-store` primero: el App Store de iOS y el Mac App Store comparten
+    // URL (mismo id de app), asi que deducir por href los mete en el mismo
+    // cubo — y entonces no se puede saber si el empujon al DMG funciona.
+    var marcado = a && a.getAttribute && a.getAttribute('data-store');
+    if (marcado) return marcado;
+    var href = a && a.getAttribute ? a.getAttribute('href') : a;
     if (!href) return 'unknown';
     if (href.indexOf('play.google.com') !== -1) return 'play';
     if (href.indexOf('apps.apple.com') !== -1) return 'appstore';
@@ -768,8 +799,13 @@ if (urlLang === 'en' || urlLang === 'es') {
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
     if (!a) return;
-    if (a.className && a.className.indexOf('store-btn') === -1) return;
-    track('web_download_click', {store: storeOf(a.getAttribute('href'))});
+    // Cuentan los botones Y cualquier enlace con `data-store`: el del Mac App
+    // Store vive en la nota bajo la rejilla, no es un `.store-btn`, y es
+    // EXACTAMENTE el numero que hay que comparar contra el del DMG.
+    var esDescarga = (a.className && a.className.indexOf('store-btn') !== -1) ||
+                     (a.getAttribute && a.getAttribute('data-store'));
+    if (!esDescarga) return;
+    track('web_download_click', {store: storeOf(a)});
   }, true);
 })();
 </script>
