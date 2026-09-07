@@ -82,22 +82,30 @@ h1{font-size:1.6rem;font-weight:800;margin-bottom:.6rem;
     <span id="otra-txt"></span>
   </a>
 
+  <!-- Los rotulos del paso 2 son los de la app movil, LITERALES. Salen de
+       `settingsTitle` y `settingsLinkDevices` en Analyzer/lib/l10n/app_es.arb
+       y app_en.arb (pantalla: lib/screens/home_screen.dart, seccion VINCULAR
+       DISPOSITIVOS). Si alli se renombran, aqui hay que cambiarlos: esta
+       pagina es lo primero que ve alguien que acaba de instalar, y mandarle a
+       tocar un boton que no existe le deja sin salida justo en el ultimo paso.
+       Ya paso: decia «Vincular con mi ordenador», que no existe en ningun
+       sitio. Un repo distinto no puede tener test que lo ate. -->
   <div class="steps">
     <div data-lang="es">
       <div class="step"><b>1</b><span>Instala la app desde la tienda</span></div>
-      <div class="step"><b>2</b><span>Ábrela y toca <b style="color:var(--text)">Vincular con mi ordenador</b></span></div>
+      <div class="step"><b>2</b><span>Ábrela, entra en <b style="color:var(--text)">Configuración</b> y toca <b style="color:var(--text)">Vincular dispositivos</b></span></div>
       <div class="step"><b>3</b><span>Escribe el código de arriba</span></div>
     </div>
     <div data-lang="en">
       <div class="step"><b>1</b><span>Install the app from the store</span></div>
-      <div class="step"><b>2</b><span>Open it and tap <b style="color:var(--text)">Link with my computer</b></span></div>
+      <div class="step"><b>2</b><span>Open it, go to <b style="color:var(--text)">Settings</b> and tap <b style="color:var(--text)">Link devices</b></span></div>
       <div class="step"><b>3</b><span>Enter the code above</span></div>
     </div>
   </div>
 
   <p class="foot">
-    <span data-lang="es">El código caduca en unos minutos. Si expira, genera otro en el ordenador.</span>
-    <span data-lang="en">The code expires in a few minutes. If it does, generate a new one on your computer.</span>
+    <span data-lang="es">El código caduca a los 10 minutos. Si expira, genera otro en el ordenador.</span>
+    <span data-lang="en">The code expires after 10 minutes. If it does, generate a new one on your computer.</span>
     <br><a href="../">djanalyzerpro.com</a>
   </p>
 
