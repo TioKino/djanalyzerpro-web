@@ -76,6 +76,35 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.9.11 build 40 macOS DMG — Mon, 07 Sep 2026 14:56:27 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.11</title>
+      <pubDate>Mon, 07 Sep 2026 14:56:27 +0000</pubDate>
+      <sparkle:version>40</sparkle:version>
+      <sparkle:shortVersionString>2.9.11</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.11</h3>
+        <ul>
+          <li>Llévate tu biblioteca al móvil escaneando un QR</li>
+          <li>Analyzer te avisa cuando tu colección de Rekordbox cambia</li>
+          <li>Duplicados: escucha cada copia antes de decidir cuál sobra</li>
+          <li>«Editado» dice qué dato has cambiado tú</li>
+          <li>El historial de limpieza cuenta la tanda entera, no solo los cambios</li>
+          <li>Papelera: nueva opción para vaciarla</li>
+          <li>Correcciones de estabilidad al guardar sesiones y fichas</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.11.dmg"
+        sparkle:os="macos"
+        sparkle:version="40"
+        sparkle:shortVersionString="2.9.11"
+        length="159214312"
+        type="application/octet-stream"
+        sparkle:edSignature="Z6gl6/YuufbrLHveyHzIit+GCBYMdxaR//KvphdyEy20Pgh8tjz7I+wPhaGq7R2828hUbCDZdLjH05veBy81BQ==" />
+    </item>
+
     <!-- 2.9.10 build 39 macOS DMG — Fri, 28 Aug 2026 06:40:42 +0000 -->
     <item>
       <title>DJ Analyzer Pro 2.9.10</title>
