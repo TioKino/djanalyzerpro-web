@@ -284,6 +284,15 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         </span>
       </a>
     </div>
+    <!-- UNA linea, y solo el porque. Aqui habia cuatro renglones sobre el
+         sandbox de Apple y la huella de sonido, en el hero, antes de que el
+         usuario supiera que hace la app. Lo unico accionable es que en Mac hay
+         dos sitios de donde bajarla y uno analiza mas rapido. -->
+    <p class="store-note">
+      <span data-lang="es">En Mac, la descarga directa analiza más rápido.</span>
+      <span data-lang="en">On Mac, the direct download analyzes faster.</span>
+    </p>
+
     <!-- PRO EDITION: motor local para Windows + macOS DMG -->
     <div class="pro-section">
       <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
@@ -307,14 +316,26 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         <div class="pro-feat">Análisis local hasta 10× más rápido que la nube</div>
         <div class="pro-feat">Funciona sin conexión a Internet</div>
         <div class="pro-feat">Ideal para librerías de más de 1000 tracks</div>
-        <div class="pro-feat">La única que calcula la huella de sonido de tu biblioteca — la que comparte cues y beat-grid con la comunidad</div>
+        <!-- Aqui habia un cuarto bullet: «La unica que calcula la huella de
+             sonido de tu biblioteca». Es FALSO y se comprobo en el backend el
+             2026-09-07: `/analyze` llama a `_attach_acoustic` de forma
+             incondicional sobre el fichero subido (main.py:3571), y la build
+             del App Store, al no llevar motor, manda el 100 % de sus analisis
+             ahi. O sea que TAMBIEN sale con huella, calculada en el servidor.
+             Las dos versiones entran en la memoria colectiva.
+             Lo unico que la del App Store no puede es rehacer la huella de
+             tracks analizados ANTES de que existiera la funcion, porque eso
+             lanza `fpcalc` como subproceso y el sandbox no le deja abrir
+             ficheros. Es un hueco de legado, no una diferencia de producto, y
+             no da para un bullet. Quedan tres, y los tres son ciertos. -->
         <div class="pro-feat">Mac firmado y notarizado por Apple. Windows en ZIP (extraer e instalar)</div>
       </div>
       <div class="pro-features" data-lang="en">
         <div class="pro-feat">Local analysis up to 10× faster than cloud</div>
         <div class="pro-feat">Works fully offline</div>
         <div class="pro-feat">Perfect for libraries over 1000 tracks</div>
-        <div class="pro-feat">The only build that computes your library's sound fingerprint — the one that shares cues and beat-grid with the community</div>
+        <!-- Ver la nota del bloque en castellano: el bullet de la huella se
+             cayo porque no era cierto. Las dos builds la generan. -->
         <div class="pro-feat">macOS signed &amp; notarized by Apple. Windows as ZIP (extract and run)</div>
       </div>
     </div>
@@ -632,6 +653,11 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
           </span>
         </a>
       </div>
+      <p class="store-note">
+        <span data-lang="es">En Mac, la descarga directa analiza más rápido.</span>
+        <span data-lang="en">On Mac, the direct download analyzes faster.</span>
+      </p>
+
       <!-- PRO EDITION en CTA inferior: misma seccion que en el hero -->
       <div class="pro-section">
         <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
