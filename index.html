@@ -284,17 +284,6 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         </span>
       </a>
     </div>
-    <p class="store-note">
-      <span data-lang="es">¿Prefieres la App Store? También está en el
-        <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
-        pero esa versión <strong>no incluye el motor local</strong> (el sandbox de Apple no lo permite):
-        analiza en la nube y no puede calcular la huella de sonido de tu biblioteca.</span>
-      <span data-lang="en">Prefer the App Store? It's also on the
-        <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
-        but that build <strong>has no local engine</strong> (Apple's sandbox doesn't allow it):
-        it analyzes in the cloud and can't compute your library's sound fingerprint.</span>
-    </p>
-
     <!-- PRO EDITION: motor local para Windows + macOS DMG -->
     <div class="pro-section">
       <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
@@ -306,22 +295,13 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <div class="pro-sub" data-lang="es">Versión completa para Windows y macOS con motor de análisis embebido. Pensado para librerías grandes y trabajo profesional sin depender de la nube.</div>
       <div class="pro-sub" data-lang="en">Full Windows &amp; macOS edition with bundled analysis engine. Built for large libraries and pro workflows without depending on the cloud.</div>
 
-      <div class="pro-grid">
-        <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows_pro">
-          <span class="store-icon">&#127911;</span>
-          <span class="store-text">
-            <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
-            <span class="store-line2">Windows · Pro</span>
-          </span>
-        </a>
-        <a href="DJAnalyzerPro.dmg" class="store-btn" data-store="dmg_pro">
-          <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
-          <span class="store-text">
-            <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
-            <span class="store-line2">macOS · Pro</span>
-          </span>
-        </a>
-      </div>
+      <!-- SIN BOTONES A PROPOSITO. Los de «Descarga directa Windows» y
+           «Descarga directa macOS» de arriba apuntan a ESTOS MISMOS ficheros
+           (DJAnalyzerPro-Setup.zip y DJAnalyzerPro.dmg): el EXE y el DMG YA
+           llevan el motor dentro. Duplicarlos aqui con la etiqueta «· Pro»
+           hacia pensar que habia dos descargas distintas y que la de arriba
+           era la capada. Esta seccion EXPLICA que trae ese canal; descargarlo
+           se hace arriba. -->
 
       <div class="pro-features" data-lang="es">
         <div class="pro-feat">Análisis local hasta 10× más rápido que la nube</div>
@@ -467,8 +447,12 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     <div class="section-label">Mobile App</div>
     <div class="section-title" data-lang="es">Tu biblioteca en el bolsillo</div>
     <div class="section-title" data-lang="en">Your library in your pocket</div>
-    <p class="section-desc" style="margin:0 auto" data-lang="es">Sincroniza con desktop y lleva toda tu música analizada al venue. Android ya disponible en Google Play. iOS próximamente.</p>
-    <p class="section-desc" style="margin:0 auto" data-lang="en">Sync with desktop and take all your analyzed music to the venue. Android available now on Google Play. iOS coming soon.</p>
+    <!-- iOS lleva publicado desde hace meses (App Store id 6763842357). Esta
+         linea decia «proximamente» y estaba echando para atras a la mitad del
+         parque movil sin que nadie lo viera: el usuario de iPhone leia que su
+         plataforma no existia todavia y no llegaba a buscarla en la tienda. -->
+    <p class="section-desc" style="margin:0 auto" data-lang="es">Sincroniza con desktop y lleva toda tu música analizada al venue. Disponible en Google Play y en la App Store.</p>
+    <p class="section-desc" style="margin:0 auto" data-lang="en">Sync with desktop and take all your analyzed music to the venue. Available on Google Play and the App Store.</p>
     <div class="mobile-grid">
       <div class="mobile-item">
         <img src="img/mobile-home.jpg" alt="Mobile Home Screen" loading="lazy">
@@ -648,17 +632,6 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
           </span>
         </a>
       </div>
-      <p class="store-note">
-        <span data-lang="es">¿Prefieres la App Store? También está en el
-          <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
-          pero esa versión <strong>no incluye el motor local</strong> (el sandbox de Apple no lo permite):
-          analiza en la nube y no puede calcular la huella de sonido de tu biblioteca.</span>
-        <span data-lang="en">Prefer the App Store? It's also on the
-          <a href="https://apps.apple.com/app/id6763842357" data-store="appstore_mac" target="_blank" rel="noopener">Mac App Store</a>,
-          but that build <strong>has no local engine</strong> (Apple's sandbox doesn't allow it):
-          it analyzes in the cloud and can't compute your library's sound fingerprint.</span>
-      </p>
-
       <!-- PRO EDITION en CTA inferior: misma seccion que en el hero -->
       <div class="pro-section">
         <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
@@ -670,22 +643,9 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         <div class="pro-sub" data-lang="es">La edición Pro para Windows y macOS lleva el motor de análisis integrado, así que no esperas a la nube y funciona offline.</div>
         <div class="pro-sub" data-lang="en">The Pro edition for Windows and macOS ships with the analysis engine embedded — no waiting on the cloud, fully offline.</div>
 
-        <div class="pro-grid">
-          <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows_pro">
-            <span class="store-icon">&#127911;</span>
-            <span class="store-text">
-              <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
-              <span class="store-line2">Windows · Pro</span>
-            </span>
-          </a>
-          <a href="DJAnalyzerPro.dmg" class="store-btn" data-store="dmg_pro">
-            <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
-            <span class="store-text">
-              <span class="store-line1" data-lang="es">Descarga directa</span><span class="store-line1" data-lang="en">Direct download</span>
-              <span class="store-line2">macOS · Pro</span>
-            </span>
-          </a>
-        </div>
+        <!-- Sin botones, igual que en el hero: los de arriba de esta misma
+             seccion ya descargan el EXE y el DMG, que SON los que llevan
+             motor. Ver la nota del hero. -->
       </div>
     </div>
   </div>
