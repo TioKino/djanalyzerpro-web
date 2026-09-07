@@ -94,6 +94,16 @@
           <li>Papelera: nueva opción para vaciarla</li>
           <li>Correcciones de estabilidad al guardar sesiones y fichas</li>
         </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Take your library to your phone by scanning a QR code</li>
+          <li>Analyzer tells you when your Rekordbox collection changes</li>
+          <li>Duplicates: listen to each copy before deciding which one to drop</li>
+          <li>&quot;Edited&quot; now tells you which field you changed</li>
+          <li>The cleanup history reports the whole run, not just the changes</li>
+          <li>Trash: new option to empty it</li>
+          <li>Stability fixes when saving sessions and track details</li>
+        </ul>
       ]]></description>
       <enclosure
         url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.11.dmg"
@@ -103,6 +113,45 @@
         length="159214312"
         type="application/octet-stream"
         sparkle:edSignature="Z6gl6/YuufbrLHveyHzIit+GCBYMdxaR//KvphdyEy20Pgh8tjz7I+wPhaGq7R2828hUbCDZdLjH05veBy81BQ==" />
+    </item>
+
+    <!-- 2.9.11 Windows — Mon, 07 Sep 2026 16:11:54 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.9.11</title>
+      <pubDate>Mon, 07 Sep 2026 16:11:54 +0000</pubDate>
+      <sparkle:version>2.9.11</sparkle:version>
+      <sparkle:shortVersionString>2.9.11</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.9.11</h3>
+        <ul>
+          <li>Llévate tu biblioteca al móvil escaneando un QR</li>
+          <li>Analyzer te avisa cuando tu colección de Rekordbox cambia</li>
+          <li>Duplicados: escucha cada copia antes de decidir cuál sobra</li>
+          <li>«Editado» dice qué dato has cambiado tú</li>
+          <li>El historial de limpieza cuenta la tanda entera, no solo los cambios</li>
+          <li>Papelera: nueva opción para vaciarla</li>
+          <li>Correcciones de estabilidad al guardar sesiones y fichas</li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Take your library to your phone by scanning a QR code</li>
+          <li>Analyzer tells you when your Rekordbox collection changes</li>
+          <li>Duplicates: listen to each copy before deciding which one to drop</li>
+          <li>&quot;Edited&quot; now tells you which field you changed</li>
+          <li>The cleanup history reports the whole run, not just the changes</li>
+          <li>Trash: new option to empty it</li>
+          <li>Stability fixes when saving sessions and track details</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.9.11-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.9.11"
+        sparkle:shortVersionString="2.9.11"
+        length="171419719"
+        type="application/zip"
+        sparkle:edSignature="8AaWF2fxanJekhCpv2w+JLNSNvjewwNlDyxf20YbR57L/i4am27JgrhIw15wvthbXP8OM0Ncfb5rPLzKkCxuAw==" />
     </item>
 
     <!-- 2.9.10 build 39 macOS DMG — Fri, 28 Aug 2026 06:40:42 +0000 -->
