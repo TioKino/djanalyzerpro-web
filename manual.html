@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de instrucciones - DJ Analyzer</title>
+<meta name="description" content="Manual de instrucciones de DJ Analyzer: todas las pantallas, opciones y atajos de la app de escritorio y movil.">
+<link rel="icon" href="favicon.png">
+<link rel="canonical" href="https://www.djanalyzerpro.com/manual.html">
+<meta property="og:title" content="Manual de instrucciones - DJ Analyzer">
+<meta property="og:description" content="Todas las pantallas, opciones y atajos de DJ Analyzer, explicados.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.djanalyzerpro.com/manual.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808; --panel:#0E0E0E; --line:#1E1E1E; --line2:#2A2A2A;
+  --txt:#E8E8E8; --dim:#AAA; --dim2:#777;
+  --accent:#8B5CF6; --accent2:#A78BFA; --cyan:#06B6D4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.75;
+     -webkit-font-smoothing:antialiased}
+a{color:var(--accent2);text-decoration:none}
+a:hover{color:var(--accent)}
+
+/* ---------- cabecera ---------- */
+.top{border-bottom:1px solid var(--line);background:rgba(8,8,8,.92);position:sticky;top:0;z-index:20;
+     backdrop-filter:blur(10px)}
+.top-inner{max-width:1180px;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.brand{font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--txt)}
+.brand span{background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;
+            background-clip:text;-webkit-text-fill-color:transparent}
+.top nav{margin-left:auto;display:flex;gap:1.25rem;font-size:.85rem}
+.top nav a{color:var(--dim)}
+.top nav a:hover{color:var(--txt)}
+
+/* ---------- portada ---------- */
+.hero{max-width:1180px;margin:0 auto;padding:3rem 1.5rem 1.5rem}
+.hero h1{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;
+         background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;
+         background-clip:text;-webkit-text-fill-color:transparent}
+.hero .meta{color:var(--dim2);font-size:.85rem;margin-top:.6rem}
+.hero .lead{color:var(--dim);font-size:1rem;margin-top:1rem;max-width:62ch}
+.note-en{margin-top:1.25rem;padding:.7rem 1rem;border:1px solid var(--line);border-left:3px solid var(--accent);
+         border-radius:8px;background:var(--panel);color:var(--dim2);font-size:.82rem;max-width:62ch}
+
+/* ---------- rejilla ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:1rem 1.5rem 5rem;display:grid;
+      grid-template-columns:264px minmax(0,1fr);gap:2.5rem;align-items:start}
+.rail{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column;padding-bottom:1rem}
+.rail h2{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim2);margin-bottom:.6rem}
+#q{width:100%;padding:.5rem .7rem;border-radius:8px;border:1px solid var(--line);background:var(--panel);
+   color:var(--txt);font:inherit;font-size:.82rem;margin-bottom:.6rem}
+#q:focus{outline:none;border-color:var(--accent)}
+.rail nav{flex:1 1 auto;min-height:0;overflow-y:auto;padding-right:.4rem}
+.rail nav a{display:block;padding:.24rem 0;font-size:.82rem;color:var(--dim2);line-height:1.45;
+            border-left:2px solid transparent;padding-left:.6rem}
+.rail nav a:hover{color:var(--txt);border-left-color:var(--line2)}
+.rail nav a.lvl3{padding-left:1.4rem;font-size:.78rem}
+.rail nav a.hit{color:var(--accent2)}
+
+/* ---------- contenido ---------- */
+article{min-width:0;max-width:78ch}
+article h2{font-size:1.5rem;font-weight:800;letter-spacing:-.01em;margin:2.6rem 0 1rem;scroll-margin-top:80px}
+article h3{font-size:1.12rem;font-weight:700;color:var(--accent2);margin:2rem 0 .7rem;scroll-margin-top:80px}
+article h4{font-size:.95rem;font-weight:700;color:var(--txt);margin:1.5rem 0 .5rem;scroll-margin-top:80px}
+article p{color:var(--dim);margin:.75rem 0;font-size:.95rem}
+article ul,article ol{margin:.75rem 0 .75rem 1.3rem}
+article li{color:var(--dim);font-size:.95rem;margin:.3rem 0}
+article strong{color:var(--txt);font-weight:600}
+article hr{border:0;border-top:1px solid var(--line);margin:3rem 0 0}
+article code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:#141414;
+             border:1px solid var(--line);border-radius:5px;padding:.08em .38em;color:#D8C9FF}
+article pre{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1rem;
+            overflow-x:auto;margin:1rem 0}
+article pre code{background:none;border:0;padding:0;color:var(--dim);font-size:.82rem;line-height:1.6}
+blockquote{border-left:3px solid var(--line2);padding-left:1rem;margin:1rem 0;color:var(--dim2)}
+
+/* Avisos: el simbolo del texto ya dice de que tipo es; esto solo le da forma. */
+p.callout{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.22);border-left:3px solid var(--accent);
+          border-radius:8px;padding:.8rem 1rem;color:var(--txt)}
+p.callout.stop{background:rgba(255,82,82,.05);border-color:rgba(255,82,82,.2);border-left-color:#FF5252}
+p.callout.tip{background:rgba(6,182,212,.05);border-color:rgba(6,182,212,.2);border-left-color:var(--cyan)}
+p.callout.ok{background:rgba(0,230,118,.05);border-color:rgba(0,230,118,.18);border-left-color:#00E676}
+
+/* Tablas: siempre con scroll propio, el body nunca se desborda. */
+.tw{overflow-x:auto;margin:1.1rem 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:min(100%,420px)}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--panel);color:var(--dim2);font-weight:600;font-size:.72rem;letter-spacing:.06em;
+   text-transform:uppercase;white-space:nowrap}
+td{color:var(--dim)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:rgba(255,255,255,.015)}
+.sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.45rem;vertical-align:baseline}
+
+/* ---------- pie ---------- */
+footer{border-top:1px solid var(--line);margin-top:2rem}
+.foot-inner{max-width:1180px;margin:0 auto;padding:2rem 1.5rem;display:flex;flex-wrap:wrap;gap:1rem;
+            align-items:center;justify-content:space-between}
+.foot-links{display:flex;gap:1.25rem;font-size:.85rem}
+.foot-links a{color:var(--dim)}
+.foot-links a:hover{color:var(--txt)}
+.foot-copy{color:var(--dim2);font-size:.8rem}
+
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:1.25rem}
+  .rail{position:static;height:auto;border:1px solid var(--line);border-radius:12px;padding:1rem;
+        background:var(--panel)}
+  .rail nav{max-height:42vh}
+  article{max-width:none}
+}
+/* En un movil estrecho los cuatro enlaces de arriba no caben y empujaban la
+   pagina entera a scroll horizontal. Se quedan los dos que importan. */
+@media (max-width:560px){
+  .top-inner,.hero,.wrap,.foot-inner{padding-left:1rem;padding-right:1rem}
+  .top nav{gap:.9rem;font-size:.8rem}
+  .top nav a:nth-child(2),.top nav a:nth-child(3){display:none}
+  .hero{padding-top:2rem}
+}
+@media print{
+  .top,.rail,footer{display:none}
+  body{background:#fff;color:#111}
+  article p,article li,td{color:#333}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">DJ <span>Analyzer</span></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="index.html#features">Funciones</a>
+      <a href="index.html#pricing">Precios</a>
+      <a href="privacy.html">Privacidad</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Manual de instrucciones</h1>
+  <p class="meta">Versión documentada: 2.9.11 (build 40) — Actualizado el 2026-09-09 — Windows · macOS · iOS · Android · Linux</p>
+  <p class="lead">Todo lo que la app hace, pantalla por pantalla: escritorio y movil,
+     que significa cada dato de un track, la memoria colectiva, la sincronizacion,
+     los atajos y lo que la app <strong>no</strong> hace.</p>
+  <p class="note-en">This manual is currently available in Spanish only.</p>
+</section>
+
+<div class="wrap">
+  <aside class="rail">
+    <h2>Indice</h2>
+    <input id="q" type="search" placeholder="Filtrar secciones..." aria-label="Filtrar secciones del manual" autocomplete="off">
+    <nav id="toc">
+<a class="lvl2" href="#cómo-leer-este-manual">Cómo leer este manual</a>
+<a class="lvl2" href="#1-qué-es-dj-analyzer">Qué es DJ Analyzer</a>
+<a class="lvl3" href="#11-la-idea-central-memoria-colectiva">La idea central: memoria colectiva</a>
+<a class="lvl3" href="#12-dónde-se-analiza-tu-música">Dónde se analiza tu música</a>
+<a class="lvl2" href="#2-instalación">Instalación</a>
+<a class="lvl3" href="#windows">Windows</a>
+<a class="lvl3" href="#macos">macOS</a>
+<a class="lvl3" href="#ios">iOS</a>
+<a class="lvl3" href="#android">Android</a>
+<a class="lvl3" href="#linux">Linux</a>
+<a class="lvl2" href="#3-primeros-pasos">Primeros pasos</a>
+<a class="lvl3" href="#31-en-escritorio">En escritorio</a>
+<a class="lvl3" href="#32-en-móvil">En móvil</a>
+<a class="lvl2" href="#4-los-datos-de-un-track">Los datos de un track</a>
+<a class="lvl3" href="#41-bpm-y-rejilla-de-beats">BPM y rejilla de beats</a>
+<a class="lvl3" href="#42-tonalidad-y-camelot">Tonalidad y Camelot</a>
+<a class="lvl3" href="#43-energía">Energía</a>
+<a class="lvl3" href="#44-tipo-de-track">Tipo de track</a>
+<a class="lvl3" href="#45-estructura-cues-y-características">Estructura, cues y características</a>
+<a class="lvl3" href="#46-de-dónde-sale-cada-dato-fuentes-y-prioridad">De dónde sale cada dato: fuentes y prioridad</a>
+<a class="lvl3" href="#47-qué-significa-editado">Qué significa "EDITADO"</a>
+<a class="lvl3" href="#48-los-tres-identificadores-de-un-track">Los tres identificadores de un track</a>
+<a class="lvl2" href="#5-la-app-de-escritorio">La app de escritorio</a>
+<a class="lvl3" href="#51-anatomía-de-la-ventana">Anatomía de la ventana</a>
+<a class="lvl3" href="#52-la-barra-lateral-sidebar">La barra lateral (sidebar)</a>
+<a class="lvl3" href="#53-multipantalla-workspace">Multipantalla (workspace)</a>
+<a class="lvl3" href="#54-paleta-de-comandos--ctrlk">Paleta de comandos — `Ctrl+K`</a>
+<a class="lvl3" href="#55-biblioteca">Biblioteca</a>
+<a class="lvl3" href="#56-importar">Importar</a>
+<a class="lvl3" href="#57-editar-un-track">Editar un track</a>
+<a class="lvl3" href="#58-la-ficha-del-track-i">La ficha del track (`I`)</a>
+<a class="lvl3" href="#59-el-waveform">El waveform</a>
+<a class="lvl3" href="#510-el-reproductor">El reproductor</a>
+<a class="lvl3" href="#511-smart-suggest">Smart Suggest</a>
+<a class="lvl3" href="#512-smart-collections">Smart Collections</a>
+<a class="lvl3" href="#513-rueda-de-camelot">Rueda de Camelot</a>
+<a class="lvl3" href="#514-flow-designer">Flow Designer</a>
+<a class="lvl3" href="#515-historial">Historial</a>
+<a class="lvl3" href="#516-analytics">Analytics</a>
+<a class="lvl3" href="#517-exportar">Exportar</a>
+<a class="lvl3" href="#518-ajustes">Ajustes</a>
+<a class="lvl3" href="#519-duplicados">Duplicados</a>
+<a class="lvl3" href="#520-panel-de-administración">Panel de administración</a>
+<a class="lvl2" href="#6-la-app-de-móvil">La app de móvil</a>
+<a class="lvl3" href="#61-pantalla-principal">Pantalla principal</a>
+<a class="lvl3" href="#62-biblioteca">Biblioteca</a>
+<a class="lvl3" href="#63-now-playing-y-waveform-en-horizontal">Now Playing y waveform en horizontal</a>
+<a class="lvl3" href="#64-escuchar-identificar-un-tema">Escuchar (identificar un tema)</a>
+<a class="lvl3" href="#65-sesiones">Sesiones</a>
+<a class="lvl3" href="#66-colecciones-carpetas-camelot-y-analytics-en-móvil">Colecciones, carpetas, Camelot y Analytics en móvil</a>
+<a class="lvl3" href="#67-ajustes-móvil">Ajustes (móvil)</a>
+<a class="lvl2" href="#7-sincronización-y-dispositivos">Sincronización y dispositivos</a>
+<a class="lvl3" href="#71-cómo-funciona">Cómo funciona</a>
+<a class="lvl3" href="#72-vincular-dos-aparatos">Vincular dos aparatos</a>
+<a class="lvl3" href="#73-traer-la-biblioteca-a-un-aparato-vacío">Traer la biblioteca a un aparato vacío</a>
+<a class="lvl3" href="#74-publicar-esta-biblioteca">Publicar esta biblioteca</a>
+<a class="lvl3" href="#75-qué-pasa-tras-resetear-un-dispositivo">Qué pasa tras resetear un dispositivo</a>
+<a class="lvl3" href="#76-volúmenes-portátiles-hdd--usb">Volúmenes portátiles (HDD / USB)</a>
+<a class="lvl3" href="#77-cuando-la-app-no-encuentra-un-fichero">Cuando la app no encuentra un fichero</a>
+<a class="lvl2" href="#8-memoria-colectiva">Memoria colectiva</a>
+<a class="lvl3" href="#81-qué-se-comparte-y-qué-no">Qué se comparte y qué no</a>
+<a class="lvl3" href="#82-cómo-agrupa-por-sonido">Cómo agrupa por sonido</a>
+<a class="lvl3" href="#83-qué-notas-tú-como-usuario">Qué notas tú como usuario</a>
+<a class="lvl3" href="#84-si-tu-biblioteca-se-queda-fuera-el-backfill">Si tu biblioteca se queda fuera: el backfill</a>
+<a class="lvl2" href="#9-atajos-de-teclado">Atajos de teclado</a>
+<a class="lvl3" href="#navegación-escritorio">Navegación (escritorio)</a>
+<a class="lvl3" href="#archivo-y-edición">Archivo y edición</a>
+<a class="lvl3" href="#tabla-de-la-biblioteca">Tabla de la biblioteca</a>
+<a class="lvl3" href="#waveform">Waveform</a>
+<a class="lvl3" href="#multipantalla">Multipantalla</a>
+<a class="lvl3" href="#lo-que-cambió-en-la-revisión-de-2026-09-08">Lo que cambió en la revisión de 2026-09-08</a>
+<a class="lvl2" href="#10-el-servidor-para-entender-qué-pasa-por-detrás">El servidor (para entender qué pasa por detrás)</a>
+<a class="lvl2" href="#11-problemas-frecuentes">Problemas frecuentes</a>
+<a class="lvl2" href="#12-glosario">Glosario</a>
+<a class="lvl2" href="#13-lo-que-la-app-no-hace">Lo que la app NO hace</a>
+<a class="lvl2" href="#14-registro-de-cambios-del-manual">Registro de cambios del manual</a>
+    </nav>
+  </aside>
+
+  <article>
+<h2 id="cómo-leer-este-manual">Cómo leer este manual</h2>
+<p>Está escrito para <strong>usar la app</strong>, no para programarla. Va de lo general a lo concreto y separa lo que solo existe en escritorio de lo que solo existe en el móvil, porque <strong>son dos interfaces distintas sobre los mismos datos</strong>.</p>
+<div class="tw"><table><thead><tr><th>Si quieres…</th><th>Ve a</th></tr></thead><tbody><tr><td>Entender qué hace la app y por qué</td><td><a href="#1-qué-es-dj-analyzer">1. Qué es DJ Analyzer</a></td></tr><tr><td>Empezar de cero</td><td><a href="#3-primeros-pasos">3. Primeros pasos</a></td></tr><tr><td>Saber qué significa cada dato de la tabla</td><td><a href="#4-los-datos-de-un-track">4. Los datos de un track</a></td></tr><tr><td>Manejar el escritorio</td><td><a href="#5-la-app-de-escritorio">5. La app de escritorio</a></td></tr><tr><td>Manejar el móvil</td><td><a href="#6-la-app-de-móvil">6. La app de móvil</a></td></tr><tr><td>Que tu biblioteca esté en todos tus aparatos</td><td><a href="#7-sincronización-y-dispositivos">7. Sincronización</a></td></tr><tr><td>Entender la "memoria colectiva"</td><td><a href="#8-memoria-colectiva">8. Memoria colectiva</a></td></tr><tr><td>Arreglar algo que no va</td><td><a href="#11-problemas-frecuentes">11. Problemas</a></td></tr><tr><td>Buscar una palabra</td><td><a href="#12-glosario">12. Glosario</a></td></tr></tbody></table></div>
+<p>Los cuadros marcados <strong>⚠️</strong> son cosas que sorprenden a casi todo el mundo la primera vez. Los marcados <strong>❌</strong> son cosas que la app <strong>no</strong> hace, dichas para que no las busques.</p>
+<p><strong>Cómo llegar hasta aquí desde la app</strong>, sin buscar el enlace:</p>
+<div class="tw"><table><thead><tr><th>Dónde</th><th>Ruta</th></tr></thead><tbody><tr><td>Escritorio</td><td><strong>Ajustes → Manual de instrucciones → «Abrir el manual»</strong></td></tr><tr><td>Escritorio (macOS)</td><td>menú <strong>Ayuda → Manual de instrucciones</strong></td></tr><tr><td>Escritorio (atajo)</td><td><code>F1</code> → <strong>«Manual completo»</strong>, abajo del cuadro de atajos</td></tr><tr><td>Móvil</td><td><strong>Ajustes → Manual de instrucciones → «Abrir el manual»</strong></td></tr><tr><td>Web</td><td><a href="https://www.djanalyzerpro.com">djanalyzerpro.com</a> → <strong>Manual</strong>, en el menú de arriba y en el pie</td></tr></tbody></table></div>
+<p>Se abre en el navegador, no dentro de la app: así el manual se corrige el mismo día en que cambia algo, sin esperar a que salga una versión nueva. <strong>Necesita conexión.</strong></p>
+<hr>
+<h2 id="1-qué-es-dj-analyzer">1. Qué es DJ Analyzer</h2>
+<p>DJ Analyzer analiza tu música y te da, de cada tema:</p>
+<ul><li><strong>BPM</strong> (tempo) y rejilla de beats</li><li><strong>Tonalidad</strong> en nota musical y en código <strong>Camelot</strong> (1A–12B)</li><li><strong>Energía</strong> en escala DJ de 1 a 10</li><li><strong>Género</strong> y subgénero</li><li><strong>Tipo de track</strong> (warm-up, peak time, closing…)</li><li><strong>Estructura</strong> (intro, subida, drop, breakdown, outro) y momento del drop</li><li><strong>Características de sonido</strong>: si tiene voces, bajos pesados, pads, densidad de percusión</li><li><strong>Forma de onda por bandas</strong> (graves / medios / agudos) para pintar el waveform</li><li><strong>Portada</strong> y un <strong>preview de 6 segundos</strong> que se puede oír sin tener el fichero</li></ul>
+<p>Y sobre eso monta las herramientas de trabajo: <strong>rueda de Camelot</strong>, <strong>Flow Designer</strong> para planificar sets, <strong>Smart Collections</strong>, <strong>cue points manuales</strong>, <strong>exportación</strong> a Rekordbox / Traktor / Serato / VirtualDJ / M3U / CSV / PDF, y <strong>sincronización</strong> entre tus aparatos.</p>
+<h3 id="11-la-idea-central-memoria-colectiva">1.1 La idea central: memoria colectiva</h3>
+<p>La promesa que separa a DJ Analyzer de un analizador cualquiera es esta:</p>
+<blockquote><p><strong>Dos DJs con el mismo tema comparten el trabajo hecho sobre él —aunque sea otro fichero, otro códec u otro tag—, porque la app los agrupa por SONIDO, no por bytes.</strong></p></blockquote>
+<p>Eso significa que si otro DJ ya analizó el tema que acabas de importar:</p>
+<ul><li><strong>No se vuelve a analizar</strong> (aparece al instante, sin subir el fichero entero).</li><li>Puedes ver <strong>sus cue points</strong> marcados en el waveform como "zonas de la comunidad".</li><li>Si él tiene el BPM y la tonalidad <strong>de Rekordbox</strong> y tú tenías una medición automática, <strong>tu dato mejora solo</strong> (nunca al revés: ver <a href="#46-de-dónde-sale-cada-dato-fuentes-y-prioridad">§4.6 Fuentes y prioridad</a>).</li><li>Se comparten notas públicas, valoraciones y correcciones de rejilla.</li></ul>
+<p>Cómo funciona por dentro está en <a href="#8-memoria-colectiva">§8</a>.</p>
+<h3 id="12-dónde-se-analiza-tu-música">1.2 Dónde se analiza tu música</h3>
+<p>Hay <strong>dos motores</strong> y no los eliges tú: depende <strong>de por dónde descargaste la app</strong>.</p>
+<div class="tw"><table><thead><tr><th>Canal</th><th>Motor local incluido</th><th>Qué implica</th></tr></thead><tbody><tr><td><strong>Windows .exe</strong> (djanalyzerpro.com)</td><td>✅ Sí</td><td>Analiza en tu propio PC, más rápido, sin subir el fichero</td></tr><tr><td><strong>macOS DMG</strong> (djanalyzerpro.com)</td><td>✅ Sí</td><td>Igual que Windows</td></tr><tr><td><strong>macOS Mac App Store</strong></td><td>❌ No</td><td>Todo el análisis va al servidor</td></tr><tr><td><strong>iOS / Android</strong></td><td>❌ No</td><td>Todo el análisis va al servidor</td></tr></tbody></table></div>
+<p class="callout">⚠️ <strong>Comprar Pro no da motor local.</strong> El motor local depende del canal de descarga, no de la licencia. Hoy, en la práctica, la gran mayoría de los análisis (≈87 %) se hacen en el servidor.</p>
+<p>El motor local <strong>no arranca al abrir la app</strong>: se enciende solo cuando pides el primer análisis, para no comerse cientos de MB de RAM si solo vas a navegar.</p>
+<hr>
+<h2 id="2-instalación">2. Instalación</h2>
+<h3 id="windows">Windows</h3>
+<p>Descarga el <code>.exe</code> desde <strong>djanalyzerpro.com</strong> y ejecútalo. Trae el motor local de análisis dentro. Se actualiza solo (WinSparkle): también puedes forzar la comprobación en <em>Ajustes → Acerca de → Comprobar actualizaciones</em>.</p>
+<h3 id="macos">macOS</h3>
+<p>Dos versiones distintas y <strong>no son iguales</strong>:</p>
+<ul><li><strong>DMG desde djanalyzerpro.com</strong>: notarizado, <strong>con motor local</strong>, con auto-update (Sparkle).</li><li><strong>Mac App Store</strong>: sin motor local y sin auto-update (actualiza la tienda). Además, por el <em>sandbox</em> de Apple, esta versión <strong>no puede calcular la huella acústica en tu ordenador</strong> — ver <a href="#84-si-tu-biblioteca-se-queda-fuera-el-backfill">§8.4</a>.</li></ul>
+<h3 id="ios">iOS</h3>
+<p>App Store, id <code>6763842357</code>. La música se añade desde el selector de archivos del sistema (incluye iCloud, Dropbox, Google Drive, OneDrive) o importando la biblioteca de Apple Music (solo metadatos).</p>
+<h3 id="android">Android</h3>
+<p>Google Play, <code>com.djanalyzerpro.app</code>.</p>
+<h3 id="linux">Linux</h3>
+<p>Experimental, sin build oficial publicada.</p>
+<hr>
+<h2 id="3-primeros-pasos">3. Primeros pasos</h2>
+<h3 id="31-en-escritorio">3.1 En escritorio</h3>
+<ol><li>Abre la app. La primera vez verás un <strong>tutorial de 3 pasos</strong> (Importa tu música → Análisis inteligente → Construye tu set).</li><li>Mete música. Cualquiera de estas cinco vale: - <strong>Arrastrar y soltar</strong> ficheros o carpetas sobre la ventana. - Botón <strong>Importar</strong> de la barra de la biblioteca (<code>Ctrl+O</code>). - Botón <strong>Carpeta</strong> (importa la carpeta entera, recursiva). - Botón <strong>DJ</strong>: traer tu biblioteca desde <strong>Rekordbox / Traktor / iTunes / VirtualDJ</strong>. - Árbol de la izquierda → sección <strong>DISCO</strong>: navegar tu disco duro y analizar desde ahí.</li><li>Espera al análisis. Verás un <strong>overlay flotante</strong> con el progreso, que puedes arrastrar, plegar, pausar (<code>Ctrl+Shift+P</code>) o cancelar.</li><li>Cuando acabe sale un resumen: <strong>analizados / ya estaban / fallados</strong>.</li></ol>
+<p>Formatos de audio aceptados: <strong>MP3, WAV, FLAC, AAC, OGG, M4A, WMA, AIFF/AIF</strong>.</p>
+<h3 id="32-en-móvil">3.2 En móvil</h3>
+<ol><li>Al abrir por primera vez aparece un <strong>onboarding de 3 pantallas</strong> con una demo de cómo se verá tu música.</li><li>Pulsa <strong>AÑADIR</strong> en la pantalla principal.</li><li>Elige <em>Desde este dispositivo</em> o <em>Añadir desde la nube</em> (iCloud, Dropbox, Google Drive, OneDrive, Archivos).</li><li>Si eliges una carpeta con varios audios, te pregunta si quieres <strong>crear una carpeta con el mismo nombre</strong> en tu biblioteca.</li></ol>
+<p class="callout tip">💡 Si ya tienes la biblioteca montada en el PC, <strong>no la vuelvas a importar en el móvil</strong>: enlaza los dos aparatos y se copia sola. Ver <a href="#7-sincronización-y-dispositivos">§7</a>.</p>
+<hr>
+<h2 id="4-los-datos-de-un-track">4. Los datos de un track</h2>
+<h3 id="41-bpm-y-rejilla-de-beats">4.1 BPM y rejilla de beats</h3>
+<p>El BPM se mide con detección de tempo y se corrige automáticamente el clásico error de mitad/doble tempo cuando la confianza es baja. Si el fichero trae BPM en sus etiquetas ID3 y es razonable (entre 60 y 200), <strong>manda el ID3</strong>.</p>
+<p>Además del BPM medio se guarda la <strong>rejilla</strong>: <code>first_beat</code> (dónde cae el primer beat) e intervalo entre beats. En el waveform puedes afinarla a mano:</p>
+<ul><li><strong>BPM ±0,01</strong> con los botones de avance rápido (es un <strong>delta</strong>, no un BPM absoluto).</li><li><strong>Offset ±2 ms</strong> con las flechas.</li><li><strong>Tap BPM</strong>: pulsa <code>T</code> (o el botón <em>Tap</em>) al ritmo mientras suena; a partir del segundo toque calcula el BPM y coloca el downbeat en tu primer toque.</li><li>Click en la etiqueta de BPM o de OFF para <strong>resetear</strong> ese ajuste.</li></ul>
+<p>Tus correcciones de rejilla se comparten con la comunidad (y las de otros llegan a ti) si el track tiene huella acústica.</p>
+<h3 id="42-tonalidad-y-camelot">4.2 Tonalidad y Camelot</h3>
+<p>La tonalidad se detecta con perfiles Krumhansl-Kessler sobre el cromagrama. Si el fichero trae tonalidad en ID3, manda el ID3 — y se entiende escrita de cualquier forma: <code>A#m</code>, <code>Bbm</code>, <code>F minor</code>, <code>8A</code>, <code>8m</code> (Open Key de Traktor).</p>
+<p>La <strong>rueda Camelot</strong> es el estándar de mezcla armónica: 24 posiciones, 1A–12A (menores, círculo interior) y 1B–12B (mayores, círculo exterior).</p>
+<p>Desde una key son <strong>compatibles</strong>: la misma, la de al lado (+1), la anterior (−1) y su paralela (A↔B con el mismo número).</p>
+<details><summary>Tabla Camelot ↔ nota</summary>
+<div class="tw"><table><thead><tr><th>Camelot</th><th>Nota</th><th>Camelot</th><th>Nota</th></tr></thead><tbody><tr><td>1A</td><td>Abm</td><td>1B</td><td>B</td></tr><tr><td>2A</td><td>Ebm</td><td>2B</td><td>F#</td></tr><tr><td>3A</td><td>Bbm</td><td>3B</td><td>Db</td></tr><tr><td>4A</td><td>Fm</td><td>4B</td><td>Ab</td></tr><tr><td>5A</td><td>Cm</td><td>5B</td><td>Eb</td></tr><tr><td>6A</td><td>Gm</td><td>6B</td><td>Bb</td></tr><tr><td>7A</td><td>Dm</td><td>7B</td><td>F</td></tr><tr><td>8A</td><td>Am</td><td>8B</td><td>C</td></tr><tr><td>9A</td><td>Em</td><td>9B</td><td>G</td></tr><tr><td>10A</td><td>Bm</td><td>10B</td><td>D</td></tr><tr><td>11A</td><td>F#m</td><td>11B</td><td>A</td></tr><tr><td>12A</td><td>Dbm</td><td>12B</td><td>E</td></tr></tbody></table></div>
+</details>
+<h3 id="43-energía">4.3 Energía</h3>
+<p>Escala <strong>DJ 1–10</strong> derivada del RMS con una curva que expande el rango medio. La app la agrupa en cuatro niveles con color fijo:</p>
+<div class="tw"><table><thead><tr><th>Nivel</th><th>Rango DJ</th><th>Color</th></tr></thead><tbody><tr><td><span class="sw" style="background:#00E676"></span><strong>BAJA</strong></td><td>1–3</td><td>Verde</td></tr><tr><td><span class="sw" style="background:#FFD740"></span><strong>MEDIA</strong></td><td>4–5</td><td>Amarillo</td></tr><tr><td><span class="sw" style="background:#FFAB40"></span><strong>ALTA</strong></td><td>6–7</td><td>Naranja</td></tr><tr><td><span class="sw" style="background:#FF5252"></span><strong>MUY ALTA</strong></td><td>8–10</td><td>Rojo</td></tr></tbody></table></div>
+<p>Puedes sobrescribir la energía a mano en el editor del track.</p>
+<h3 id="44-tipo-de-track">4.4 Tipo de track</h3>
+<p>Clasificación del papel del tema dentro de un set. Se calcula combinando una heurística de estructura con un clasificador espectral (el espectral pesa más), y viene con <strong>confianza</strong> y <strong>alternativas</strong>.</p>
+<p>Tipos que la app usa en filtros y colecciones: <code>Opener</code> · <code>Warmup</code> · <code>Builder</code> · <code>Peak Time</code> · <code>Anthem</code> · <code>Cooldown</code> · <code>Closing</code></p>
+<p class="callout">⚠️ Internamente se guardan con guion bajo (<code>peak_time</code>). La app normaliza al comparar, así que "Peak Time" y "peak_time" casan.</p>
+<h3 id="45-estructura-cues-y-características">4.5 Estructura, cues y características</h3>
+<ul><li><strong>Estructura</strong>: intro, buildup, drop, breakdown, outro + el <em>timestamp</em> del drop.</li><li><strong>Características</strong>: <code>has_vocals</code>, <code>has_heavy_bass</code>, <code>has_pads</code>, densidad de percusión, energía de entrada y de salida de la mezcla.</li><li><strong>Cue points</strong>: <strong>100 % manuales</strong>. La app <strong>no</strong> pone cues automáticos.</li></ul>
+<p class="callout stop">❌ <strong>La estimación automática de secciones como cues se descartó a propósito</strong> por poco fiable. Los cues los pones tú.</p>
+<h3 id="46-de-dónde-sale-cada-dato-fuentes-y-prioridad">4.6 De dónde sale cada dato: fuentes y prioridad</h3>
+<p>Cada dato (BPM, tonalidad, género) lleva una <strong>fuente</strong>, y hay un ranking. Cuando compiten dos versiones del mismo dato, <strong>gana la más fiable y nunca se degrada</strong>:</p>
+<div class="tw"><table><thead><tr><th>Prioridad</th><th>Fuente</th><th>Qué es</th></tr></thead><tbody><tr><td>110</td><td><code>rekordbox</code></td><td>Importado de un XML de Rekordbox</td></tr><tr><td>105</td><td><code>traktor</code></td><td>Importado de un NML de Traktor</td></tr><tr><td>100</td><td><code>virtualdj</code></td><td>Importado de VirtualDJ</td></tr><tr><td>80–95</td><td><code>consensus_N</code></td><td>Consenso de N DJs de la comunidad (más votos, más peso)</td></tr><tr><td>50</td><td><code>local_engine</code></td><td>Motor local de DJ Analyzer</td></tr><tr><td>30</td><td><code>id3</code> / <code>itunes</code></td><td>Etiqueta del fichero</td></tr><tr><td>15</td><td><code>analysis</code></td><td>Análisis espectral del servidor</td></tr><tr><td>14</td><td><code>discogs</code> / <code>musicbrainz</code> / <code>acousticbrainz</code></td><td>APIs externas (sobre todo género)</td></tr><tr><td>5</td><td><code>cached</code></td><td>Copia de caché</td></tr><tr><td>0</td><td>vacío / desconocido</td><td>Sin determinar</td></tr></tbody></table></div>
+<p>Esta regla se aplica en tres sitios: en el sync entre tus aparatos, al importar un XML, y en la mejora automática por memoria colectiva.</p>
+<h3 id="47-qué-significa-editado">4.7 Qué significa "EDITADO"</h3>
+<p>El badge <strong>EDITADO</strong> / el lapicito significa <strong>lo tocó una persona</strong>. Cuenta como edición manual: <strong>título, artista, energía, BPM, tonalidad, año, tipo, rejilla de beats (si no es 0) y tags</strong>.</p>
+<p><strong>No</strong> cuenta como edición: el <strong>género</strong> (porque importar un XML escribe el género en todos los tracks que casan), las <strong>notas</strong> (tienen su propio icono), la <strong>portada</strong> (viene de una identificación aceptada) ni una lista de tags vacía.</p>
+<p>Las mejoras automáticas (memoria colectiva, enriquecimiento de fichas sin audio, consenso) <strong>no</strong> marcan el track como editado.</p>
+<h3 id="48-los-tres-identificadores-de-un-track">4.8 Los tres identificadores de un track</h3>
+<p>Se confunden con facilidad. No son lo mismo:</p>
+<div class="tw"><table><thead><tr><th>Nombre</th><th>Qué es</th><th>Para qué</th></tr></thead><tbody><tr><td><strong>id del track</strong></td><td><code>MD5(nombre de fichero + tamaño)</code></td><td>Identidad local. <strong>Renombrar el fichero cambia el id</strong></td></tr><tr><td><strong>fingerprint</strong></td><td>MD5 del <strong>contenido</strong>, bit a bit</td><td>Deduplicar ficheros idénticos y cachear análisis</td></tr><tr><td><strong>huella acústica</strong> (chromaprint) + <strong>cluster</strong></td><td>Huella del <strong>sonido</strong></td><td>La memoria colectiva. Cubre otro códec, otro bitrate, otro tag</td></tr></tbody></table></div>
+<hr>
+<h2 id="5-la-app-de-escritorio">5. La app de escritorio</h2>
+<h3 id="51-anatomía-de-la-ventana">5.1 Anatomía de la ventana</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│ Barra de título (buscar · minimizar/maximizar/cerrar)        │
+├──────────────────────────────────────────────────────────────┤
+│ Banner de anuncio (solo si hay uno sin descartar)            │
+├────┬─────────────────────────────────────────────────────────┤
+│ S  │                                             │           │
+│ i  │        CONTENIDO (1 pantalla o varias)      │  SMART    │
+│ d  │                                             │  SUGGEST  │
+│ e  │                                             │           │
+│ b  │                                             │           │
+├────┴─────────────────────────────────────────────────────────┤
+│ WAVEFORM (plegable)                                          │
+├──────────────────────────────────────────────────────────────┤
+│ REPRODUCTOR                                                  │
+└──────────────────────────────────────────────────────────────┘</code></pre>
+<p>En <strong>Windows y Linux</strong> la barra de título es propia de la app (sin marco del sistema). En <strong>macOS</strong> se mantiene la barra nativa y además hay <strong>menú superior nativo</strong> (DJ Analyzer / Archivo / Edición / Ver / Ayuda).</p>
+<h3 id="52-la-barra-lateral-sidebar">5.2 La barra lateral (sidebar)</h3>
+<p>72 px de ancho, con las secciones y su atajo:</p>
+<div class="tw"><table><thead><tr><th>#</th><th>Sección</th><th>Atajo</th><th>Qué es</th></tr></thead><tbody><tr><td>1</td><td><strong>Biblioteca</strong></td><td><code>Ctrl+1</code></td><td>Tabla de tracks + árbol de carpetas + disco</td></tr><tr><td>2</td><td><strong>Collections</strong></td><td><code>Ctrl+2</code></td><td>Smart Collections</td></tr><tr><td>3</td><td><strong>Camelot</strong></td><td><code>Ctrl+3</code></td><td>Rueda de Camelot</td></tr><tr><td>4</td><td><strong>Flow</strong></td><td><code>Ctrl+4</code></td><td>Flow Designer</td></tr><tr><td>5</td><td><strong>Historial</strong></td><td><code>Ctrl+5</code></td><td>Sesiones, reproducciones y detecciones</td></tr><tr><td>6</td><td><strong>Analytics</strong></td><td><code>Ctrl+6</code></td><td>Estadísticas de la biblioteca</td></tr><tr><td>—</td><td><strong>Admin</strong></td><td><code>Ctrl+8</code></td><td>Solo si la build lleva token de admin</td></tr><tr><td>7</td><td><strong>Config</strong></td><td><code>Ctrl+7</code></td><td>Ajustes</td></tr></tbody></table></div>
+<p>Abajo del todo, además de Config, hay tres controles:</p>
+<ul><li><strong>Indicador de sincronización</strong> — cambia de color e icono según el estado, y es clicable: sincroniza (o reanuda, si está en pausa). Su tooltip dice exactamente qué pasa: <em>sincronizado hace X</em>, <em>hay N novedades</em>, <em>cambios locales pendientes</em>, <em>error de conexión</em>, <em>sincronización en pausa tras resetear</em>. Cuando llegan novedades del móvil, despliega un desglose (tracks añadidos, ediciones, carpetas, colecciones, sesiones, favoritos) con opción de <strong>Ignorar</strong>.</li><li><strong>Botón Suggest</strong> — abre/cierra el panel de sugerencias.</li><li><strong>Botón Multi</strong> — abre el selector de <strong>multipantalla</strong>.</li></ul>
+<h3 id="53-multipantalla-workspace">5.3 Multipantalla (workspace)</h3>
+<p>La app puede dividir el área central en varios paneles, cada uno con la pantalla que quieras. Seis plantillas:</p>
+<div class="tw"><table><thead><tr><th>Atajo</th><th>Plantilla</th><th>Disposición</th></tr></thead><tbody><tr><td><code>Ctrl+Alt+1</code></td><td>Single</td><td>1 panel</td></tr><tr><td><code>Ctrl+Alt+2</code></td><td>Dual</td><td>2 en vertical, 50/50</td></tr><tr><td><code>Ctrl+Alt+3</code></td><td>Asymmetric</td><td>2, 65/35</td></tr><tr><td><code>Ctrl+Alt+4</code></td><td>1 + 2 Side</td><td>1 grande + 2 apilados</td></tr><tr><td><code>Ctrl+Alt+5</code></td><td>Quad</td><td>4 en cuadrícula</td></tr><tr><td><code>Ctrl+Alt+6</code></td><td>1 + 3 Side</td><td>1 grande + 3 apilados</td></tr></tbody></table></div>
+<p>Con más de un panel:</p>
+<ul><li>Cada panel tiene <strong>cabecera</strong> con su nombre; el desplegable cambia qué pantalla muestra.</li><li><strong>Doble click</strong> en la cabecera o en un divisor: <strong>maximiza / restaura</strong> ese panel.</li><li><code>Esc</code>: restaura el panel maximizado.</li><li>Los divisores se <strong>arrastran</strong> para repartir el espacio.</li><li>Si un panel se queda más pequeño que el tamaño mínimo de su pantalla, <strong>se hace zoom-out proporcional</strong> en vez de recortar contenido (nada se esconde).</li><li>Abajo a la derecha hay un <strong>indicador de layout</strong> con botón para volver a una sola pantalla.</li></ul>
+<p class="callout ok">✅ <strong>Smart Suggest funciona en cualquier layout</strong> (corregido el 2026-09-08). Antes el panel solo se montaba en modo una-pantalla: con dos o más paneles abiertos, el botón <em>Suggest</em> y <code>Ctrl+G</code> no enseñaban nada y no había forma de saber por qué. Ahora el panel se abre por la derecha estés en la plantilla que estés.</p>
+<h3 id="54-paleta-de-comandos--ctrlk">5.4 Paleta de comandos — <code>Ctrl+K</code></h3>
+<p>Buscador de acciones. Escribe y ejecuta. Categorías: <strong>Navegación</strong>, <strong>Acciones</strong>, <strong>Herramientas</strong>.</p>
+<p>Comandos disponibles: ir a Biblioteca / Analytics / Rueda Camelot / Flow Designer / Historial / Configuración · Importar archivos de audio · Importar carpeta completa · Importar desde Rekordbox/Traktor · Exportar biblioteca · Buscar en biblioteca · Analizar tracks pendientes · Sugerencias inteligentes · Abrir Flow Designer.</p>
+<p class="callout">⚠️ Con varios paneles abiertos, la sección elegida se abre <strong>en el panel que tenga el foco</strong> (haz click en un panel para dárselo). Hasta la revisión de 2026-09-08 la paleta <strong>no hacía nada en multipantalla</strong>; lo mismo pasaba con «Ir a biblioteca» de Camelot, Colecciones, Flow e Historial, con el buscador de la barra de título y con el clic en un género de Analytics.</p>
+<h3 id="55-biblioteca">5.5 Biblioteca</h3>
+<p>Es la pantalla principal. Tres zonas: <strong>árbol</strong> (izquierda), <strong>tabla</strong> (centro) y <strong>Smart Suggest</strong> (derecha, plegable).</p>
+<h4 id="551-el-árbol-de-la-izquierda">5.5.1 El árbol de la izquierda</h4>
+<p>Ancho ajustable (140–400 px) arrastrando su borde. Contiene <strong>fuentes</strong>:</p>
+<ul><li><strong>📚 Toda la biblioteca</strong> — todos los tracks analizados.</li><li><strong>⭐ Favoritos</strong> — los marcados con el corazón.</li><li><strong>CARPETAS</strong> — tus carpetas y subcarpetas, con color e icono propios.</li><li><strong>DISCO</strong> — las unidades y carpetas reales de este ordenador.</li></ul>
+<p><strong>Carpetas</strong> (menú contextual, click derecho):</p>
+<div class="tw"><table><thead><tr><th>Opción</th><th>Qué hace</th></tr></thead><tbody><tr><td>Nueva subcarpeta</td><td>Crea una carpeta hija</td></tr><tr><td>Re-analizar (N)</td><td>Re-analiza todos los tracks de la carpeta y sus subcarpetas que tengan fichero local</td></tr><tr><td>Renombrar</td><td>Abre el editor de la carpeta</td></tr><tr><td>Cambiar color / icono</td><td>Igual, en la pestaña de estilo</td></tr><tr><td>Duplicar aquí</td><td>Copia la carpeta y sus tracks con el sufijo "(copia)"</td></tr><tr><td>Copiar / Pegar aquí</td><td>Portapapeles de carpetas: copiar una y pegarla dentro de otra</td></tr><tr><td>Eliminar carpeta</td><td>Borra la carpeta; <strong>los tracks que queden huérfanos se eliminan de la biblioteca</strong></td></tr></tbody></table></div>
+<p>Puedes <strong>arrastrar tracks desde la tabla y soltarlos sobre una carpeta</strong> para asignarlos.</p>
+<p><strong>DISCO</strong> — la rampa de entrada. Al elegir una carpeta del disco, <strong>la misma tabla</strong> muestra sus ficheros de audio (con el mismo aspecto), enriquecidos con las etiquetas ID3/FLAC reales cuando aún no están analizados. Click derecho sobre una carpeta del disco:</p>
+<ul><li><strong>Analizar esta carpeta</strong></li><li><strong>Analizar con subcarpetas</strong> (recursivo)</li></ul>
+<p>Reproducir un track del disco que no esté en la biblioteca <strong>lo mete en la biblioteca y lo analiza</strong> automáticamente. El árbol de disco recuerda qué carpetas tenías abiertas y en cuál estabas.</p>
+<p class="callout">⚠️ La fuente <strong>DISCO es de este ordenador</strong>: no viaja a ningún otro aparato. Por eso, al importar una carpeta, la app <strong>replica su árbol como carpetas de biblioteca</strong> (por ruta completa, así dos "Techno" en ramas distintas no se fusionan), que sí viajan.</p>
+<h4 id="552-la-tabla">5.5.2 La tabla</h4>
+<p><strong>Columnas</strong> (todas redimensionables arrastrando su borde, y ordenables haciendo click en la cabecera):</p>
+<p><code>#</code> · <strong>TÍTULO</strong> · <strong>ARTISTA</strong> · <strong>GÉNERO</strong> · <strong>BPM</strong> · <strong>KEY</strong> · <strong>CAM</strong> · <strong>ENERGÍA</strong> · <strong>TIPO</strong> · <strong>AÑO</strong> · <strong>DURA.</strong> · <strong>★</strong> (tu valoración)</p>
+<p>La columna <strong>★</strong> no es ordenable, y su tooltip lo dice: <em>"Tu valoración (toca una estrella). También suma a la media de la comunidad."</em></p>
+<p>Si las columnas no caben, la tabla <strong>hace scroll horizontal</strong> en vez de recortar.</p>
+<p><strong>Cada fila</strong> muestra además, de izquierda a derecha, los indicadores que apliquen:</p>
+<div class="tw"><table><thead><tr><th>Indicador</th><th>Significa</th></tr></thead><tbody><tr><td>Mini-waveform y portada</td><td>Vista previa del track</td></tr><tr><td>❤️</td><td>Favorito (aparece al pasar el ratón aunque no lo sea)</td></tr><tr><td>✏️</td><td><strong>Editado a mano.</strong> Su tooltip <strong>dice qué campos</strong>, no solo que hay algo editado</td></tr><tr><td>Icono de plataforma</td><td>Dónde se analizó: Windows, macOS, Linux, iPhone, Android…</td></tr><tr><td>Icono de USB</td><td>El track vive en un <strong>volumen portátil</strong> registrado</td></tr><tr><td>🔊</td><td><strong>Heavy Bass</strong></td></tr><tr><td>★ ★★ ★★★</td><td>Popularidad entre DJs: <em>usado por varios</em> → <em>popular</em> → <em>muy popular</em></td></tr><tr><td>📝</td><td>Tiene <strong>notas DJ</strong>. Su tooltip enseña las primeras 100 letras</td></tr><tr><td>☁️ tachada</td><td><em>Sin archivo local — solo preview</em></td></tr></tbody></table></div>
+<p class="callout">⚠️ El icono de notas <strong>no se pinta si el track además está editado a mano</strong>, para no juntar dos iconos: en ese caso solo verás el lápiz.</p>
+<p><strong>Interacción:</strong></p>
+<div class="tw"><table><thead><tr><th>Acción</th><th>Resultado</th></tr></thead><tbody><tr><td>Click</td><td>Selecciona ese track</td></tr><tr><td><code>Ctrl</code>+Click</td><td>Añade/quita de la selección</td></tr><tr><td><code>Shift</code>+Click</td><td>Selecciona el rango</td></tr><tr><td>Doble click</td><td>Reproduce (o pausa si ya sonaba)</td></tr><tr><td>Click derecho</td><td>Menú contextual</td></tr><tr><td>Click en zona vacía</td><td>Deselecciona todo</td></tr><tr><td>Arrastrar fila</td><td>Suelta sobre una carpeta para asignarla</td></tr></tbody></table></div>
+<p><strong>Teclado (con el foco en la tabla):</strong></p>
+<div class="tw"><table><thead><tr><th>Tecla</th><th>Acción</th></tr></thead><tbody><tr><td><code>↑</code> <code>↓</code></td><td>Moverse por la lista (con scroll automático)</td></tr><tr><td><code>←</code> <code>→</code></td><td>Track anterior / siguiente <strong>de la reproducción</strong></td></tr><tr><td><code>Enter</code></td><td>Reproducir / pausar el seleccionado</td></tr><tr><td><code>Espacio</code></td><td>Reproducir / pausar</td></tr><tr><td><code>S</code></td><td>Aleatorio (shuffle)</td></tr><tr><td><code>R</code></td><td>Repetir</td></tr><tr><td><code>Ctrl+A</code></td><td>Seleccionar todo lo visible</td></tr><tr><td><code>Supr</code></td><td>Eliminar los seleccionados</td></tr><tr><td><code>Esc</code></td><td>Deseleccionar (o devolver el foco a la tabla si estabas buscando)</td></tr></tbody></table></div>
+<h4 id="553-la-barra-de-herramientas">5.5.3 La barra de herramientas</h4>
+<p>De izquierda a derecha:</p>
+<ol><li><strong>BIBLIOTECA</strong> + contador total de tracks.</li><li><strong>❤️ Filtro de favoritos</strong> con su número. Click: mostrar solo favoritos.</li><li><strong>🌐 Filtro por ubicación</strong>. Opciones: Todos · Windows · macOS · Linux · iPhone · Android · Todos Desktop · Todos Móvil · <strong>HDD / USB portátil</strong> · <strong>Solo disco interno</strong>.</li><li><strong>☁️ Filtro de disponibilidad</strong> (solo aparece si falta algún fichero): Todos · <strong>Disponibles localmente</strong> · <strong>No disponibles localmente (N)</strong>. A su lado, un botón rojo para <strong>eliminar de la biblioteca todos los no disponibles</strong> (con confirmación; los ficheros del disco no se tocan).</li><li><strong>Barra de acciones múltiples</strong> — aparece al seleccionar 2 o más (ver abajo).</li><li><strong>Buscador</strong> (<code>Ctrl+F</code>). Busca en <strong>título, artista y género</strong>, con 300 ms de retardo para no recalcular en cada tecla. La <code>X</code> lo limpia.</li><li><strong>Importar</strong> (<code>Ctrl+O</code>) · <strong>Carpeta</strong> · <strong>DJ</strong> (Rekordbox/Traktor XML) · <strong>Suggest</strong>.</li></ol>
+<p>Los filtros son <strong>ortogonales</strong>: puedes pedir "HDD externo + disponibles ahora" o "iPhone + no disponibles aquí".</p>
+<p><strong>Barra de acciones múltiples</strong> (2+ seleccionados): contador · Seleccionar todos · <strong>Re-analizar</strong> · <strong>Favoritos</strong> · <strong>Carpeta</strong> · <strong>Sesión</strong> · <strong>Eliminar</strong> · Deseleccionar todo.</p>
+<h4 id="554-menú-contextual-de-un-track">5.5.4 Menú contextual de un track</h4>
+<div class="tw"><table><thead><tr><th>Opción</th><th>Nota</th></tr></thead><tbody><tr><td><em>Sin archivo local — solo preview</em> + <strong>Localizar archivo…</strong></td><td>Solo si falta el fichero</td></tr><tr><td><strong>Reproducir</strong> (<code>Enter</code>)</td><td>Si no hay fichero local, suena el preview de 6 s del servidor</td></tr><tr><td><strong>Preview 6s</strong></td><td>Fuerza el snippet corto</td></tr><tr><td><strong>Re-analizar</strong></td><td>Solo en biblioteca. Con varios seleccionados, en lote</td></tr><tr><td><strong>Limpiar metadata</strong></td><td>Identificación con AudD. Requiere fichero local</td></tr><tr><td><strong>Añadir/Quitar de favoritos</strong> (<code>F</code>)</td><td></td></tr><tr><td><strong>Editar metadata</strong> (<code>E</code>)</td><td>Individual</td></tr><tr><td><strong>Batch Edit (N tracks)</strong></td><td>Con 2+ seleccionados: género, tipo y tags a la vez</td></tr><tr><td><strong>Edit Notes</strong></td><td>Notas privadas y comunitarias</td></tr><tr><td><strong>Asignar a carpeta</strong></td><td></td></tr><tr><td><strong>Añadir a sesión</strong></td><td></td></tr><tr><td><strong>Exportar</strong></td><td></td></tr><tr><td><strong>Info del track</strong> (<code>I</code>)</td><td>Ficha completa</td></tr><tr><td><strong>Abrir en explorador</strong></td><td>Abre el Finder/Explorador en el fichero</td></tr><tr><td><strong>Copiar info</strong> (<code>Ctrl+C</code>)</td><td>Artista, título, BPM, key y género al portapapeles</td></tr><tr><td><strong>Quitar de carpetas · &lt;nombre&gt;</strong></td><td>Solo si estás filtrando por una carpeta. Saca de <strong>esa</strong> carpeta</td></tr><tr><td><strong>Eliminar</strong> (<code>Supr</code>)</td><td>Solo en vista completa. Borra de la biblioteca</td></tr></tbody></table></div>
+<p class="callout">⚠️ <strong>Eliminar no borra el fichero del disco.</strong> Saca el track de la biblioteca, lo quita de carpetas, favoritos y sesiones, y <strong>manda el borrado a tus otros dispositivos</strong>. Se puede recuperar de la <strong>papelera durante 30 días</strong>.</p>
+<h4 id="555-la-barra-de-estado">5.5.5 La barra de estado</h4>
+<p>Abajo: <code>N tracks</code> (o <code>N seleccionados</code>) · <code>de M total</code> · duración total · BPM medio.</p>
+<p>Si hay tracks ocultos, aparece un icono con el motivo exacto: <em>"N ocultos por: búsqueda, favoritos, carpeta…"</em>. Si no hay motivo conocido, el icono se vuelve rojo: puede haber entradas corruptas en la caché.</p>
+<h4 id="556-los-banners-de-la-biblioteca">5.5.6 Los banners de la biblioteca</h4>
+<p>Aparecen encima de la tabla y <strong>solo cuando hacen falta</strong>:</p>
+<div class="tw"><table><thead><tr><th>Banner</th><th>Cuándo</th><th>Qué ofrece</th></tr></thead><tbody><tr><td><strong>Metadata sucia</strong></td><td>Hay tracks con "Unknown", "Track 01", <code>[Free DL]</code>, snake_case, títulos igual que el fichero, caracteres raros…</td><td>Botón <strong>Limpiar metadata</strong> · <strong>X</strong> para descartar</td></tr><tr><td><strong>Análisis pendiente</strong></td><td>Cerraste la app a mitad de un análisis</td><td><strong>Reanudar</strong> la cola</td></tr><tr><td><strong>Tu biblioteca ha mejorado</strong></td><td>Otros DJs trabajaron temas que tú también tienes</td><td>Ver qué llegó</td></tr><tr><td><strong>La colección ha cambiado</strong></td><td>El XML de Rekordbox/Traktor que importaste se ha vuelto a exportar</td><td>Abrir el importador (<strong>no reimporta solo</strong>)</td></tr><tr><td><strong>Llévatela al móvil</strong></td><td>Ya tienes biblioteca de verdad y ningún otro aparato vinculado</td><td><strong>Código QR</strong> que lleva a la tienda y al código de vinculación</td></tr><tr><td><strong>Mezclas del día</strong></td><td>Siempre que haya material</td><td>Parejas de temas <strong>de tu propia biblioteca</strong> que mezclan bien, priorizando los que nunca has usado. Cambia cada día</td></tr></tbody></table></div>
+<h3 id="56-importar">5.6 Importar</h3>
+<h4 id="561-audio-suelto-o-carpetas">5.6.1 Audio suelto o carpetas</h4>
+<ul><li><strong>Arrastrar y soltar</strong>: acepta ficheros y carpetas; recorre las carpetas y filtra por extensión.</li><li><strong>Importar</strong> (<code>Ctrl+O</code>): selector de ficheros.</li><li><strong>Carpeta</strong>: selector de carpeta; escanea recursivamente mostrando un contador mientras busca (un HDD externo grande tarda).</li></ul>
+<p>Si la carpeta está en una unidad externa no registrada, la app <strong>ofrece registrarla como volumen portátil</strong> (ver <a href="#76-volúmenes-portátiles-hdd--usb">§7.6</a>).</p>
+<p><strong>El overlay de progreso</strong> es una ventanita flotante que puedes <strong>arrastrar</strong> a donde quieras (recuerda la posición) y que muestra:</p>
+<ul><li>Estado: <em>Preparando lote… N archivos</em> → <em>Analizando N/M</em> → <em>Optimizando N/M</em> → <em>Completado – N tracks</em></li><li>Fase actual: <em>Procesando en la nube…</em> / <em>Analizando espectro local…</em></li><li>Botones: <strong>Pausar / Reanudar</strong> (<code>Ctrl+Shift+P</code>), <strong>Cancelar</strong>, <strong>Ver detalles</strong>, <strong>Colapsar</strong></li></ul>
+<p>Si cancelas, te dice cuántos se completaron y confirma que <strong>los ya analizados se conservan</strong>. Si el ordenador se suspende a mitad, al despertar avisa por si el análisis se ha quedado colgado.</p>
+<p><strong>El resumen final</strong> separa tres cosas: <strong>ANALIZADOS</strong> · <strong>YA ESTABAN</strong> · <strong>FALLADOS</strong>, con acceso a la lista completa de fallos. Si el análisis fue a la nube pudiendo ser local, te lo dice.</p>
+<h4 id="562-traer-tu-biblioteca-de-otro-software-dj">5.6.2 Traer tu biblioteca de otro software DJ</h4>
+<p>Botón <strong>DJ</strong> de la barra, o <em>Archivo → Importar biblioteca…</em>, o la paleta de comandos. Formatos:</p>
+<div class="tw"><table><thead><tr><th>Formato</th><th>Extensión</th><th>Qué trae</th></tr></thead><tbody><tr><td><strong>Rekordbox XML</strong></td><td><code>.xml</code></td><td>Tracks, cues, BPM, key, género</td></tr><tr><td><strong>Traktor NML</strong></td><td><code>.nml</code></td><td>Tracks, cues, BPM, key, género</td></tr><tr><td><strong>iTunes / Apple Music</strong></td><td><code>.xml</code></td><td>Tracks, género y BPM (+ playlists). La key y los cues los genera el análisis</td></tr><tr><td><strong>VirtualDJ</strong></td><td><code>.xml</code></td><td>Tracks, cues, BPM, key, género (base de datos o playlist exportada)</td></tr></tbody></table></div>
+<p>El asistente tiene estos controles:</p>
+<ul><li><strong>DATOS A IMPORTAR</strong> (marcables uno a uno): Importar BPM · Importar Key · Importar Género · Importar Cues · <strong>Traer tracks que no tengo</strong> · <strong>Playlists</strong>.</li><li><strong>MODO DE CONFLICTO</strong>: <em>Solo nuevos</em> (no reemplaza lo que ya tienes) o <em>Sobreescribir</em>.</li><li><strong>Añadir a carpeta</strong>: sin carpeta, una existente, o <strong>crear nueva</strong>.</li><li>Lista de <strong>TRACKS ENCONTRADOS</strong> con selección individual (Todos / Ninguno).</li></ul>
+<p>Al terminar enseña un resumen honesto, incluida la sección <strong>LO QUE NO SE IMPORTÓ</strong>, que separa tres motivos distintos:</p>
+<ul><li><em>N tracks tuyos no aparecen en el XML</em></li><li><em>N casaron con el XML, pero su entrada no traía BPM, tonalidad ni género</em></li><li><em>N traían datos que no mejoraban lo que ya tenías</em></li></ul>
+<p>Si el XML apunta a ficheros que tienes en disco y aún no están analizados, te ofrece <strong>analizarlos</strong> ahí mismo.</p>
+<p><strong>Playlists</strong>: recrea el árbol de playlists como carpetas, respetando subcarpetas, <strong>por ruta completa</strong> (dos "Techno" en ramas distintas no se fusionan) y reutilizando las que ya existan (reimportar no duplica).</p>
+<h4 id="563-tracks-sin-audio-fichas-fantasma">5.6.3 Tracks sin audio ("fichas fantasma")</h4>
+<p>Con <strong>"Traer tracks que no tengo"</strong> activado (por defecto), los temas del XML que no tienes en local <strong>no se descartan</strong>: se crean como <strong>fichas sin audio</strong> con todo lo que traiga el XML (BPM, tonalidad, género, año, duración, cues).</p>
+<ul><li><strong>No suenan</strong>, pero se ven, se filtran, se ordenan y se usan en el Flow Designer y en sesiones.</li><li>Tienen id estable: reimportar el mismo XML <strong>no duplica</strong>.</li><li>Si más adelante consigues el fichero de verdad y lo analizas, <strong>la ficha se fusiona con el track real</strong>: adopta lo que sabía del XML y le cede sus cues, carpetas y ediciones.</li><li>Se <strong>rellenan solas</strong> por artista+título desde la memoria colectiva (energía, estructura, duración, tipo, cues), y mejoran BPM/key/género solo si suben de fiabilidad. Si el BPM de la comunidad no cuadra con el del XML (ni en relación mitad/doble, con 6 % de tolerancia), <strong>se descarta todo</strong>: el match por nombre es difuso y casi seguro es otra versión.</li></ul>
+<p class="callout">⚠️ Las fichas sin audio están <strong>aisladas de la memoria colectiva por sonido</strong>: sin fichero no hay huella, así que no generan preview, no se analizan y no entran en el backfill. Es a propósito.</p>
+<h4 id="564-imports-fallidos">5.6.4 Imports fallidos</h4>
+<p><em>Ajustes → Mis Datos → Imports fallidos</em> (aparece solo si hay alguno). Lista con el motivo exacto:</p>
+<p>Archivo de audio corrupto · Archivo no encontrado en disco · Sin conexión al backend · Límite de peticiones alcanzado · Error del servidor (5xx) · Tiempo agotado del backend · Archivo demasiado grande · Track demasiado corto · Error desconocido.</p>
+<p>Acciones: <strong>Re-intentar</strong> (uno o todos los visibles), <strong>abrir la carpeta del archivo</strong>, <strong>quitar de la lista</strong>, <strong>vaciar la lista</strong>.</p>
+<h3 id="57-editar-un-track">5.7 Editar un track</h3>
+<h4 id="571-el-diálogo-de-edición-e">5.7.1 El diálogo de edición (<code>E</code>)</h4>
+<p>Campos editables, cada uno mostrando <strong>el valor original</strong> al lado para que sepas qué estás cambiando:</p>
+<ul><li><strong>Título</strong> y <strong>Artista</strong></li><li><strong>Género</strong> — selector por familias (Techno, House, Trance, D&amp;B, Dubstep, Hard Dance, Electro, Disco &amp; Funk, Ambient, EDM, Synthwave, Industrial, Hip Hop, Latin Urban, Rock, Indie, Punk, Metal, Pop, R&amp;B, Jazz, Blues, Country, Reggae, Caribbean, Latin, African, Asian, World, Classical, Soundtrack, Experimental, Spoken) con <strong>buscador</strong> y más de 400 subgéneros</li><li><strong>BPM</strong> (valor absoluto)</li><li><strong>Camelot / tonalidad</strong> (desplegable 1A–12B)</li><li><strong>Año</strong></li><li><strong>Energía</strong> (BAJA / MEDIA / ALTA / MUY ALTA)</li><li><strong>Tipo</strong> de track</li><li><strong>Notas DJ</strong></li><li><strong>Tags</strong></li></ul>
+<p>Extras: <strong>Identificar track</strong> (consulta online y propone artista/título/álbum/ sello, con confianza), <strong>Restaurar original</strong>, <strong>Copiar ruta</strong>, y una <strong>pista de consenso</strong> cuando la comunidad tiene un valor distinto para ese campo (con botón para aplicarlo).</p>
+<h4 id="572-notas">5.7.2 Notas</h4>
+<p>Dos pestañas, y la diferencia importa:</p>
+<ul><li><strong>Privada</strong> — <em>"Solo tú la ves — se sincroniza entre tus dispositivos"</em>.</li><li><strong>Comunidad</strong> — <em>"Compartidas con todos los DJs · agrupadas por sonido"</em>. Si el track aún no tiene huella acústica, te lo dice y explica por qué no puede compartirse.</li></ul>
+<h4 id="573-limpiar-metadata-audd">5.7.3 Limpiar metadata (AudD)</h4>
+<p>Identifica el tema por su audio y propone artista/título correctos. Se lanza desde el banner de metadata sucia o desde el menú contextual.</p>
+<p>El flujo completo:</p>
+<ol><li>Si ya limpiaste algunos de esos tracks y su metadata está bien, <strong>avisa antes de gastar cuota</strong>: <em>Saltar los ya limpios</em> / <em>Limpiar todos igualmente</em>.</li><li>Procesa en cola (puedes seguir añadiendo tracks: se encolan en la tanda en marcha) con un <strong>overlay de progreso</strong> <em>Identificando… N/M</em>.</li><li>Muestra una tabla <strong>ACTUAL → PROPUESTA</strong> donde marcas qué aceptar: <strong>Aplicar todo</strong> o <strong>Aplicar seleccionados</strong>.</li><li>Al final da un desglose honesto que <strong>separa causas que piden acciones distintas</strong>: - <em>N sin reconocer</em> (AudD no lo conoce) - <em>N propuestas descartadas</em> (AudD acertó pero la app lo consideró basura) - <em>N ya estaban bien</em> - <em>N rechazadas por ti</em> - <em>N demasiado largos</em> — AudD identifica pistas de hasta 12 minutos; un mix de una hora no se identifica ni gastando la llamada - <em>N con error</em> (red, fichero inaccesible) - <em>cupo diario agotado</em></li></ol>
+<p class="callout">⚠️ <strong>El cupo de identificación es diario y COMPARTIDO entre todos los usuarios</strong>, así que puede agotarse sin que tú lo hayas gastado. Cuando pasa, la app te dice a qué hora vuelve a cero <strong>en tu hora local</strong> y que los pendientes <strong>siguen marcados para reintentar</strong>.</p>
+<p><strong>Historial de limpieza</strong> (<em>Ajustes → Mis Datos</em>): una entrada por propuesta con ORIGINAL vs PROPUESTO y su estado (Aceptado / Rechazado / Descartado), filtrable y buscable — y encima, el resumen de <strong>las últimas tandas</strong> con cuántos tracks pasaron y qué pasó con los que no dieron propuesta.</p>
+<p><strong>Tracks descartados de limpieza</strong> (<em>Ajustes → Mis Datos</em>): los que quitaste del banner con la X. Puedes <strong>reintentar la limpieza</strong> o <strong>restaurarlos todos</strong>.</p>
+<h3 id="58-la-ficha-del-track-i">5.8 La ficha del track (<code>I</code>)</h3>
+<p>Ventana con la portada difuminada de fondo y cinco bloques:</p>
+<ul><li><strong>Técnico</strong> — BPM, tonalidad, Camelot, energía, tipo, duración, confianza, fecha de análisis y <strong>origen</strong> de cada dato (con "Sin determinar" cuando no se sabe, en vez de inventarlo).</li><li><strong>Metadatos</strong> — artista, título, álbum, sello, año, género.</li><li><strong>Organización</strong> — carpetas y colecciones a las que pertenece.</li><li><strong>Archivo</strong> — ruta, y un estado claro entre cuatro: <em>El fichero está en esta ruta</em> · <em>No está en esa ruta: movido, renombrado o borrado</em> · <em>Sin fichero aquí — llegó de otro dispositivo</em> · <em>En un volumen portátil que no está conectado</em>.</li><li><strong>Estructura</strong> — mini-línea de tiempo con las secciones detectadas.</li></ul>
+<p>Incluye <strong>MI NOTA PRIVADA</strong>, la sección de <strong>COMUNIDAD</strong> (notas, valoraciones, número de DJs) y botones de reproducir, favorito, copiar info, editar metadata y abrir en el explorador.</p>
+<p class="callout tip">💡 Abrir la ficha es lo que <strong>dispara la mejora automática por memoria colectiva</strong> de ese track (si el toggle de Ajustes está activo).</p>
+<h3 id="59-el-waveform">5.9 El waveform</h3>
+<p>Se abre desde el botón del reproductor. Dos formas: <strong>mini</strong> (dentro de la barra del reproductor, clicable para navegar) y <strong>expandido</strong>.</p>
+<p><strong>Barra de herramientas del waveform expandido:</strong></p>
+<ul><li>Etiqueta de <strong>origen</strong> de la forma de onda, con cuatro valores: <strong>FFT REAL</strong> (calculado en tu ordenador, verde), <strong>FFT SERVER</strong> (calculado por el servidor, azul), <strong>SINTÉTICO</strong> (dibujo aproximado, rojo) y <strong>SIN DATOS</strong>.</li><li><strong>Comunidad</strong> — pinta las zonas marcadas por otros DJs (mix-in, mix-out, drops más usados) con su contador.</li><li><strong>Beats</strong> — muestra la rejilla. Al activarlo aparecen los controles de <strong>BPM ±0,01</strong>, <strong>offset ±2 ms</strong> y <strong>Tap BPM</strong>.</li><li><strong>Cues</strong> — muestra/oculta tus cues, con contador.</li><li><strong>Botones de tipo de cue</strong> (uno por tipo) y <strong>modo de snap</strong>.</li><li>Duración y BPM medio.</li><li><strong>Zoom</strong> −/+ con el nivel actual, <strong>ajustar a pantalla</strong>, y <strong>seguir cabezal</strong> (auto-scroll durante la reproducción).</li><li><strong>Panel de cues</strong> (<code>P</code>) y <strong>cerrar</strong>.</li></ul>
+<p><strong>Zonas de abajo</strong>: rejilla de <strong>hot cues A–H</strong> (click salta al cue) y <strong>minimapa</strong> para moverte por el track cuando estás con zoom.</p>
+<h4 id="591-cue-points">5.9.1 Cue points</h4>
+<p>Ocho tipos, cada uno con color, icono y atajo:</p>
+<div class="tw"><table><thead><tr><th>Tipo</th><th>Atajo</th><th>Color</th><th>Para qué</th></tr></thead><tbody><tr><td><strong>Mix In</strong></td><td><code>I</code></td><td>Verde</td><td>Dónde empezar a mezclar este track</td></tr><tr><td><strong>Mix Out</strong></td><td><code>O</code></td><td>Rojo</td><td>Dónde empezar a salir</td></tr><tr><td><strong>Drop</strong></td><td><code>D</code></td><td>Amarillo</td><td>El impacto principal</td></tr><tr><td><strong>Breakdown</strong></td><td><code>B</code></td><td>Azul</td><td>Inicio del momento tranquilo</td></tr><tr><td><strong>Vocal</strong></td><td><code>V</code></td><td>Púrpura</td><td>Entrada de voz importante</td></tr><tr><td><strong>Build-up</strong></td><td><code>U</code></td><td>Naranja</td><td>Inicio de la subida</td></tr><tr><td><strong>Loop</strong></td><td><code>L</code></td><td>Blanco</td><td>Región con inicio <strong>y</strong> fin</td></tr><tr><td><strong>Custom</strong></td><td><code>C</code></td><td>Gris</td><td>El que tú definas (nombre y color propios)</td></tr></tbody></table></div>
+<p><strong>Cómo se ponen:</strong></p>
+<ul><li>Pulsa la tecla del tipo (o su botón) y <strong>haz click en el waveform</strong> donde lo quieras. <code>Esc</code> cancela.</li><li>O <strong>click derecho</strong> sobre el waveform → <em>AÑADIR CUE</em> → tipo.</li></ul>
+<p><strong>Modos de snap</strong> (<code>S</code> para cambiar):</p>
+<div class="tw"><table><thead><tr><th>Modo</th><th>Comportamiento</th></tr></thead><tbody><tr><td><strong>LIBRE</strong></td><td>Exactamente donde hagas click</td></tr><tr><td><strong>BEAT</strong></td><td>Se ajusta al beat más cercano según el BPM</td></tr><tr><td><strong>COMPÁS</strong></td><td>Se ajusta al compás más cercano (4 beats)</td></tr></tbody></table></div>
+<p><strong>Sobre un cue existente</strong> (click derecho): <strong>Editar nota…</strong> o <strong>Eliminar</strong>. Seleccionado, <code>Supr</code> o <code>Retroceso</code> lo borra. Los cues se pueden <strong>arrastrar</strong>.</p>
+<p><strong>Notas de cue</strong>: cada cue admite una nota larga ("Mezclar en bajos, cuidado con el vocal"). Al guardarla hay una casilla: <strong>Compartir esta nota con la comunidad</strong>. El aviso lo deja claro: <em>"La posición del cue siempre se comparte. El texto solo si marcas esto."</em></p>
+<p><strong>Panel de cues</strong> (<code>P</code>): lista con posición exacta, nota, editar y <strong>Borrar todos</strong>.</p>
+<h3 id="510-el-reproductor">5.10 El reproductor</h3>
+<p>Barra inferior con:</p>
+<ul><li>Portada, título y artista del track en curso</li><li><strong>BPM</strong> en grande con color según valor, <strong>Camelot</strong> con la nota debajo, indicadores de cue e indicador de energía</li><li>Controles: <strong>Aleatorio</strong> (<code>S</code>) · <strong>Anterior</strong> · <strong>Play/Pausa</strong> (<code>Espacio</code>) · <strong>Siguiente</strong> · <strong>Repetir</strong> (<code>R</code>, cicla entre off / uno / todos)</li><li><strong>Mini waveform</strong> clicable para navegar (sustituye a la barra de progreso)</li><li>Tiempo: click para alternar entre <strong>transcurrido</strong> y <strong>restante</strong></li><li><strong>Volumen</strong> con botón de silencio</li><li><strong>Expandir waveform</strong></li></ul>
+<p>La <strong>cola</strong> de reproducción es siempre <strong>lo que ves filtrado y ordenado</strong>: si buscas o filtras, siguiente/anterior respetan esa lista.</p>
+<p class="callout">⚠️ <strong>Si no tienes el fichero, el track suena igual</strong>: la app cae al preview de 6 segundos del servidor. La fila lo indica con <em>"Sin archivo local — solo preview"</em>.</p>
+<h3 id="511-smart-suggest">5.11 Smart Suggest</h3>
+<p>Panel lateral derecho (botón <strong>Suggest</strong> de la barra o del sidebar). Propone el <strong>siguiente track ideal</strong> a partir de una referencia. Está disponible en <strong>cualquier</strong> plantilla de multipantalla, no solo en la vista simple.</p>
+<p><strong>Cómo elige la referencia:</strong> el track que está sonando, o el que fijes tú con <strong>Fijar como referencia</strong> (doble click en cualquier track de la biblioteca).</p>
+<p><strong>Cómo puntúa</strong> (0–100):</p>
+<div class="tw"><table><thead><tr><th>Factor</th><th>Peso</th><th>Detalle</th></tr></thead><tbody><tr><td><strong>BPM</strong></td><td>30</td><td>Dentro de la tolerancia. Mitad/doble tempo suma 20</td></tr><tr><td><strong>Tonalidad</strong></td><td>30</td><td>Compatibilidad Camelot</td></tr><tr><td><strong>Energía</strong></td><td>25</td><td>Dentro de la tolerancia</td></tr><tr><td><strong>Género</strong></td><td>15</td><td>Igual &gt; subgénero &gt; familia relacionada</td></tr><tr><td>Secuencia lógica de tipo</td><td>+5</td><td>Ej.: warmup → builder → peak</td></tr><tr><td>Mismo artista</td><td>−15</td><td>Para forzar variedad</td></tr><tr><td>Rechazado antes</td><td>−20</td><td>Aprende de tus rechazos</td></tr><tr><td>Aceptado antes</td><td>+3</td><td></td></tr></tbody></table></div>
+<p><strong>Controles del panel:</strong> tolerancia de <strong>BPM ±</strong>, de <strong>Energía ±</strong>, y modo de <strong>Key</strong>: <em>Camelot</em> (compatibles), <em>Todas</em>, o modo estricto de adyacencia. También un <strong>alcance</strong>: toda la biblioteca o solo unas carpetas.</p>
+<p>Cada sugerencia explica <strong>por qué</strong> en lenguaje llano: <em>BPM idéntico · Key compatible · Sube energía · Subgénero · Flujo → peak…</em>, y tiene botones de <strong>Aceptar</strong> / <strong>Rechazar</strong> (que alimentan el aprendizaje), <strong>Reproducir</strong>, <strong>Preview 6s</strong>, <strong>Añadir a sesión</strong>, <strong>Asignar a carpeta</strong> y <strong>Editar metadata</strong>.</p>
+<h3 id="512-smart-collections">5.12 Smart Collections</h3>
+<p>Playlists <strong>dinámicas</strong>: defines reglas y los tracks entran y salen solos según importas.</p>
+<p><strong>Tipos de regla:</strong></p>
+<div class="tw"><table><thead><tr><th>Regla</th><th>Qué filtra</th></tr></thead><tbody><tr><td><strong>Rango de BPM</strong></td><td>mín–máx</td></tr><tr><td><strong>Keys específicas</strong></td><td>conjunto de códigos Camelot</td></tr><tr><td><strong>Compatible con key</strong></td><td>una key de referencia + sus compatibles Camelot</td></tr><tr><td><strong>Nivel de energía</strong></td><td>Baja / Media / Alta / Muy Alta</td></tr><tr><td><strong>Género musical</strong></td><td>uno o varios géneros</td></tr><tr><td><strong>Tipo de track</strong></td><td>Opener, Warmup, Builder, Peak Time, Anthem, Cooldown, Closing</td></tr><tr><td><strong>Artista contiene</strong></td><td>texto</td></tr><tr><td><strong>Título contiene</strong></td><td>texto</td></tr><tr><td><strong>Duración</strong></td><td>rango</td></tr><tr><td><strong>Fecha de importación</strong></td><td>Hoy · Última semana · Último mes · Últimos 3/6 meses · Último año</td></tr><tr><td><strong>Tags</strong></td><td>uno o varios de tus tags</td></tr></tbody></table></div>
+<p><strong>Lógica</strong>: <code>Y</code> (el track debe cumplir <strong>todas</strong> las reglas) o <code>O</code> (le basta con <strong>cualquiera</strong>). Dentro de una regla, los valores se combinan con O.</p>
+<p>Cada colección tiene <strong>nombre</strong>, <strong>color</strong> (10 opciones) e <strong>icono</strong> (12 opciones).</p>
+<p><strong>Presets</strong> listos para usar: <strong>Peak Time Bangers</strong>, <strong>Warmup Vibes</strong>, <strong>Recent</strong> (últimos 7 días) y <strong>Melodic Techno</strong>.</p>
+<p>La pantalla muestra la lista de colecciones a la izquierda y sus tracks a la derecha, con cabecera <em>"N tracks · M reglas · Auto-actualizada"</em>, y botones de <strong>Nueva</strong>, <strong>Editar</strong>, <strong>Eliminar</strong>, <strong>Exportar</strong> y añadir a sesión.</p>
+<h3 id="513-rueda-de-camelot">5.13 Rueda de Camelot</h3>
+<p>Rueda interactiva de 24 segmentos: exterior <strong>Mayor (B)</strong>, interior <strong>Menor (A)</strong>. Cada segmento se colorea según cuántos tracks tienes en esa tonalidad y con qué energía media.</p>
+<ul><li><strong>Click</strong> en un segmento: abre el panel con los tracks de esa key, ordenados por BPM, y muestra las <strong>keys compatibles</strong>.</li><li>Cabecera: total de tracks, <strong>keys cubiertas</strong> y <strong>zonas muertas</strong> (keys en las que no tienes nada). El aviso es literal: <em>"Dead zone: necesitas material en X"</em>.</li><li>Respeta la <strong>fuente activa del árbol</strong> (biblioteca completa, favoritos, una carpeta o una carpeta del disco).</li><li>Los tracks del panel tienen el mismo menú contextual que la biblioteca.</li></ul>
+<h3 id="514-flow-designer">5.14 Flow Designer</h3>
+<p>Planifica un set como un <strong>viaje de energía</strong>.</p>
+<pre><code>┌──────────────────────────────────────────────┬───────────┐
+│  Toolbar: templates · orden · zoom · guardar │           │
+├──────────────────────────────────────────────┤  PANEL    │
+│                                              │  DE       │
+│   [Nodo1]──[Nodo2]──[Nodo3]──[Nodo4]         │  SESIÓN   │
+│   (altura del nodo = su energía)             │           │
+└──────────────────────────────────────────────┴───────────┘</code></pre>
+<ul><li>Cada track es un <strong>nodo</strong>; su <strong>altura en el lienzo es su energía</strong>.</li><li>Entre nodos se dibuja la <strong>conexión</strong> con su <strong>puntuación de transición</strong> (0–100) y una etiqueta: <strong>Perfecta · Buena · Aceptable · Difícil</strong>.</li><li>Pasando el ratón por una conexión sale el consejo concreto: <em>Mezcla perfecta — Keys compatibles y BPM cercano</em> · <em>Usa EQ para suavizar el cambio armónico</em> · <em>Cambio armónico fuerte — Mezcla en frecuencias bajas</em> · <em>BPM muy diferente (X) — Usa breakdown</em> · <em>Transición difícil — Considera reordenar o usar efecto</em>.</li></ul>
+<p><strong>Cómo se puntúa una transición (0–100):</strong> armonía Camelot 40 · diferencia de BPM 30 (≤3 → 30 pts, ≤6 → 20, ≤10 → 10) · progresión de energía 30 (≤1 → 30, ≤2 → 20, ≤3 → 10).</p>
+<p><strong>Añadir tracks</strong>: arrastrándolos desde la biblioteca, o con el <strong>selector</strong> que tiene buscador, filtro por carpetas y favoritos, y selección múltiple.</p>
+<p><strong>Modos de orden:</strong></p>
+<div class="tw"><table><thead><tr><th>Modo</th><th>Qué hace</th></tr></thead><tbody><tr><td><strong>Sugerido IA</strong></td><td>Empieza por el de menor energía y construye la cadena maximizando BPM + armonía + subida gradual de energía</td></tr><tr><td><strong>Por energía</strong></td><td>Agrupa por tipo (warmup → peak → closing) y ordena por energía</td></tr><tr><td><strong>Por armonía</strong></td><td>Cadena greedy de mejor compatibilidad Camelot</td></tr><tr><td><strong>Por BPM</strong></td><td>Ascendente</td></tr><tr><td><strong>Manual</strong></td><td>El que tú arrastres</td></tr></tbody></table></div>
+<p><strong>Auto-optimizar</strong> prueba los cuatro modos, puntúa el set entero (40 % transiciones, 30 % energía, 30 % BPM) y se queda con el mejor.</p>
+<p><strong>Plantillas de energía</strong> — reordenan el set para que su curva se parezca a un perfil típico:</p>
+<div class="tw"><table><thead><tr><th>Plantilla</th><th>Curva</th></tr></thead><tbody><tr><td><strong>Festival Main Stage</strong></td><td>Arranque potente, picos sostenidos, cierre energético</td></tr><tr><td><strong>Club Night</strong></td><td>Warm-up gradual, picos progresivos, cooldown suave</td></tr><tr><td><strong>Warm-up 2h</strong></td><td>Energía baja, subida muy gradual</td></tr><tr><td><strong>After-hours</strong></td><td>Atmosférico, hipnótico, energía media-baja constante</td></tr><tr><td><strong>Progressive Journey</strong></td><td>Ascenso constante con mini-breaks</td></tr><tr><td><strong>Peak Hour</strong></td><td>Energía máxima sostenida</td></tr></tbody></table></div>
+<p>La app también <strong>detecta sola</strong> a cuál se parece tu set y lo enseña.</p>
+<p><strong>Lienzo</strong>: zoom con la rueda (centrado en el puntero), arrastrar para desplazar, mover nodos, y toggles de <strong>Grid</strong>, <strong>Curva</strong> de energía y <strong>Links</strong>.</p>
+<p><strong>Panel de sesión</strong>: la lista en orden, el <strong>SET SCORE</strong> global con su desglose de armonía y energía, y las transiciones una a una.</p>
+<p><strong>Guardar / cargar</strong>: nombra la sesión y guárdala; puedes cargar cualquiera de las guardadas. Recuerda la última sesión abierta. También se puede <strong>compartir</strong> y <strong>exportar</strong> directamente.</p>
+<h3 id="515-historial">5.15 Historial</h3>
+<p>Tres pestañas:</p>
+<ol><li><strong>SESIONES</strong> — tus sesiones guardadas, con sus stats DJ. Acciones: <strong>Abrir en Flow</strong>, <strong>Exportar</strong>, <strong>Eliminar</strong>, y ver la lista de tracks.</li><li><strong>REPRODUCCIÓN</strong> — qué has reproducido y cuándo, agrupado por HOY / AYER / fecha. Acciones por fila: reproducir, copiar info, buscar en biblioteca, quitar del historial. Y <strong>Limpiar historial</strong>.</li><li><strong>DETECCIONES</strong> — los temas identificados con <strong>Escuchar</strong> desde el móvil, que se sincronizan aquí. Cada tarjeta se despliega y muestra: - Datos DJ (género, energía, BPM, Camelot, tipo) y estructura - <strong>Compatibilidad de mezcla</strong> con lo que estés escuchando (%) - <strong>Popularidad</strong> entre DJs - Si está <strong>EN MI BIBLIOTECA</strong> o <strong>EN LA NUBE</strong> - Acciones: <strong>Añadir a sesión</strong>, <strong>Ir a biblioteca</strong>, <strong>Favorito</strong>, <strong>Copiar info DJ</strong>, <strong>Abrir en Spotify</strong>, <strong>Buscar en YouTube</strong>, <strong>Buscar en Beatport</strong>, preview - Botón <strong>Sync</strong> para traer las detecciones nuevas del móvil</li></ol>
+<h3 id="516-analytics">5.16 Analytics</h3>
+<p>Estadísticas de toda la biblioteca:</p>
+<ul><li><strong>Cinco tarjetas</strong>: Tracks · Duración Total · BPM Medio · Géneros · Tonalidades</li><li><strong>Distribución de BPM</strong> (histograma)</li><li><strong>Top Géneros</strong> (clicable: te lleva a la biblioteca filtrada por ese género)</li><li><strong>Distribución de Energía</strong></li><li><strong>Tonalidades (Camelot)</strong></li><li><strong>Tipo de Track</strong></li><li><strong>Sesiones Guardadas</strong> con su resumen</li></ul>
+<p>Dos exportaciones desde aquí: <strong>Exportar Biblioteca</strong> (formatos de datos) y <strong>PDF Report</strong> — un informe maquetado con resumen de biblioteca, histograma de BPM, distribución de energía, tonalidades, tipos, top géneros, set list y viaje armónico.</p>
+<h3 id="517-exportar">5.17 Exportar</h3>
+<p><code>Ctrl+E</code>, o desde el menú contextual, Analytics, Collections o Flow.</p>
+<div class="tw"><table><thead><tr><th>Formato</th><th>Extensión</th><th>Destino</th><th>Lleva cues</th></tr></thead><tbody><tr><td><strong>Rekordbox XML</strong></td><td><code>.xml</code></td><td>Pioneer Rekordbox</td><td>✅ (hasta 8 hot cues)</td></tr><tr><td><strong>Traktor NML</strong></td><td><code>.nml</code></td><td>Native Instruments Traktor</td><td>✅ (hasta 8)</td></tr><tr><td><strong>VirtualDJ</strong></td><td><code>.xml</code></td><td>VirtualDJ (POIs)</td><td>✅</td></tr><tr><td><strong>Serato CSV</strong></td><td><code>.csv</code></td><td>Serato DJ Pro/Lite</td><td>❌</td></tr><tr><td><strong>M3U Playlist</strong></td><td><code>.m3u8</code></td><td>VLC, Winamp, cualquier reproductor</td><td>❌</td></tr><tr><td><strong>CSV Analytics</strong></td><td><code>.csv</code></td><td>Excel / Google Sheets</td><td>✅ (columnas mix in / drop / mix out + notas)</td></tr></tbody></table></div>
+<p>El diálogo permite elegir <strong>nombre de archivo</strong>, <strong>carpeta de destino</strong> y marcar <strong>Incluir CueFlow cues</strong>. Por defecto va a Descargas.</p>
+<p class="callout stop">❌ <strong>Energía, estructura y forma de onda propias no viajan</strong> en la exportación: esos formatos no tienen campo para ellas. Es un límite del formato, no un fallo.</p>
+<h3 id="518-ajustes">5.18 Ajustes</h3>
+<p>Nueve secciones (la última, oculta).</p>
+<h4 id="sincronización">Sincronización</h4>
+<p>Estado actual con color e icono, y <strong>botón para sincronizar ahora</strong> (o <strong>Reanudar</strong> si está en pausa). Debajo: si el dispositivo está registrado y cuántos hay vinculados, acceso a <strong>Vincular dispositivos</strong>, y <strong>Restaurar desde la nube</strong> (<em>"Trae toda tu biblioteca desde la nube. Úsalo si a este dispositivo le faltan tracks que sí tienes en otro"</em>).</p>
+<p>Aviso permanente: <em>"Se comprueba si hay novedades al abrir la app. La sincronización se lanza manualmente."</em></p>
+<p class="callout">⚠️ Ese texto decía <em>"cada 15 s"</em> hasta la revisión de 2026-09-08 y era falso: la consulta se hace <strong>una vez, al arrancar</strong>. Si dejas la app abierta y trabajas en otro aparato, pulsa el indicador para refrescar.</p>
+<h4 id="copias-de-seguridad">Copias de seguridad</h4>
+<p>Las <strong>dos únicas</strong> formas de deshacer, juntas:</p>
+<ul><li><strong>Puntos de restauración</strong> — una foto completa (tracks, análisis, sesiones, carpetas, colecciones) a una fecha. Se crean <strong>solos antes de publicar y antes de formatear</strong>, y puedes crear uno cuando quieras. Se conservan los 5 más recientes. Volver a uno <strong>también se puede deshacer</strong> (guarda otro antes).</li><li><strong>Papelera</strong> — tracks sueltos que borraste, durante <strong>30 días</strong>. Recuperar uno lo devuelve a tu biblioteca y a tus otros dispositivos.</li></ul>
+<h4 id="análisis">Análisis</h4>
+<p>Cuatro interruptores y un botón:</p>
+<ul><li><strong>Analizar automáticamente al importar</strong></li><li><strong>Mejorar datos automáticamente</strong> — <em>"Corrige BPM, tonalidad y género de tus tracks con el mejor análisis que la comunidad tiene del mismo audio. Solo mejora, nunca empeora tus datos."</em></li><li><strong>Avisarme cuando termine un import grande</strong> — notificación local, <strong>una sola vez en la vida de la instalación</strong> y solo para imports de <strong>50 tracks o más</strong>. El permiso del sistema se pide justo antes de ese primer aviso, no al arrancar. No hay avisos diarios ni recurrentes.</li><li><strong>Compartir correcciones con la comunidad</strong> — tus ediciones de tipo y género cuentan como voto; si bastantes DJs coinciden, el cambio se aplica para todos.</li></ul>
+<p><strong>Restaurar previews</strong> (solo escritorio) — vuelve a comprobar <strong>todos</strong> tus snippets de 6 s contra el servidor y <strong>re-sube los que falten</strong>, ignorando lo que este equipo crea que ya subió. Sirve cuando los previews han dejado de sonar en el móvil o con el disco desconectado: si el servidor perdió los ficheros, el escritorio los daba por subidos y no volvía a mandarlos nunca. Al acabar dice cuántos snippets locales ha verificado.</p>
+<p class="callout">⚠️ Este botón <strong>no existía</strong> hasta el 2026-09-08 aunque el mecanismo sí: era una red de seguridad a la que no se podía llegar desde la app.</p>
+<h4 id="forma-de-onda">Forma de onda</h4>
+<p>Dos paletas de color:</p>
+<ul><li><strong>Rekordbox PWV5</strong> — colores RGB puros estilo CDJ-3000, tabla discreta por banda dominante.</li><li><strong>3Band CDJ</strong> — mezcla aditiva azul/ámbar/blanco, aspecto neón continuo con hot-peak.</li></ul>
+<h4 id="idioma">Idioma</h4>
+<p>Español / English. <strong>El cambio se aplica al instante.</strong></p>
+<h4 id="manual-de-instrucciones">Manual de instrucciones</h4>
+<p>Botón <strong>«Abrir el manual»</strong>: abre este manual en tu navegador. En macOS está además en el menú <strong>Ayuda</strong>, y desde el cuadro de <code>F1</code> con el enlace <strong>«Manual completo»</strong>.</p>
+<h4 id="atajos-de-teclado">Atajos de teclado</h4>
+<p>Lista de referencia (ver <a href="#9-atajos-de-teclado">§9</a>).</p>
+<h4 id="mis-datos">Mis Datos</h4>
+<p>Contadores (tracks analizados, optimizados, sesiones guardadas, tracks detectados) y accesos a <strong>Tracks descartados de limpieza</strong>, <strong>Historial de limpieza metadata</strong>, <strong>Imports fallidos</strong> y <strong>Duplicados</strong>.</p>
+<p>En la build del <strong>Mac App Store</strong> aparece aquí además la tarjeta de <strong>Memoria colectiva</strong> (ver <a href="#84-si-tu-biblioteca-se-queda-fuera-el-backfill">§8.4</a>).</p>
+<p><strong>ZONA DE BORRADO</strong>:</p>
+<div class="tw"><table><thead><tr><th>Acción</th><th>Alcance</th><th>¿Recuperable?</th></tr></thead><tbody><tr><td><strong>Borrar análisis</strong></td><td>Solo este dispositivo. La nube y tus otros aparatos no se tocan</td><td>No pasa por papelera. Se recupera con <em>Restaurar desde la nube</em></td></tr><tr><td><strong>Borrar detecciones</strong></td><td>Solo este dispositivo</td><td>No</td></tr><tr><td><strong>Borrar sesiones</strong></td><td>Solo este dispositivo</td><td>No</td></tr><tr><td><strong>Publicar esta biblioteca</strong></td><td>Ver abajo</td><td>Sí, por el punto de restauración</td></tr><tr><td><strong>RESETEAR ESTE DISPOSITIVO</strong></td><td>Todo lo local</td><td>Sí, por el punto de restauración y por la nube</td></tr></tbody></table></div>
+<p><strong>Publicar esta biblioteca</strong> — declara que <strong>lo que hay en este ordenador es tu biblioteca buena</strong>. Marca como borrado lo que no esté aquí <strong>y sustituye por completo</strong> carpetas, colecciones, ediciones, sesiones, favoritos y cues en tus otros aparatos. Es lo único que limpia carpetas fantasma de una biblioteca anterior. Crea un punto de restauración antes. <strong>Para el día a día no hace falta</strong>: el sync normal ya lleva lo que añades, editas y borras.</p>
+<p><strong>Resetear este dispositivo</strong> — borra biblioteca, sesiones, favoritos, carpetas, colecciones, cues, ediciones y cachés <strong>solo de este aparato</strong>. No toca el servidor. Doble confirmación: primero explica el alcance, luego te hace escribir <strong>FORMATEAR</strong>. Después, <strong>el sync queda en pausa</strong> y el aparato se queda vacío hasta que pulses <em>Restaurar desde la nube</em>.</p>
+<h4 id="acerca-de">Acerca de</h4>
+<p>Nombre, versión, sistema operativo, núcleos, enlace a djanalyzerpro.com y, en las builds distribuibles, <strong>Comprobar actualizaciones</strong>.</p>
+<p><em>(Aquí viven dos gestos ocultos: 10 toques sobre el número de versión activan el <strong>modo desarrollador</strong>; 7 toques rápidos sobre el icono abren el diálogo del <strong>token de administrador</strong>.)</em></p>
+<h4 id="developer-mode-oculto">Developer Mode (oculto)</h4>
+<p>Cambiar la URL del servidor de análisis (con <strong>Test</strong> y <strong>Guardar</strong>), ver servidor/modo/local/token, versión de Dart y del sistema, y dos utilidades de análisis espectral local (procesar pendientes / limpiar caché FFT).</p>
+<h3 id="519-duplicados">5.19 Duplicados</h3>
+<p><em>Ajustes → Mis Datos → Duplicados</em>. Busca <strong>el mismo tema repetido en ficheros distintos</strong> (el FLAC comprado y el MP3 rippeado): bytes distintos, así que ni el MD5 ni el nombre los juntan — <strong>solo los junta la huella acústica</strong>.</p>
+<ul><li>El escaneo arranca solo al entrar y muestra el progreso.</li><li>Separa <strong>dos grupos que no son lo mismo</strong>: <em>Mismo sonido, distinto fichero</em> y <em>Ficheros idénticos</em>.</li><li>Y sobre todo separa <strong>"no lo sé"</strong>: los tracks sin huella acústica (fichas sin audio, o analizados antes de que existiera) se cuentan aparte, con el texto explícito: <em>"Eso es «no lo sé», no «están limpios»"</em>.</li><li><strong>Cuál sobra lo decides tú</strong>: no hay botón de "quitar las peores", porque la app no sabe cuál está en el disco bueno ni cuál lleva los cues del último bolo.</li><li>Puedes <strong>escuchar cada copia</strong> para comparar antes de decidir.</li><li>Borrar quita de la biblioteca, <strong>no del disco</strong>, y vuelve de la papelera durante 30 días.</li></ul>
+<p class="callout">⚠️ Los duplicados <strong>byte a byte ya se resuelven solos</strong> al analizar (se colapsan y migran cues y ediciones al superviviente). Esta pantalla es para los otros.</p>
+<h3 id="520-panel-de-administración">5.20 Panel de administración</h3>
+<p>Solo visible si la build lleva token de admin configurado, o si lo introduces con el gesto oculto de <em>Acerca de</em>. Muestra: lista de usuarios con su resumen de datos (tracks, previews, sesiones, carpetas, colecciones, cues, favoritos, correcciones), errores agrupados por bug único con traceback, actividad en vivo, embudo de producto y exportación a CSV. No forma parte del uso normal.</p>
+<hr>
+<h2 id="6-la-app-de-móvil">6. La app de móvil</h2>
+<h3 id="61-pantalla-principal">6.1 Pantalla principal</h3>
+<p>Arriba, el logo animado <strong>DJ ANALYZER</strong> con el lema <em>Analiza • Organiza • Mezcla</em>. Debajo, las tarjetas:</p>
+<div class="tw"><table><thead><tr><th>Tarjeta</th><th>Qué hace</th></tr></thead><tbody><tr><td><strong>MI BIBLIOTECA</strong></td><td>Abre la lista de tracks. Muestra cuántos llevas analizados</td></tr><tr><td><strong>ESCUCHAR</strong></td><td>Identificar el track que esté sonando</td></tr><tr><td><strong>SESIONES</strong></td><td>Tus sets guardados</td></tr><tr><td><strong>(botón sync)</strong></td><td>Sincronizar con tus otros aparatos</td></tr><tr><td><strong>AÑADIR</strong></td><td>Meter música</td></tr><tr><td><strong>Carpetas</strong></td><td>Tus carpetas</td></tr><tr><td><strong>Collections</strong></td><td>Smart Collections</td></tr><tr><td><strong>Camelot</strong></td><td>Rueda de Camelot</td></tr><tr><td><strong>Analytics</strong></td><td>Estadísticas</td></tr></tbody></table></div>
+<p>Abajo, una tira con las funciones (BPM, Key, Energía, Cues, Collections, Camelot, Sesiones, Sync, Exportar) y la versión.</p>
+<p>Hay <strong>layout específico para horizontal</strong>. Y un <strong>slot de banner</strong> que puede mostrar el aviso de que existe versión de escritorio.</p>
+<h3 id="62-biblioteca">6.2 Biblioteca</h3>
+<p>Cabecera con contador <em>visible / total</em>, y botones de favoritos, filtros, modo de vista, selección múltiple, añadir tracks, generar sesión, info y ordenación (Nombre · Artista · BPM · Tono · Energía · Tipo · Reciente).</p>
+<p><strong>Barra de filtros</strong> (se despliega): buscador, solo favoritos, <strong>Género</strong>, <strong>Energía</strong>, <strong>Tipo</strong>, <strong>rango de BPM</strong>, <strong>Carpeta</strong> y <strong>Origen</strong> (con la lista real de tus dispositivos vinculados, cada uno con su nombre e icono). Botón <strong>Limpiar</strong>.</p>
+<p><strong>Cada track</strong> es una tarjeta con portada, título, artista, BPM, Camelot, energía con color, género, año, sello, álbum, badge <strong>EDITADO</strong> y mini-waveform.</p>
+<p><strong>Toca un track</strong> para reproducirlo. <strong>Mantén pulsado</strong> (o el botón de opciones) para el menú:</p>
+<ul><li><strong>Reproducir preview</strong> · <strong>Añadir/Quitar de sesión</strong> · <strong>Añadir/Quitar de favoritos</strong></li><li><strong>Editar track</strong> · <strong>Género estimado</strong> (corregir género) · <strong>Notas</strong></li><li><strong>Reconocer canción</strong> — <em>"Identificar online (como Shazam)"</em>. Encima te dice <strong>qué datos concretos puede rellenar</strong> (portada, artista, título, álbum, sello, año, género)</li><li><strong>Re-analizar</strong> · <strong>Compartir</strong> (WhatsApp, Telegram…) · <strong>Info del track</strong></li><li><strong>Añadir a carpeta</strong> · <strong>Quitar de esta carpeta</strong> · <strong>Quitar de carpetas</strong></li><li><strong>Eliminar de biblioteca</strong> — con el aviso <em>"El archivo NO se borrará del dispositivo"</em></li></ul>
+<p><strong>Selección múltiple</strong>: seleccionar todo / ninguno, añadir a sesión, añadir a carpeta, eliminar.</p>
+<p>Abajo, la <strong>barra del reproductor</strong> siempre visible; tocándola se abre <strong>Now Playing</strong>.</p>
+<p>Si la biblioteca está vacía, además de "Añadir tracks" ofrece: <em>"¿Ya tienes tu biblioteca en el PC? Enlázalo y aparece aquí"</em>.</p>
+<h3 id="63-now-playing-y-waveform-en-horizontal">6.3 Now Playing y waveform en horizontal</h3>
+<p><strong>Vertical</strong>: portada a pantalla completa difuminada de fondo, artwork, título y artista, chips de metadatos, barra de energía, waveform con progreso, controles de transporte, información de la cola y menú contextual (⋮).</p>
+<p>El menú ⋮ de esta pantalla ofrece: <strong>Info del track</strong>, <strong>Reproducir preview</strong>, <strong>Favorito</strong>, <strong>Editar track</strong>, <strong>Añadir a carpeta</strong>, <strong>Quitar de carpetas</strong> y <strong>Compartir</strong>.</p>
+<p class="callout">⚠️ Hasta la revisión de 2026-09-08 este menú enseñaba además <em>Añadir a sesión</em>, <em>Reconocer canción</em>, <em>Re-analizar</em> y <em>Eliminar de biblioteca</em>, y <strong>las cuatro no hacían nada</strong>: se cerraba la hoja y ya. Ahora no se muestran — esas acciones viven en la Biblioteca, que es donde están la cola de análisis y el estado de la sesión.</p>
+<p><strong>Horizontal</strong>: <strong>waveform a pantalla completa</strong>, con casi todo lo del escritorio:</p>
+<ul><li>Cabecera con artista, título, BPM y Camelot</li><li><strong>Etiquetas de sección</strong> (si activas <em>Secciones</em>)</li><li><strong>Zoom</strong>: doble toque alterna 1x/4x; pellizcar para ajustar; <strong>minimapa</strong> que aparece 3 s al cambiar el zoom y se esconde solo</li><li><strong>Auto-follow</strong>: la gráfica corre bajo el cabezal</li><li><strong>Tap BPM</strong> y ajuste de rejilla</li><li><strong>Cues</strong>: mantén pulsado para colocar, con la misma paleta de tipos y <strong>snap</strong> (<em>Snap: LIBRE / BEAT / COMPÁS</em>)</li><li>Panel de <strong>CUES</strong> con notas</li><li>Toggle de <strong>Comunidad</strong></li></ul>
+<h3 id="64-escuchar-identificar-un-tema">6.4 Escuchar (identificar un tema)</h3>
+<p>Pantalla dedicada, tipo Shazam. Pulsa <strong>DETECTAR</strong>.</p>
+<ul><li>Graba <strong>segmentos de 12 segundos</strong> y los manda a identificar.</li><li>Hasta <strong>4 intentos</strong> automáticos: <em>"Intento X de Y"</em>, <em>"Reintentando con nueva muestra…"</em>.</li><li>Si la captura es <strong>silencio real</strong>, no gasta cuota: te dice <em>"No se captó bien el audio. Acerca el micro y evita el ruido."</em></li><li>Si el servicio <strong>sí procesó el audio y no conoce el tema</strong>, para de reintentar (repetir no ayudaría) y lo dice: <em>"No encontramos esta canción en la base de datos."</em></li><li>Consejo permanente: <em>"Acerca el móvil al altavoz para mejores resultados."</em></li></ul>
+<p><strong>Cuando acierta</strong>, muestra la ficha completa:</p>
+<ul><li>Portada, título, artista, y si está <strong>EN MI BIBLIOTECA</strong> / <strong>NO EN BIBLIOTECA</strong> / <strong>ANALIZADO (COMUNIDAD)</strong></li><li><strong>INFO DJ</strong>: BPM, tonalidad (con su fuente), energía, género (con su fuente), duración, tipo, popularidad</li><li><strong>CARACTERÍSTICAS</strong> del sonido</li><li><strong>TRACKS SIMILARES</strong> y <strong>MÁS DE \&lt;artista\&gt;</strong></li><li><strong>ESCUCHAR EN</strong>: Spotify, YouTube, Beatport, SoundCloud</li><li><strong>GUARDAR EN HISTORIAL</strong> e <strong>IR A MI BIBLIOTECA</strong></li></ul>
+<p>Si el tema <strong>no está analizado por nadie</strong>, lo dice tal cual: <em>"Este track aún no ha sido analizado por ningún usuario. Para obtener BPM, Key, Energía y más información DJ, añade este track a tu biblioteca y analízalo."</em></p>
+<p><strong>Historial de detecciones</strong>: lista con hora relativa, acceso a la ficha y <strong>Borrar historial</strong>. Se sincroniza con la pestaña <em>DETECCIONES</em> del escritorio.</p>
+<h3 id="65-sesiones">6.5 Sesiones</h3>
+<p><strong>Mis Sesiones</strong> lista los sets guardados con número de tracks, duración, energía y fecha (Hoy / Ayer / Hace N días / Hace N semanas). Acciones: abrir, renombrar, compartir, eliminar.</p>
+<p>Dentro de una sesión, <strong>dos pestañas</strong>:</p>
+<ul><li><strong>Tracks</strong> — la lista, arrastrable, con opciones por track y botón de deshacer al quitar uno.</li><li><strong>Mezcla</strong> — las transiciones con su calidad (<strong>Perfecta / Buena / Cuidado / Difícil</strong>) y el consejo concreto para cada una.</li></ul>
+<p>Arriba: <strong>BPM promedio</strong>, <strong>compatibles</strong>, <strong>curva de energía</strong> (gírala en horizontal para verla en grande) y el nivel general (Suave / Groove / Pico).</p>
+<p><strong>Ordenación</strong>: los mismos cinco modos que en escritorio (Sugerido IA, Por energía, Por armonía, Por BPM, Manual) — es exactamente el mismo algoritmo.</p>
+<p><strong>Exportar</strong> desde la sesión: <strong>Rekordbox XML</strong>, <strong>Traktor NML</strong>, <strong>Playlist M3U</strong>, <strong>Datos CSV</strong>. Se guardan en Descargas (o eliges carpeta).</p>
+<p>Si sales con cambios sin guardar, pregunta: <strong>Guardar</strong> / <strong>Descartar</strong>.</p>
+<h3 id="66-colecciones-carpetas-camelot-y-analytics-en-móvil">6.6 Colecciones, carpetas, Camelot y Analytics en móvil</h3>
+<ul><li><strong>Smart Collections</strong> — se pueden crear con reglas (BPM, energía, género, tipo, keys, compatibilidad Camelot, artista/título contiene, duración) y lógica Y/O, además de <strong>AÑADIR RÁPIDO</strong> con los presets. Las colecciones creadas en el PC con reglas que el móvil no edita se muestran como <em>"Sin reglas — configura en el PC"</em>.</li><li><strong>Carpetas</strong> — árbol completo con crear, renombrar, color, icono, subcarpetas, duplicar y eliminar; y estadísticas por carpeta.</li><li><strong>Camelot</strong> — la rueda, con panel de tracks por key y compatibles.</li><li><strong>Analytics</strong> — las mismas estadísticas que en escritorio, adaptadas.</li></ul>
+<h3 id="67-ajustes-móvil">6.7 Ajustes (móvil)</h3>
+<p>Hoja deslizante con: <strong>Sincronización</strong> (estado, registro, id del dispositivo), <strong>Vincular dispositivos</strong>, <strong>Idioma</strong>, <strong>Forma de onda</strong>, <strong>Mejorar datos automáticamente</strong>, <strong>Memoria colectiva</strong> (subir audio por wifi — ver <a href="#84-si-tu-biblioteca-se-queda-fuera-el-backfill">§8.4</a>), <strong>Manual de instrucciones</strong> (abre este manual en el navegador), <strong>Mis Datos</strong> (contadores + borrar todos los datos), <strong>Importar Biblioteca</strong> (Rekordbox XML, Traktor NML y, en iPhone, <strong>Apple Music</strong>) y <strong>Acerca de</strong>.</p>
+<p><strong>Importar de Apple Music</strong> (solo iOS): trae <strong>solo metadatos</strong> de los tracks <strong>descargados</strong> (los de streaming hay que bajarlos antes). Lo avisa: <em>"El análisis completo de audio de tracks de Apple Music llegará en una actualización futura."</em></p>
+<hr>
+<h2 id="7-sincronización-y-dispositivos">7. Sincronización y dispositivos</h2>
+<h3 id="71-cómo-funciona">7.1 Cómo funciona</h3>
+<ul><li>Tu biblioteca se sincroniza entre todos tus aparatos vinculados a la misma cuenta.</li><li><strong>El PC manda, el móvil sigue.</strong> En conflicto, gana <strong>la versión más reciente</strong>.</li><li>Se sincronizan: análisis (track a track), <strong>carpetas</strong>, <strong>colecciones</strong>, <strong>ediciones manuales</strong>, <strong>sesiones</strong>, <strong>favoritos</strong>, <strong>cues</strong>, <strong>notas privadas</strong> y <strong>detecciones</strong>.</li><li>Máximo <strong>20 dispositivos</strong> por cuenta.</li><li>Reintento automático con espera creciente (10 s → 30 min, hasta 10 veces) al recuperar conexión.</li><li>Se consultan novedades cada 15 s; <strong>la sincronización la lanzas tú</strong> con el botón.</li></ul>
+<h3 id="72-vincular-dos-aparatos">7.2 Vincular dos aparatos</h3>
+<ol><li>En el aparato que ya tiene la biblioteca: <em>Ajustes → Vincular dispositivos → <strong>GENERAR CÓDIGO</strong></em>.</li><li>Sale un código de <strong>6 caracteres</strong> con cuenta atrás.</li><li>En el otro aparato: <em>Ajustes → Vincular dispositivos → <strong>INTRODUCIR CÓDIGO</strong></em> y escríbelo.</li><li>Listo: <em>"¡Dispositivo vinculado correctamente!"</em></li></ol>
+<p>En escritorio, además, el banner <strong>Llévatela al móvil</strong> te da un <strong>QR</strong> que detecta la plataforma, lleva a la tienda correcta y enseña el código en grande.</p>
+<p><strong>Desvincular</strong>: en la lista de dispositivos vinculados. El aparato se separa de la cuenta compartida y se le asigna una cuenta nueva independiente. No se puede desvincular si es el único de la cuenta.</p>
+<h3 id="73-traer-la-biblioteca-a-un-aparato-vacío">7.3 Traer la biblioteca a un aparato vacío</h3>
+<p><em>Ajustes → Sincronización → <strong>Restaurar desde la nube</strong></em>. Fuerza una descarga completa, ignorando lo que el aparato crea saber. Es lo que hay que usar cuando "a este equipo le faltan tracks que sí tengo en otro".</p>
+<h3 id="74-publicar-esta-biblioteca">7.4 Publicar esta biblioteca</h3>
+<p>Ver <a href="#mis-datos">§5.18</a>. En resumen: úsalo cuando quieras decir <em>"la buena es esta"</em>. Es de dos o tres veces al año, no del día a día.</p>
+<p class="callout">⚠️ <strong>No se puede publicar con el sync en pausa</strong> (tras un formateo): publicarías una biblioteca que el servidor aún no conoce. La app te lo impide y te dice qué hacer.</p>
+<h3 id="75-qué-pasa-tras-resetear-un-dispositivo">7.5 Qué pasa tras resetear un dispositivo</h3>
+<ul><li>El sync <strong>queda en pausa</strong>, a propósito: el reset es puramente local.</li><li>El indicador lo dice (<em>"Sincronización en pausa tras el reseteo"</em>) y el botón cambia a <strong>Reanudar sincronización</strong>.</li><li>Mientras dure, <strong>publicar está bloqueado</strong>.</li><li>Nada se ha perdido: está en la nube y en el punto de restauración que se creó antes de formatear.</li></ul>
+<h3 id="76-volúmenes-portátiles-hdd--usb">7.6 Volúmenes portátiles (HDD / USB)</h3>
+<p>Solo en escritorio. Si guardas la música en un disco externo:</p>
+<ol><li>Al importar desde él, la app <strong>ofrece registrarlo</strong>.</li><li>Escribe un marcador <code>.dj-analyzer-volume-id</code> en la raíz con un UUID estable que <strong>sobrevive a desconectar y volver a conectar</strong>, y a cambiar de letra de unidad o de punto de montaje.</li><li>Los tracks se marcan con ese volumen y su ruta relativa.</li><li>En otro ordenador con el mismo disco montado, <strong>los ficheros se encuentran solos</strong>.</li></ol>
+<p>La app vigila los volúmenes cada 5 segundos y actualiza el estado <em>Conectado / Desconectado</em>.</p>
+<h3 id="77-cuando-la-app-no-encuentra-un-fichero">7.7 Cuando la app no encuentra un fichero</h3>
+<p>Se resuelve en tres pasos, por este orden:</p>
+<ol><li>La <strong>ruta original</strong>.</li><li><strong>Punto de montaje del volumen + ruta relativa</strong> (para discos externos).</li><li><strong>Heurística por nombre de fichero</strong> entre los que este aparato conoce.</li></ol>
+<p>Si aun así no aparece, el track se marca como <strong>no disponible localmente</strong> — pero <strong>sigue siendo usable</strong>: suena por preview, se ve, se filtra y se exporta. Puedes <strong>Localizar archivo…</strong> a mano desde el menú contextual, y la app corrige la ruta (preservando el vínculo con el volumen portátil si lo tenía).</p>
+<hr>
+<h2 id="8-memoria-colectiva">8. Memoria colectiva</h2>
+<h3 id="81-qué-se-comparte-y-qué-no">8.1 Qué se comparte y qué no</h3>
+<div class="tw"><table><thead><tr><th>Se comparte con todos los DJs</th><th>Es solo tuyo</th></tr></thead><tbody><tr><td>Posición de los cue points</td><td>El <strong>texto</strong> de las notas de cue (salvo que marques la casilla)</td></tr><tr><td>Correcciones de rejilla (BPM/offset)</td><td>Tus <strong>notas privadas</strong></td></tr><tr><td>Notas marcadas como públicas</td><td>Tus <strong>carpetas</strong>, colecciones y sesiones</td></tr><tr><td>Valoraciones (media y popularidad)</td><td>Tus <strong>favoritos</strong></td></tr><tr><td>Correcciones de metadata que pasen a consenso</td><td>Tu <strong>historial</strong> de reproducción</td></tr></tbody></table></div>
+<p class="callout">⚠️ Tu música <strong>no se sube</strong> para compartirla. Lo que viaja son datos: la huella acústica (unos 4 KB), los análisis y las correcciones. En los casos en que sí se sube audio (análisis en el servidor y backfill), el fichero va a un temporal y se borra: <strong>el servidor no guarda tu música</strong>.</p>
+<h3 id="82-cómo-agrupa-por-sonido">8.2 Cómo agrupa por sonido</h3>
+<ol><li>De cada track se calcula una <strong>huella acústica</strong> (chromaprint), que <strong>no cambia</strong> si renombras el fichero, cambias los tags o el contenedor, y que es ~99,8 % idéntica entre el mismo audio en MP3 y en FLAC.</li><li>Dos huellas dentro de un umbral de distancia (0,15) y con duraciones que no difieran más de 2,5 s pertenecen al <strong>mismo cluster acústico</strong>.</li><li>Sobre el cluster van tres cosas: <strong>compartir</strong> (cues, rejilla, notas, valoraciones, popularidad), <strong>unificar metadata</strong> adoptando siempre la fuente más fiable, y <strong>ahorrar identificaciones</strong> (si el cluster ya tiene una identidad limpia, se hereda).</li></ol>
+<h3 id="83-qué-notas-tú-como-usuario">8.3 Qué notas tú como usuario</h3>
+<ul><li>Al importar, muchos tracks aparecen <strong>al instante y ya analizados</strong>.</li><li>El banner <strong>"Tu biblioteca ha mejorado"</strong> te cuenta qué trabajo de otros ha llegado a tus temas.</li><li>En el waveform, el toggle <strong>Comunidad</strong> pinta las zonas que otros DJs marcan.</li><li>El BPM y la tonalidad <strong>mejoran solos</strong> si alguien tiene el mismo tema con datos de Rekordbox (nunca al revés).</li><li>En la ficha, la sección <strong>COMUNIDAD</strong> con notas, valoración media y número de DJs.</li></ul>
+<h3 id="84-si-tu-biblioteca-se-queda-fuera-el-backfill">8.4 Si tu biblioteca se queda fuera: el backfill</h3>
+<p>Para entrar en la memoria colectiva hace falta la huella acústica. Hay <strong>dos mecanismos y no son intercambiables</strong> — lo que decide es si tu versión de la app puede calcular la huella en tu propio aparato:</p>
+<div class="tw"><table><thead><tr><th>Tu build</th><th>Mecanismo</th><th>Coste</th><th>Cuándo</th></tr></thead><tbody><tr><td><strong>Windows</strong> y <strong>macOS DMG</strong></td><td>Calcula la huella <strong>en tu ordenador</strong> y manda ~4 KB</td><td>Gratis, sin datos</td><td><strong>Automático</strong>, en segundo plano al arrancar</td></tr><tr><td><strong>Mac App Store</strong> y <strong>móvil</strong></td><td><strong>Sube el audio</strong> y la huella la saca el servidor</td><td>Gasta datos</td><td><strong>A petición</strong> y <strong>exige wifi</strong></td></tr></tbody></table></div>
+<p>En el segundo caso aparece la tarjeta <strong>Memoria colectiva</strong> en Ajustes, con el aviso literal: <em>"Esta versión no puede calcular la huella de sonido aquí. Súbelos y la calcula el servidor"</em> y <em>"Hace falta wifi: subir la biblioteca por datos móviles cuesta dinero"</em>.</p>
+<p>Antes de subir nada, la app pregunta al servidor y <strong>parte el lote en tres</strong>:</p>
+<ul><li>los que <strong>se pueden curar</strong> (analizados y sin huella) → estos sí se suben;</li><li>los que <strong>ya tienen huella</strong> → no hacen falta;</li><li>los que <strong>no están analizados</strong> → <strong>no se suben</strong>, porque no rellenarían un hueco: dispararían un análisis completo, y en un móvil recién instalado eso sería la biblioteca entera.</li></ul>
+<p>El resultado se cuenta con honestidad: <em>"Listo: N con huella nueva, M no se pudieron."</em> Si la conexión falla varias veces seguidas, se para solo y lo dice.</p>
+<p>Además, y sin que hagas nada: <strong>cada vez que vuelves a subir un fichero que ya estaba analizado, la app aprovecha para curarle la huella si le faltaba</strong>.</p>
+<hr>
+<h2 id="9-atajos-de-teclado">9. Atajos de teclado</h2>
+<h3 id="navegación-escritorio">Navegación (escritorio)</h3>
+<div class="tw"><table><thead><tr><th>Atajo</th><th>Acción</th></tr></thead><tbody><tr><td><code>Ctrl+1</code></td><td>Biblioteca</td></tr><tr><td><code>Ctrl+2</code></td><td>Collections</td></tr><tr><td><code>Ctrl+3</code></td><td>Camelot</td></tr><tr><td><code>Ctrl+4</code></td><td>Flow Designer</td></tr><tr><td><code>Ctrl+5</code></td><td>Historial</td></tr><tr><td><code>Ctrl+6</code></td><td>Analytics</td></tr><tr><td><code>Ctrl+7</code></td><td>Configuración</td></tr><tr><td><code>Ctrl+8</code></td><td>Admin (si está habilitado)</td></tr><tr><td><code>Ctrl+K</code></td><td>Paleta de comandos</td></tr><tr><td><code>F1</code></td><td>Ayuda de atajos</td></tr></tbody></table></div>
+<p>En macOS, <code>Cmd</code> en lugar de <code>Ctrl</code>, y además el menú nativo con <code>Cmd+,</code> (Preferencias), <code>Cmd+O</code> (importar audio), <code>Cmd+Shift+O</code> (importar carpeta), <code>Cmd+Shift+I</code> (importar sesión <code>.djsession</code>), <code>Cmd+N</code> (nueva sesión), <code>Cmd+Shift+E</code> (exportar), <code>Cmd+Z</code> / <code>Cmd+Shift+Z</code> (deshacer/rehacer), <code>Cmd+F</code> (buscar) y <code>Cmd+1</code>…<code>Cmd+6</code> para las seis secciones del menú <em>Ver</em>.</p>
+<p class="callout ok">✅ La ventana de ayuda de <code>F1</code> está <strong>traducida</strong> (español / inglés, según el idioma de la app) desde el 2026-09-08. Antes salía siempre en inglés.</p>
+<h3 id="archivo-y-edición">Archivo y edición</h3>
+<div class="tw"><table><thead><tr><th>Atajo</th><th>Acción</th></tr></thead><tbody><tr><td><code>Ctrl+O</code></td><td>Importar archivos de audio</td></tr><tr><td><code>Ctrl+E</code></td><td>Exportar</td></tr><tr><td><code>Ctrl+F</code></td><td>Buscar en la biblioteca</td></tr><tr><td><code>Ctrl+G</code></td><td>Abrir / cerrar Smart Suggest</td></tr><tr><td><code>Ctrl+N</code></td><td>Nueva sesión (Flow Designer)</td></tr><tr><td><code>Ctrl+Z</code></td><td>Deshacer</td></tr><tr><td><code>Ctrl+Shift+Z</code></td><td>Rehacer</td></tr><tr><td><code>Ctrl+Shift+P</code></td><td>Pausar / reanudar el análisis en curso</td></tr></tbody></table></div>
+<h3 id="tabla-de-la-biblioteca">Tabla de la biblioteca</h3>
+<div class="tw"><table><thead><tr><th>Atajo</th><th>Acción</th></tr></thead><tbody><tr><td><code>↑</code> <code>↓</code></td><td>Moverse por la lista</td></tr><tr><td><code>←</code> <code>→</code></td><td>Track anterior / siguiente de la reproducción</td></tr><tr><td><code>Enter</code></td><td>Reproducir / pausar</td></tr><tr><td><code>Espacio</code></td><td>Reproducir / pausar</td></tr><tr><td><code>S</code></td><td>Aleatorio</td></tr><tr><td><code>R</code></td><td>Repetir</td></tr><tr><td><code>Ctrl+A</code></td><td>Seleccionar todo</td></tr><tr><td><code>E</code></td><td>Editar el track seleccionado (solo con uno)</td></tr><tr><td><code>I</code></td><td>Ficha del track (solo con uno)</td></tr><tr><td><code>F</code></td><td>Favorito (sobre toda la selección)</td></tr><tr><td><code>Ctrl+C</code></td><td>Copiar artista, título, BPM, key y género</td></tr><tr><td><code>Supr</code></td><td>Eliminar seleccionados</td></tr><tr><td><code>Esc</code></td><td>Deseleccionar</td></tr><tr><td>Doble click</td><td>Reproducir</td></tr><tr><td><code>Ctrl</code>+Click</td><td>Selección múltiple</td></tr><tr><td><code>Shift</code>+Click</td><td>Seleccionar rango</td></tr></tbody></table></div>
+<h3 id="waveform">Waveform</h3>
+<div class="tw"><table><thead><tr><th>Atajo</th><th>Acción</th></tr></thead><tbody><tr><td><code>I</code></td><td>Cue Mix In</td></tr><tr><td><code>O</code></td><td>Cue Mix Out</td></tr><tr><td><code>D</code></td><td>Cue Drop</td></tr><tr><td><code>B</code></td><td>Cue Breakdown</td></tr><tr><td><code>V</code></td><td>Cue Vocal</td></tr><tr><td><code>U</code></td><td>Cue Build-up</td></tr><tr><td><code>L</code></td><td>Cue Loop</td></tr><tr><td><code>C</code></td><td>Cue Custom</td></tr><tr><td><code>S</code></td><td>Cambiar modo de snap (Libre / Beat / Compás)</td></tr><tr><td><code>P</code></td><td>Panel de cues</td></tr><tr><td><code>T</code></td><td>Tap BPM (con el modo Tap activo)</td></tr><tr><td><code>Esc</code></td><td>Cancelar colocación / deseleccionar cue</td></tr><tr><td><code>Supr</code> / <code>Retroceso</code></td><td>Borrar el cue seleccionado</td></tr></tbody></table></div>
+<h3 id="multipantalla">Multipantalla</h3>
+<div class="tw"><table><thead><tr><th>Atajo</th><th>Acción</th></tr></thead><tbody><tr><td><code>Ctrl+Alt+1..6</code></td><td>Plantillas de layout</td></tr><tr><td><code>Esc</code></td><td>Restaurar panel maximizado</td></tr><tr><td>Doble click en cabecera</td><td>Maximizar / restaurar panel</td></tr></tbody></table></div>
+<h3 id="lo-que-cambió-en-la-revisión-de-2026-09-08">Lo que cambió en la revisión de 2026-09-08</h3>
+<p>Una auditoría del código encontró varios atajos y controles que la interfaz <strong>anunciaba sin que existieran</strong>. Se corrigieron, así que todo lo de las tablas de arriba es cierto hoy:</p>
+<ul><li><strong><code>Ctrl+G</code></strong> (Smart Suggest) y <strong><code>Ctrl+Shift+P</code></strong> (pausar/reanudar análisis) se anunciaban en tooltips, en Ajustes y en la paleta, pero no estaban asignados. Ahora sí.</li><li><strong><code>E</code>, <code>I</code>, <code>F</code> y <code>Ctrl+C</code></strong> aparecían escritos en el menú contextual de la tabla y no hacían nada. Ahora editan, abren la ficha, marcan favorito y copian la info.</li><li><strong>La ventana <code>F1</code></strong> tenía el mapa de navegación de una versión anterior (decía <code>Ctrl+2</code> = Camelot) y atajos falsos de reproducción. Corregida.</li><li><strong>La paleta de comandos</strong> mostraba los mismos atajos desfasados junto a cada sección. Corregidos.</li><li>**macOS: <em>Ver → Carpetas</em> (<code>Cmd+7</code>)** abría un panel en blanco, porque apuntaba a una sección que no tiene pantalla propia. Se quitó del menú: las carpetas se manejan desde el árbol de la Biblioteca (<code>Cmd+1</code>).</li></ul>
+<hr>
+<h2 id="10-el-servidor-para-entender-qué-pasa-por-detrás">10. El servidor (para entender qué pasa por detrás)</h2>
+<p>No necesitas nada de esto para usar la app, pero explica varios comportamientos.</p>
+<ul><li>El backend está en <strong>Render</strong>, con disco persistente. Analiza con librosa / scipy / numpy / ffmpeg y guarda en SQLite.</li><li>Servicios externos que consulta: <strong>AudD</strong> (reconocimiento de audio), <strong>Discogs</strong>, <strong>MusicBrainz</strong>, <strong>Last.fm</strong> (géneros y metadatos).</li><li><strong>Beatport se eliminó</strong>: su protección anti-bot lo hacía inalcanzable. El botón <em>Buscar en Beatport</em> sigue funcionando porque solo abre la web.</li><li>Endpoints principales: analizar, identificar, comprobar si ya está analizado, cues de comunidad, rejilla de comunidad, notas, valoraciones, popularidad, preview, portada, backfill de huella, sincronización y vinculación.</li><li><strong>El sistema de ficheros del servidor se resetea en cada despliegue</strong>: por eso los previews se generan al vuelo y lo que debe sobrevivir va al disco persistente.</li><li>Las <strong>portadas y los previews son durables</strong> y están indexados por el contenido del fichero, no por usuario: se comparten y no se borran al limpiar la base de datos.</li></ul>
+<hr>
+<h2 id="11-problemas-frecuentes">11. Problemas frecuentes</h2>
+<p><strong>El análisis va lento o no arranca.</strong> Si estás en Mac App Store o en móvil, todo el análisis va al servidor: es lo normal. En Windows o en el DMG, el motor local <strong>se enciende con el primer análisis</strong>, así que el primero tarda más.</p>
+<p><strong>Un track dice "Sin archivo local — solo preview".</strong> El fichero se movió, se renombró, se borró, o llegó de otro dispositivo, o está en un disco externo desconectado. La ficha del track te dice cuál de los cuatro es. Sigue sonando por preview. Para arreglarlo: menú contextual → <strong>Localizar archivo…</strong>, o conecta el disco.</p>
+<p><strong>Faltan tracks en este aparato.</strong> <em>Ajustes → Sincronización → <strong>Restaurar desde la nube</strong></em>.</p>
+<p><strong>Sincronicé y no pasa nada / dice que está en pausa.</strong> Es el estado normal después de <em>Resetear este dispositivo</em>. Pulsa <strong>Reanudar sincronización</strong>.</p>
+<p><strong>Borré tracks sin querer.</strong> <em>Ajustes → Copias de seguridad → <strong>Papelera</strong></em> (30 días). Si fue algo más gordo (publicar, formatear), <em>Puntos de restauración</em>.</p>
+<p><strong>"Limpiar metadata" no propone nada.</strong> Mira el desglose del final: puede ser cupo diario agotado (compartido entre todos los usuarios, vuelve a cero a la hora que indica), tracks demasiado largos (más de 12 minutos no se identifican), errores de red, o que ya estuvieran bien.</p>
+<p><strong>Un track sale con el BPM al doble o a la mitad.</strong> Corrígelo en el editor (campo BPM), o afínalo en el waveform con el ajuste de BPM y el Tap BPM.</p>
+<p><strong>La tonalidad no coincide con la de Rekordbox.</strong> Importa el XML de Rekordbox: su tonalidad tiene prioridad 110 y sustituirá a la medida automáticamente. La app entiende bemoles, sostenidos, modos escritos y Open Key.</p>
+<p><strong>Los duplicados dicen "no lo sé" de casi toda mi biblioteca.</strong> Es lo esperado si tu biblioteca aún no tiene huella acústica. Ver <a href="#84-si-tu-biblioteca-se-queda-fuera-el-backfill">§8.4</a>.</p>
+<p><strong>No aparece el panel de admin.</strong> Es correcto: solo existe en builds con token de administrador.</p>
+<p><strong>Cerré la app a mitad de un análisis.</strong> Al abrir sale el banner <strong>Análisis pendiente</strong> con el botón de reanudar. Los tracks ya analizados no se pierden.</p>
+<hr>
+<h2 id="12-glosario">12. Glosario</h2>
+<p><strong>Backfill</strong> — proceso en segundo plano que rellena la huella acústica de los tracks que no la tienen, para que entren en la memoria colectiva.</p>
+<p><strong>Camelot</strong> — sistema de notación de tonalidad en 24 códigos (1A–12B) pensado para mezclar en armonía.</p>
+<p><strong>Cluster acústico</strong> — grupo de tracks que suenan igual aunque sean ficheros distintos. Es la unidad sobre la que se comparte todo.</p>
+<p><strong>Consenso</strong> — cuando varios DJs corrigen el mismo dato del mismo tema y el cambio se aplica para todos. Se cuenta <strong>por dispositivo</strong>, no por pulsación.</p>
+<p><strong>Cue point</strong> — marca de posición en el track. En DJ Analyzer son siempre manuales.</p>
+<p><strong>Energía DJ</strong> — escala 1–10 de intensidad, agrupada en Baja/Media/Alta/Muy Alta.</p>
+<p><strong>Ficha sin audio (ghost)</strong> — entrada importada de un XML de un tema que no tienes en local. Se ve y se usa, pero no suena.</p>
+<p><strong>Fuente</strong> — de dónde salió un dato (rekordbox, traktor, id3, consenso, análisis…). Determina qué gana cuando hay dos versiones.</p>
+<p><strong>Huella acústica</strong> — firma del sonido, independiente del fichero. La base de la memoria colectiva.</p>
+<p><strong>Modo Disco</strong> — vista del sistema de ficheros de este ordenador dentro de la misma tabla de la biblioteca. Es la rampa de entrada; no viaja a otros aparatos.</p>
+<p><strong>Preview</strong> — fragmento de 6 segundos servido desde la nube, que permite oír un track aunque no tengas el fichero.</p>
+<p><strong>Publicar</strong> — declarar que la biblioteca de este ordenador es la buena y sustituir la organización en el resto de tus aparatos.</p>
+<p><strong>Punto de restauración</strong> — foto completa de tu biblioteca en una fecha.</p>
+<p><strong>Smart Collection</strong> — playlist que se define por reglas y se actualiza sola.</p>
+<p><strong>Snap</strong> — a qué se ajusta un cue al colocarlo: a nada, al beat, o al compás.</p>
+<p><strong>Volumen portátil</strong> — disco externo registrado con un identificador estable para que sus tracks se localicen desde cualquier ordenador.</p>
+<hr>
+<h2 id="13-lo-que-la-app-no-hace">13. Lo que la app NO hace</h2>
+<p>Dicho para que no lo busques:</p>
+<ul><li>❌ <strong>No pone cues automáticos.</strong> Se descartó por poco fiable.</li><li>❌ <strong>No hay versión web.</strong> La web es la página del producto.</li><li>❌ <strong>No reproduce ni mezcla como un software de DJ</strong>: analiza, organiza y planifica. Para pinchar, exportas a Rekordbox / Traktor / Serato / VirtualDJ.</li><li>❌ <strong>No borra ficheros de tu disco.</strong> Ninguna acción de la app toca el disco: "eliminar" saca el track de la biblioteca.</li><li>❌ <strong>El formateo local no viaja</strong> a tus otros aparatos: es intencionadamente local.</li><li>❌ <strong>No exporta energía, estructura ni forma de onda propias</strong> a formatos de terceros: esos formatos no tienen campo donde meterlas.</li><li>❌ <strong>Comprar Pro no da motor local</strong>: eso depende del canal de descarga.</li><li>❌ <strong>El servidor no guarda tu música.</strong> Los ficheros que se suben para analizar van a un temporal y se borran.</li><li>❌ <strong>No hay tema claro.</strong> La app es de tema oscuro fijo; no existe ajuste de apariencia.</li><li>❌ <strong>No se pueden mover carpetas arrastrándolas</strong> entre sí, ni reordenar las Smart Collections, ni «limpiar carpetas vacías» de una vez.</li></ul>
+<hr>
+<h2 id="14-registro-de-cambios-del-manual">14. Registro de cambios del manual</h2>
+<p>Este manual es un <strong>documento vivo</strong>: se actualiza con cada cambio de la app.</p>
+<div class="tw"><table><thead><tr><th>Fecha</th><th>Qué cambió</th></tr></thead><tbody><tr><td><strong>2026-09-09</strong></td><td>El manual <strong>ya se alcanza desde la app y desde la web</strong>: Ajustes → «Manual de instrucciones» en escritorio y en móvil, menú <strong>Ayuda</strong> en macOS, enlace <strong>«Manual completo»</strong> en el cuadro de <code>F1</code>, y <strong>Manual</strong> en el menú y el pie de djanalyzerpro.com. Vive en <a href="https://www.djanalyzerpro.com/manual.html">djanalyzerpro.com/manual.html</a> y no empaquetado en la app, para que se corrija el mismo día sin esperar a una versión nueva.</td></tr><tr><td><strong>2026-09-08</strong></td><td>Segunda tanda de reparaciones: <strong>Smart Suggest ya funciona en multipantalla</strong> (antes el botón y <code>Ctrl+G</code> no hacían nada fuera de la vista simple), <strong>nuevo botón «Restaurar previews»</strong> en Ajustes → Análisis (el mecanismo existía y no había forma de llamarlo), la <strong>ventana de <code>F1</code> está traducida</strong> (antes solo en inglés) y el aviso del selector de layouts ya dice el atajo real (<code>Ctrl+Alt+1…6</code>, no <code>Ctrl+1/2/3</code>).</td></tr><tr><td><strong>2026-09-08</strong></td><td>Primera edición completa, a partir de una lectura de punta a punta del cliente y del backend. Auditoría posterior: se corrigieron los atajos anunciados que no existían (<code>Ctrl+G</code>, <code>Ctrl+Shift+P</code>, <code>E</code>, <code>I</code>, <code>F</code>, <code>Ctrl+C</code>), la ventana de <code>F1</code> y las etiquetas de la paleta, el panel en blanco de <em>Ver → Carpetas</em> en macOS, la navegación que no funcionaba en multipantalla, cuatro opciones muertas del menú ⋮ de <em>Reproduciendo ahora</em> en móvil y el aviso falso de «cada 15 s» en Ajustes.</td></tr></tbody></table></div>
+  </article>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-links">
+      <a href="index.html">Inicio</a>
+      <a href="privacy.html">Privacidad</a>
+      <a href="mailto:djanalyzerpro@gmail.com">Contacto</a>
+    </div>
+    <div class="foot-copy">&copy; 2026 DJ Analyzer. Built with Flutter &amp; FastAPI.</div>
+  </div>
+</footer>
+
+<script>
+// Filtro del indice. Progresivo: sin JS el indice sale entero y funciona igual.
+(function () {
+  var q = document.getElementById('q'), toc = document.getElementById('toc');
+  if (!q || !toc) return;
+  var links = [].slice.call(toc.querySelectorAll('a'));
+  q.addEventListener('input', function () {
+    var t = q.value.trim().toLowerCase();
+    links.forEach(function (a) {
+      var hit = !t || a.textContent.toLowerCase().indexOf(t) !== -1;
+      a.hidden = !hit;
+      a.classList.toggle('hit', !!t && hit);
+    });
+  });
+})();
+</script>
+</body>
+</html>
