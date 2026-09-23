@@ -56,6 +56,23 @@
        El alias se queda SOLO para el boton "Descarga directa" de la web.
     3. Añadir un <item> nuevo a este XML (arriba de los anteriores) apuntando
        a la URL VERSIONADA. Mantener el historial entero.
+
+       EL <sparkle:minimumSystemVersion> DE macOS SE FIJA A MANO, ITEM A ITEM,
+       Y NO SE HEREDA DEL ANTERIOR (2026-09-23). El minimo del proyecto subio
+       de 11.0 a 12.0 el 2026-09-17 (Xcode 27 dejo de compilar por debajo:
+       Analyzer#163 toca los tres MACOSX_DEPLOYMENT_TARGET, la linea
+       `platform :osx` del Podfile y el post_install de los Pods). Si el item
+       nuevo se queda en 11.0, Sparkle OFRECE la actualizacion a un Mac con Big
+       Sur, se la descarga, y la app NO ARRANCA.
+           item 2.10.0 y posteriores (macOS) -> 12.0
+           items 2.9.11 y anteriores         -> se quedan en 11.0
+       Los viejos NO se tocan: esos DMG si arrancaban en Big Sur, asi que su
+       11.0 es verdad. O sea que esto no es un sed global, es una linea por
+       item. Windows no se ve afectado (sigue en 10.0.0).
+
+       Y recuerda que sparkle:version esta INVERTIDO entre plataformas: en
+       macOS es el BUILD NUMBER (42 para la 2.10.0) y en Windows la CADENA
+       (2.10.0). Confundirlos rompe la comparacion del auto-update.
     4. Correr `./verify_appcast.sh` — comprueba que cada enclosure existe y
        que su `length` casa con el Content-Length real. Si falla, NO publicar.
     5. Subir appcast.xml actualizado al hosting.
