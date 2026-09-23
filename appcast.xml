@@ -93,6 +93,53 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.10.0 build 42 macOS DMG — Wed, 23 Sep 2026 18:33:14 +0000 -->
+    <!-- minimumSystemVersion 12.0: el proyecto subio el minimo el 2026-09-17
+         (Analyzer#163, Xcode 27). NO copiar el 11.0 de los items de abajo. -->
+    <item>
+      <title>DJ Analyzer Pro 2.10.0</title>
+      <pubDate>Wed, 23 Sep 2026 18:33:14 +0000</pubDate>
+      <sparkle:version>42</sparkle:version>
+      <sparkle:shortVersionString>2.10.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.10.0</h3>
+        <ul>
+          <li>Forma de onda reescrita: el volumen real, y sin temblar al hacer scroll</li>
+          <li>Hot cues A&ndash;H con su letra y su color, y las teclas 1&ndash;8 para soltarlos</li>
+          <li>Pinchar en la onda te lleva exactamente donde pides</li>
+          <li>Arrastra la onda para moverte por el tema, como en Rekordbox</li>
+          <li>La cuadr&iacute;cula ya no se separa del tema seg&uacute;n avanza</li>
+          <li>Tu rejilla de beats vuelve tambi&eacute;n a Traktor y VirtualDJ, con &aacute;lbum y a&ntilde;o</li>
+          <li>Columnas ajustables que se recuerdan, e importar listas sueltas (M3U y TXT)</li>
+          <li>Tu biblioteca entra en la memoria colectiva desde m&oacute;vil y Mac App Store</li>
+          <li>Manual de instrucciones completo, desde Ajustes y el men&uacute; Ayuda</li>
+          <li><strong>Requiere macOS 12 Monterey o superior</strong></li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Waveform rebuilt: real loudness, and no shimmer as you scroll</li>
+          <li>Hot cues A&ndash;H with their own letter and color, keys 1&ndash;8 to drop them</li>
+          <li>Clicking the waveform lands exactly where you asked</li>
+          <li>Drag the wave to move through the track, like in Rekordbox</li>
+          <li>The grid no longer drifts away as the track goes on</li>
+          <li>Your beat grid travels to Traktor and VirtualDJ too, with album and year</li>
+          <li>Resizable columns that stick, and single-playlist import (M3U and TXT)</li>
+          <li>Your library joins the shared memory from mobile and the Mac App Store</li>
+          <li>Complete user manual, from Settings and the Help menu</li>
+          <li><strong>Requires macOS 12 Monterey or later</strong></li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.10.0.dmg"
+        sparkle:os="macos"
+        sparkle:version="42"
+        sparkle:shortVersionString="2.10.0"
+        length="159307238"
+        type="application/octet-stream"
+        sparkle:edSignature="TFYgiON7U8oRgQPnjL8Hb3UFrtlCcfxV2bvUH/epeR80N0GfPF1xIE+ZqrNMrSnIMfmSyeQhmUzcDpoqfqQiAg==" />
+    </item>
+
     <!-- 2.9.11 build 40 macOS DMG — Mon, 07 Sep 2026 14:56:27 +0000 -->
     <item>
       <title>DJ Analyzer Pro 2.9.11</title>
