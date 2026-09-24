@@ -140,6 +140,51 @@
         sparkle:edSignature="TFYgiON7U8oRgQPnjL8Hb3UFrtlCcfxV2bvUH/epeR80N0GfPF1xIE+ZqrNMrSnIMfmSyeQhmUzcDpoqfqQiAg==" />
     </item>
 
+    <!-- 2.10.0 Windows — Thu, 24 Sep 2026 09:26:37 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.10.0</title>
+      <pubDate>Thu, 24 Sep 2026 09:26:37 +0000</pubDate>
+      <sparkle:version>2.10.0</sparkle:version>
+      <sparkle:shortVersionString>2.10.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.10.0</h3>
+        <ul>
+          <li>Forma de onda reescrita: el volumen real, y sin temblar al hacer scroll</li>
+          <li>Hot cues A&ndash;H con su letra y su color, y las teclas 1&ndash;8 para soltarlos</li>
+          <li>Pinchar en la onda te lleva exactamente donde pides</li>
+          <li>Arrastra la onda para moverte por el tema, como en Rekordbox</li>
+          <li>La cuadr&iacute;cula ya no se separa del tema seg&uacute;n avanza</li>
+          <li>Tu rejilla de beats vuelve tambi&eacute;n a Traktor y VirtualDJ, con &aacute;lbum y a&ntilde;o</li>
+          <li>Columnas ajustables que se recuerdan, e importar listas sueltas (M3U y TXT)</li>
+          <li>Tu biblioteca entra en la memoria colectiva desde m&oacute;vil y Mac App Store</li>
+          <li>Manual de instrucciones completo, desde Ajustes y la ventana de F1</li>
+          <li>Arreglado: una unidad sin medio tumbaba el &aacute;rbol de disco entero</li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Waveform rebuilt: real loudness, and no shimmer as you scroll</li>
+          <li>Hot cues A&ndash;H with their own letter and color, keys 1&ndash;8 to drop them</li>
+          <li>Clicking the waveform lands exactly where you asked</li>
+          <li>Drag the wave to move through the track, like in Rekordbox</li>
+          <li>The grid no longer drifts away as the track goes on</li>
+          <li>Your beat grid travels to Traktor and VirtualDJ too, with album and year</li>
+          <li>Resizable columns that stick, and single-playlist import (M3U and TXT)</li>
+          <li>Your library joins the shared memory from mobile and the Mac App Store</li>
+          <li>Complete user manual, from Settings and the F1 window</li>
+          <li>Fixed: a drive with no media took down the whole disk tree</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.10.0-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.10.0"
+        sparkle:shortVersionString="2.10.0"
+        length="171510072"
+        type="application/zip"
+        sparkle:edSignature="D9HBysPgDnpmd0slWNek3z4yp5fXYpcUbJZOOLAertIHGUJR8LRSjYq3APB6KFkuUGw7kHjKAQthIJB3nYYUDw==" />
+    </item>
+
     <!-- 2.9.11 build 40 macOS DMG — Mon, 07 Sep 2026 14:56:27 +0000 -->
     <item>
       <title>DJ Analyzer Pro 2.9.11</title>
