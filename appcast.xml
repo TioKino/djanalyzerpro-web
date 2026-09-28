@@ -93,6 +93,91 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.10.1 build 43 macOS DMG — Mon, 28 Sep 2026 03:42:43 +0000 -->
+    <!-- minimumSystemVersion 12.0, igual que la 2.10.0 (Analyzer#163, Xcode 27). -->
+    <item>
+      <title>DJ Analyzer Pro 2.10.1</title>
+      <pubDate>Mon, 28 Sep 2026 03:42:43 +0000</pubDate>
+      <sparkle:version>43</sparkle:version>
+      <sparkle:shortVersionString>2.10.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.10.1</h3>
+        <ul>
+          <li>Arreglado: al cambiar de tema, el anterior pod&iacute;a desaparecer de la biblioteca. Si te pas&oacute;, vuelve a importar la carpeta y se recupera</li>
+          <li>Enviar a VirtualDJ: listas, hot cues y loops directos a tu VirtualDJ</li>
+          <li>Traktor: tonalidades y ubicaciones corregidas al importar y exportar</li>
+          <li>Arrastra la onda como un vinilo</li>
+          <li>Lo que importas de Rekordbox, Traktor y VirtualDJ ya ayuda a toda la comunidad</li>
+          <li>Portadas m&aacute;s fiables: manda la del propio fichero</li>
+          <li>Tus estrellas son de tu cuenta y te siguen a todos tus dispositivos</li>
+          <li>Arranque m&aacute;s ligero y correcciones varias</li>
+          <li><strong>Requiere macOS 12 Monterey o superior</strong></li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Fixed: switching tracks could remove the previous one from your library. If it happened to you, re-import the folder to get it back</li>
+          <li>Send to VirtualDJ: playlists, hot cues and loops straight into your VirtualDJ</li>
+          <li>Traktor: keys and file locations fixed on import and export</li>
+          <li>Drag the waveform like a vinyl</li>
+          <li>What you import from Rekordbox, Traktor and VirtualDJ now helps the whole community</li>
+          <li>More reliable artwork: the cover inside the file comes first</li>
+          <li>Your ratings belong to your account and follow you to all your devices</li>
+          <li>Lighter startup and various fixes</li>
+          <li><strong>Requires macOS 12 Monterey or later</strong></li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.10.1.dmg"
+        sparkle:os="macos"
+        sparkle:version="43"
+        sparkle:shortVersionString="2.10.1"
+        length="159535938"
+        type="application/octet-stream"
+        sparkle:edSignature="pfQtujq4w4cc5kgDztzehhoSIYEUzUiUpmERgZowddIHOjP0HpyQHXQuRyiaQ+mIj5E4hvNuq4ZrLlf2dw2xBg==" />
+    </item>
+
+    <!-- 2.10.1 Windows — Mon, 28 Sep 2026 21:00:09 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.10.1</title>
+      <pubDate>Mon, 28 Sep 2026 21:00:09 +0000</pubDate>
+      <sparkle:version>2.10.1</sparkle:version>
+      <sparkle:shortVersionString>2.10.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.10.1</h3>
+        <ul>
+          <li>Arreglado: al cambiar de tema, el anterior pod&iacute;a desaparecer de la biblioteca. Si te pas&oacute;, vuelve a importar la carpeta y se recupera</li>
+          <li>Enviar a VirtualDJ: listas, hot cues y loops directos a tu VirtualDJ</li>
+          <li>Traktor: tonalidades y ubicaciones corregidas al importar y exportar</li>
+          <li>Arrastra la onda como un vinilo</li>
+          <li>Lo que importas de Rekordbox, Traktor y VirtualDJ ya ayuda a toda la comunidad</li>
+          <li>Portadas m&aacute;s fiables: manda la del propio fichero</li>
+          <li>Tus estrellas son de tu cuenta y te siguen a todos tus dispositivos</li>
+          <li>Arranque m&aacute;s ligero y correcciones varias</li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Fixed: switching tracks could remove the previous one from your library. If it happened to you, re-import the folder to get it back</li>
+          <li>Send to VirtualDJ: playlists, hot cues and loops straight into your VirtualDJ</li>
+          <li>Traktor: keys and file locations fixed on import and export</li>
+          <li>Drag the waveform like a vinyl</li>
+          <li>What you import from Rekordbox, Traktor and VirtualDJ now helps the whole community</li>
+          <li>More reliable artwork: the cover inside the file comes first</li>
+          <li>Your ratings belong to your account and follow you to all your devices</li>
+          <li>Lighter startup and various fixes</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.10.1-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.10.1"
+        sparkle:shortVersionString="2.10.1"
+        length="171644813"
+        type="application/zip"
+        sparkle:edSignature="LRJIYxu2qXYTYWsEIzvmdyXW4/svSyfo/9EuD9/SoAsCCqxT+TLybu9dPeDcYn+oxI1jI+HANWkAusH3OyH9BA==" />
+    </item>
+
     <!-- 2.10.0 build 42 macOS DMG — Wed, 23 Sep 2026 18:33:14 +0000 -->
     <!-- minimumSystemVersion 12.0: el proyecto subio el minimo el 2026-09-17
          (Analyzer#163, Xcode 27). NO copiar el 11.0 de los items de abajo. -->
