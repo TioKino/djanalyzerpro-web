@@ -40,7 +40,7 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 if [ "${APPCAST#http}" != "$APPCAST" ]; then
-    echo "Descargando $APPCAST…"
+    echo "Descargando ${APPCAST}…"
     curl -fsSL "$APPCAST" -o "$TMP/appcast.xml" || { echo "ERROR: no se pudo descargar"; exit 1; }
     APPCAST="$TMP/appcast.xml"
 fi
