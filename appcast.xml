@@ -134,6 +134,45 @@
         sparkle:edSignature="2lFzwOKtphCuk1zoOppAFvDwqtCWJM38xhK4Osj0nz4a54hhQU5llMYvAn/W+phCu/hyJkovghUv+114PYQMCg==" />
     </item>
 
+    <!-- 2.10.2 Windows — Fri, 23 Oct 2026 19:16:12 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.10.2</title>
+      <pubDate>Fri, 23 Oct 2026 19:16:12 +0000</pubDate>
+      <sparkle:version>2.10.2</sparkle:version>
+      <sparkle:shortVersionString>2.10.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.0.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.10.2</h3>
+        <ul>
+          <li>Loops con longitud: nacen de 4 beats en un pad libre y llegan as&iacute; a VirtualDJ, Traktor y Rekordbox</li>
+          <li>La rejilla cae en el golpe (ya no a contratiempo) y saltar a un cue suena justo ah&iacute;</li>
+          <li>Borrar cues se puede deshacer, y &laquo;Borrar todos&raquo; pregunta antes</li>
+          <li>Los sets que grabas con el m&oacute;vil llegan al ordenador, listos para hacer una sesi&oacute;n</li>
+          <li>Importar tu biblioteca: buscador, filtro y un Cancelar que para de verdad. De Traktor, tambi&eacute;n una lista suelta</li>
+          <li>Si usas DJ Analyzer tambi&eacute;n en el m&oacute;vil, actual&iacute;zalo all&iacute;</li>
+          <li>Correcciones varias</li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Loops with a length: they start at 4 beats on a free pad and reach VirtualDJ, Traktor and Rekordbox that way</li>
+          <li>The beat grid lands on the kick (no longer on the off-beat), and jumping to a cue plays right there</li>
+          <li>Deleting cues can be undone, and "Delete all" asks first</li>
+          <li>Sets you record with your phone reach your computer, ready to become a session</li>
+          <li>Importing your library: search, filter and a Cancel that really stops. From Traktor, a single playlist too</li>
+          <li>If you also use DJ Analyzer on your phone, update it there too</li>
+          <li>Various fixes</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.10.2-Setup.zip"
+        sparkle:os="windows"
+        sparkle:version="2.10.2"
+        sparkle:shortVersionString="2.10.2"
+        length="174714503"
+        type="application/zip"
+        sparkle:edSignature="Lixgo+ODHUYpmmTRtyieakRGdKnpO0t51HHEQHLkXr+PIUs0hMF/sgMKbxK8Yg69EQc2n4PWTR9Ih4ppwBR6CA==" />
+    </item>
+
     <!-- 2.10.1 build 43 macOS DMG — Mon, 28 Sep 2026 03:42:43 +0000 -->
     <!-- minimumSystemVersion 12.0, igual que la 2.10.0 (Analyzer#163, Xcode 27). -->
     <item>
