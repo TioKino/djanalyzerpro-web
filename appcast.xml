@@ -93,6 +93,51 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.10.3 build 46 macOS DMG — Thu, 29 Oct 2026 12:38:52 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.10.3</title>
+      <pubDate>Thu, 29 Oct 2026 12:38:52 +0000</pubDate>
+      <sparkle:version>46</sparkle:version>
+      <sparkle:shortVersionString>2.10.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.10.3</h3>
+        <ul>
+          <li>M&aacute;s f&aacute;cil de leer: fondos grafito, textos m&aacute;s claros y todo en tu idioma</li>
+          <li>Suggest busca con el tema que est&aacute;s escuchando</li>
+          <li>El trackpad hace zoom en la onda: pellizca o desliza dos dedos</li>
+          <li>La rejilla marca el comp&aacute;s cuando el &laquo;1&raquo; es de fiar: el de tu programa de DJ o el que marques t&uacute;</li>
+          <li>Ajustes por secciones, con buscador</li>
+          <li>Un solo bot&oacute;n Importar, y los avisos de uno en uno</li>
+          <li>Los sets que grabas con el m&oacute;vil: cada tema con su BPM y su tonalidad, y &laquo;Rehacer con tu m&uacute;sica&raquo;</li>
+          <li>Si usas DJ Analyzer tambi&eacute;n en el m&oacute;vil, actual&iacute;zalo all&iacute;</li>
+          <li>Correcciones varias</li>
+          <li><strong>Requiere macOS 12 Monterey o superior</strong></li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Easier to read: graphite backgrounds, clearer text and everything in your language</li>
+          <li>Suggest searches with the track you're listening to</li>
+          <li>The trackpad zooms the waveform: pinch or slide two fingers</li>
+          <li>The beat grid marks the bar when the "1" can be trusted: your DJ software's, or the one you mark</li>
+          <li>Settings in sections, with search</li>
+          <li>A single Import button, and notices one at a time</li>
+          <li>Sets you record with your phone: each track with its BPM and key, and "Redo with your music"</li>
+          <li>If you also use DJ Analyzer on your phone, update it there too</li>
+          <li>Various fixes</li>
+          <li><strong>Requires macOS 12 Monterey or later</strong></li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.10.3.dmg"
+        sparkle:os="macos"
+        sparkle:version="46"
+        sparkle:shortVersionString="2.10.3"
+        length="160534650"
+        type="application/octet-stream"
+        sparkle:edSignature="7aFj8981jgjUC3f5yV0XaRlJ3aFAyvGMhLz0rfrFqC7iGQmlncMbWo5JjpG72H1QxVhWmxMhGwJ0zewY1504AA==" />
+    </item>
+
     <!-- 2.10.2 build 45 macOS DMG — Fri, 23 Oct 2026 14:57:22 +0000 -->
     <item>
       <title>DJ Analyzer Pro 2.10.2</title>
