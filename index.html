@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<title>DJ Analyzer - Professional DJ Music Analysis</title>
-<meta name="description" content="Analiza tu música como un pro: BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. Disponible en Windows, macOS, iOS y Android. Edición Pro con motor de análisis local para Windows y macOS.">
+<title>DJ Analyzer — Análisis musical para DJs con memoria colectiva</title>
+<meta name="description" content="BPM, tonalidad, energía y Camelot, y una memoria colectiva: los cues y la rejilla de otros DJs con tu mismo tema te llegan aunque sea otro fichero. Ida y vuelta con Rekordbox, Traktor y VirtualDJ. Windows, macOS, iOS y Android.">
 <link rel="canonical" href="https://www.djanalyzerpro.com/">
 <link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/">
-<link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/?lang=en">
+<link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <!-- Open Graph / Twitter -->
-<meta property="og:title" content="DJ Analyzer - Professional DJ Music Analysis">
-<meta property="og:description" content="BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. La app definitiva para DJs.">
+<meta property="og:title" content="DJ Analyzer — Análisis musical para DJs con memoria colectiva">
+<meta property="og:description" content="BPM, tonalidad, energía y Camelot, y los cues y la rejilla de otros DJs con tu mismo tema. Ida y vuelta con Rekordbox, Traktor y VirtualDJ.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.djanalyzerpro.com/">
 <meta property="og:image" content="https://www.djanalyzerpro.com/img/library.jpg">
@@ -24,7 +24,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DJ Analyzer">
-<meta name="twitter:description" content="Professional DJ music analysis - BPM, Key, Energy & Session Planning">
+<meta name="twitter:description" content="BPM, tonalidad, energía y Camelot, y los cues y la rejilla de otros DJs con tu mismo tema.">
 <meta name="twitter:image" content="https://www.djanalyzerpro.com/img/library.jpg">
 
 <!-- Schema.org -->
@@ -51,8 +51,8 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format('woff2')}</style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -106,6 +106,9 @@ nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:b
 /* STORE BADGES */
 .store-grid{display:grid;grid-template-columns:repeat(2,minmax(200px,240px));gap:1rem;justify-content:center;margin-top:2rem}
 @media(min-width:900px){.store-grid{grid-template-columns:repeat(4,minmax(180px,220px))}}
+/* En un teléfono los dos botones por fila no caben con 200 px de mínimo:
+   la página tenía scroll horizontal (W2, 2026-11-13). */
+@media(max-width:480px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-left:16px;padding-right:16px}.store-btn{min-width:0}}
 .store-btn{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.1rem;border-radius:12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-align:left;transition:all .25s;position:relative}
 .store-btn:hover{border-color:var(--purple);background:var(--bg4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.15);color:#fff}
 .store-btn .store-icon{font-size:1.6rem;flex-shrink:0}
@@ -162,6 +165,7 @@ section{padding:6rem 2rem}
 .screenshot-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative}
 .screenshot-item:hover{border-color:var(--purple);transform:scale(1.02);box-shadow:0 12px 40px rgba(139,92,246,.15)}
 .screenshot-item img{width:100%;height:auto;display:block}
+picture{display:block}
 .screenshot-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1.5rem 1rem .75rem;font-size:.85rem;font-weight:600;color:#fff}
 
 /* MOBILE SHOWCASE */
@@ -178,23 +182,7 @@ section{padding:6rem 2rem}
 .step h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
 .step p{color:var(--text2);font-size:.9rem}
 
-/* PRICING */
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto}
-.price-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative}
-.price-card.featured{border-color:var(--purple);box-shadow:0 0 40px rgba(139,92,246,.15)}
-.price-card.featured::before{content:'POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--cyan));color:#fff;font-size:.7rem;font-weight:700;padding:.3rem 1rem;border-radius:100px;letter-spacing:1px}
-.price-name{font-size:1rem;font-weight:600;color:var(--text2);margin-bottom:.5rem}
-.price-amount{font-size:2.5rem;font-weight:900;margin-bottom:.25rem}
-.price-amount span{font-size:1rem;font-weight:500;color:var(--text3)}
-.price-desc{color:var(--text3);font-size:.85rem;margin-bottom:2rem}
-.price-features{list-style:none;margin-bottom:2rem}
-.price-features li{padding:.5rem 0;font-size:.9rem;color:var(--text2);display:flex;align-items:center;gap:.5rem}
 .check{color:var(--green);font-weight:700}
-.price-btn{display:block;width:100%;padding:.85rem;border-radius:12px;font-size:.95rem;font-weight:600;border:none;cursor:pointer;text-align:center;transition:all .25s}
-.price-btn-primary{background:var(--purple);color:#fff}
-.price-btn-primary:hover{background:var(--purple-light);color:#fff}
-.price-btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
-.price-btn-secondary:hover{border-color:var(--purple);color:#fff}
 
 /* CTA */
 .cta-section{text-align:center}
@@ -231,7 +219,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <ul class="nav-links">
         <li><a href="#features" data-lang="es">Funciones</a><a href="#features" data-lang="en">Features</a></li>
         <li><a href="#screenshots" data-lang="es">Capturas</a><a href="#screenshots" data-lang="en">Screenshots</a></li>
-        <li><a href="#pricing" data-lang="es">Precios</a><a href="#pricing" data-lang="en">Pricing</a></li>
+        <li><a href="#pricing" data-lang="es">Precio</a><a href="#pricing" data-lang="en">Price</a></li>
         <li><a href="manual.html">Manual</a></li>
       </ul>
       <div class="lang-toggle" role="group" aria-label="Idioma / Language">
@@ -252,8 +240,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     <h1 data-lang="es">Analiza. Mezcla.<br><span class="gradient">Domina tu sesión.</span></h1>
     <h1 data-lang="en">Analyze. Mix.<br><span class="gradient">Own your session.</span></h1>
 
-    <p data-lang="es">BPM, Key, Energy, Camelot, Waveform y Session Planning en una sola app. El arma secreta de los DJs que quieren ir un paso más allá.</p>
-    <p data-lang="en">BPM, Key, Energy, Camelot, Waveform and Session Planning in one app. The secret weapon for DJs who want to go beyond.</p>
+    <p data-lang="es">BPM, tonalidad, energía, Camelot y onda, y una memoria colectiva: si otro DJ ya preparó tu tema —aunque sea otro fichero—, sus cues y su rejilla te llegan. Va y vuelve con Rekordbox, Traktor y VirtualDJ.</p>
+    <p data-lang="en">BPM, key, energy, Camelot and waveform, plus a collective memory: if another DJ already prepared your track —even as a different file— their cues and beat grid reach you. Round-trips with Rekordbox, Traktor and VirtualDJ.</p>
 
     <div class="store-grid">
       <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows">
@@ -294,16 +282,19 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <span data-lang="en">On Mac, the direct download analyzes faster.</span>
     </p>
 
-    <!-- PRO EDITION: motor local para Windows + macOS DMG -->
+    <!-- MOTOR LOCAL (Windows + macOS DMG). Hasta el 2026-11-13 se llamaba «Pro
+         Edition» / «Edición Pro»: el motor local depende del CANAL de descarga,
+         no de la licencia (CLAUDE.md, «Motor local»), y comprar Pro no se lo
+         dará a nadie del Mac App Store ni del móvil. No vuelvas a llamarlo Pro. -->
     <div class="pro-section">
-      <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
-      <div class="pro-label" data-lang="en">Pro Edition · Local engine · Free for now</div>
+      <div class="pro-label" data-lang="es">Descarga directa · Motor local</div>
+      <div class="pro-label" data-lang="en">Direct download · Local engine</div>
 
       <div class="pro-title" data-lang="es">Análisis instantáneo, sin esperas, offline</div>
       <div class="pro-title" data-lang="en">Instant analysis, no waiting, offline</div>
 
-      <div class="pro-sub" data-lang="es">Versión completa para Windows y macOS con motor de análisis embebido. Pensado para librerías grandes y trabajo profesional sin depender de la nube.</div>
-      <div class="pro-sub" data-lang="en">Full Windows &amp; macOS edition with bundled analysis engine. Built for large libraries and pro workflows without depending on the cloud.</div>
+      <div class="pro-sub" data-lang="es">La descarga directa de Windows y macOS lleva el motor de análisis dentro: tus temas se analizan en tu ordenador. Pensado para librerías grandes.</div>
+      <div class="pro-sub" data-lang="en">The direct download for Windows and macOS ships with the analysis engine inside: your tracks are analyzed on your computer. Built for large libraries.</div>
 
       <!-- SIN BOTONES A PROPOSITO. Los de «Descarga directa Windows» y
            «Descarga directa macOS» de arriba apuntan a ESTOS MISMOS ficheros
@@ -346,6 +337,81 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <div class="hero-stat"><div class="num">24</div><div class="label">Camelot Keys</div></div>
       <div class="hero-stat"><div class="num">12K</div><div class="label">Waveform Frames</div></div>
       <div class="hero-stat"><div class="num">4</div><div class="label" data-lang="es">Plataformas</div><div class="label" data-lang="en">Platforms</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE NOS DISTINGUE (auditoría W2, 2026-11-13): lo que no hace
+     cualquiera. Lo genérico (BPM, Camelot, onda) va en Features, debajo. -->
+<section id="unique">
+  <div class="container">
+    <div class="section-label" data-lang="es">Solo aquí</div>
+    <div class="section-label" data-lang="en">Only here</div>
+    <div class="section-title" data-lang="es">Lo que no hace ninguna otra app</div>
+    <div class="section-title" data-lang="en">What no other app does</div>
+    <div class="features-grid" data-lang="es">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#129504;</div>
+        <h3>Memoria colectiva</h3>
+        <p>Dos DJs con el mismo tema —otro fichero, otro formato, otras etiquetas— comparten cues, rejilla y correcciones: la app los junta por cómo suenan, no por el nombre. Los puntos donde coinciden varios DJs los adoptas con un clic.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128260;</div>
+        <h3>Ida y vuelta con tu programa</h3>
+        <p>Importa de Rekordbox, Traktor y VirtualDJ tus cues, loops, rejilla y listas, y devuélvelos igual. Comprobado contra los programas de verdad, no contra nosotros mismos.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127897;</div>
+        <h3>Escuchar</h3>
+        <p>¿Qué está sonando? El móvil lo identifica y te dice si ya lo tienes en tu biblioteca, con su BPM y su tonalidad, y qué tienes tú que mezcle con él.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128101;</div>
+        <h3>Duplicados por el sonido</h3>
+        <p>Encuentra el mismo tema en dos ficheros distintos —el FLAC comprado y el MP3 de siempre— y te sugiere cuál quedarte sin perder tus cues.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127926;</div>
+        <h3>Las mezclas, aparte</h3>
+        <p>Una sesión grabada de una hora no se cuela en tu biblioteca como si fuera un tema: se aparta sola, suena con su onda y, en el Mac, saca su tracklist.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128194;</div>
+        <h3>Carpeta vigilada</h3>
+        <p>Elige tu carpeta de descargas y lo que caiga en ella entra solo en la biblioteca, analizado y en su carpeta.</p>
+      </div>
+    </div>
+    <div class="features-grid" data-lang="en">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#129504;</div>
+        <h3>Collective memory</h3>
+        <p>Two DJs with the same track —different file, format or tags— share cues, beat grid and corrections: the app matches them by how they sound, not by name. Where several DJs agree, you adopt their cues in one click.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128260;</div>
+        <h3>Round-trip with your DJ software</h3>
+        <p>Bring your cues, loops, beat grid and playlists in from Rekordbox, Traktor and VirtualDJ, and send them back the same way. Tested against the real programs, not just against ourselves.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127897;</div>
+        <h3>Listen</h3>
+        <p>What's playing? Your phone identifies it and tells you whether it's already in your library, with its BPM and key, and what you have that mixes with it.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128101;</div>
+        <h3>Duplicates by sound</h3>
+        <p>Finds the same track in two different files —the FLAC you bought and your old MP3— and suggests which one to keep without losing your cues.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127926;</div>
+        <h3>Mixes kept apart</h3>
+        <p>An hour-long recorded mix doesn't sneak into your library as a track: it's set aside on its own, plays with its waveform and, on Mac, gets its tracklist.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128194;</div>
+        <h3>Watched folder</h3>
+        <p>Pick your downloads folder and whatever lands in it joins your library on its own, analyzed and in its folder.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -444,19 +510,19 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     </div>
     <div class="screenshots-grid">
       <div class="screenshot-item">
-        <img src="img/library.jpg" alt="Library - Track Table" loading="lazy">
+        <picture><source srcset="img/library.webp" type="image/webp"><img src="img/library.jpg" alt="Library - Track Table" width="1200" height="634" decoding="async"></picture>
         <div class="screenshot-label">Library & Track Analysis</div>
       </div>
       <div class="screenshot-item">
-        <img src="img/camelot.png" alt="Camelot Wheel & Smart Suggest" loading="lazy">
+        <picture><source srcset="img/camelot.webp" type="image/webp"><img src="img/camelot.png" alt="Camelot Wheel & Smart Suggest" width="1200" height="632" loading="lazy" decoding="async"></picture>
         <div class="screenshot-label">Camelot Wheel & Smart Suggest</div>
       </div>
       <div class="screenshot-item">
-        <img src="img/flow.jpg" alt="Flow Designer" loading="lazy">
+        <picture><source srcset="img/flow.webp" type="image/webp"><img src="img/flow.jpg" alt="Flow Designer" width="1200" height="631" loading="lazy" decoding="async"></picture>
         <div class="screenshot-label">Flow Designer - Session Planning</div>
       </div>
       <div class="screenshot-item">
-        <img src="img/smart-collections.jpg" alt="Smart Collections" loading="lazy">
+        <picture><source srcset="img/smart-collections.webp" type="image/webp"><img src="img/smart-collections.jpg" alt="Smart Collections" width="1200" height="636" loading="lazy" decoding="async"></picture>
         <div class="screenshot-label">Smart Collections</div>
       </div>
     </div>
@@ -477,15 +543,15 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     <p class="section-desc" style="margin:0 auto" data-lang="en">Sync with desktop and take all your analyzed music to the venue. Available on Google Play and the App Store.</p>
     <div class="mobile-grid">
       <div class="mobile-item">
-        <img src="img/mobile-home.jpg" alt="Mobile Home Screen" loading="lazy">
+        <picture><source srcset="img/mobile-home.webp" type="image/webp"><img src="img/mobile-home.jpg" alt="Mobile Home Screen" width="600" height="1213" loading="lazy" decoding="async"></picture>
         <div class="mobile-label">Home</div>
       </div>
       <div class="mobile-item">
-        <img src="img/mobile-library.jpg" alt="Mobile Library" loading="lazy">
+        <picture><source srcset="img/mobile-library.webp" type="image/webp"><img src="img/mobile-library.jpg" alt="Mobile Library" width="600" height="1226" loading="lazy" decoding="async"></picture>
         <div class="mobile-label">Library</div>
       </div>
       <div class="mobile-item">
-        <img src="img/mobile-session.jpg" alt="Mobile Session" loading="lazy">
+        <picture><source srcset="img/mobile-session.webp" type="image/webp"><img src="img/mobile-session.jpg" alt="Mobile Session" width="600" height="1196" loading="lazy" decoding="async"></picture>
         <div class="mobile-label">Session</div>
       </div>
     </div>
@@ -540,79 +606,17 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRECIO (W1, 2026-11-13): hubo una tabla «Free / Pro 4,99 €/mes» con un
+     reparto por funciones que nadie había decidido (PAYWALL.md dice otra
+     cosa). Hasta que el precio exista, solo esto: hoy es gratis entera. -->
 <section id="pricing" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container" style="text-align:center">
-    <div class="section-label" data-lang="es">Precios</div>
-    <div class="section-label" data-lang="en">Pricing</div>
-    <div class="section-title" data-lang="es">Empieza gratis, crece cuando quieras</div>
-    <div class="section-title" data-lang="en">Start free, upgrade when you're ready</div>
-    <p class="section-desc" style="margin:0 auto" data-lang="es">Sin trucos. Sin límites artificiales.</p>
-    <p class="section-desc" style="margin:0 auto" data-lang="en">No tricks. No artificial limits.</p>
-
-    <!-- ES pricing -->
-    <div class="pricing-grid" data-lang="es">
-      <div class="price-card">
-        <div class="price-name">Free</div>
-        <div class="price-amount">0 &euro;</div>
-        <div class="price-desc">Para siempre</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> Análisis BPM, Key, Energy</li>
-          <li><span class="check">&#10003;</span> Camelot Wheel</li>
-          <li><span class="check">&#10003;</span> Smart Collections</li>
-          <li><span class="check">&#10003;</span> Waveform espectral</li>
-          <li><span class="check">&#10003;</span> Import/Export básico</li>
-          <li><span class="check">&#10003;</span> Cloud Sync (1 dispositivo)</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-secondary">Descargar Gratis</a>
-      </div>
-      <div class="price-card featured">
-        <div class="price-name">Pro</div>
-        <div class="price-amount">4.99 &euro; <span>/ mes</span></div>
-        <div class="price-desc">Para DJs profesionales</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> Todo lo de Free</li>
-          <li><span class="check">&#10003;</span> Flow Designer completo</li>
-          <li><span class="check">&#10003;</span> Export Rekordbox / Traktor / VirtualDJ</li>
-          <li><span class="check">&#10003;</span> Analytics avanzados</li>
-          <li><span class="check">&#10003;</span> Cloud Sync ilimitado</li>
-          <li><span class="check">&#10003;</span> Soporte prioritario</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-primary">Próximamente</a>
-      </div>
-    </div>
-
-    <!-- EN pricing -->
-    <div class="pricing-grid" data-lang="en">
-      <div class="price-card">
-        <div class="price-name">Free</div>
-        <div class="price-amount">0 &euro;</div>
-        <div class="price-desc">Forever</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> BPM, Key, Energy analysis</li>
-          <li><span class="check">&#10003;</span> Camelot Wheel</li>
-          <li><span class="check">&#10003;</span> Smart Collections</li>
-          <li><span class="check">&#10003;</span> Spectral Waveform</li>
-          <li><span class="check">&#10003;</span> Basic Import/Export</li>
-          <li><span class="check">&#10003;</span> Cloud Sync (1 device)</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-secondary">Download Free</a>
-      </div>
-      <div class="price-card featured">
-        <div class="price-name">Pro</div>
-        <div class="price-amount">4.99 &euro; <span>/ month</span></div>
-        <div class="price-desc">For professional DJs</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> Everything in Free</li>
-          <li><span class="check">&#10003;</span> Full Flow Designer</li>
-          <li><span class="check">&#10003;</span> Export Rekordbox / Traktor / VirtualDJ</li>
-          <li><span class="check">&#10003;</span> Advanced Analytics</li>
-          <li><span class="check">&#10003;</span> Unlimited Cloud Sync</li>
-          <li><span class="check">&#10003;</span> Priority Support</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-primary">Coming Soon</a>
-      </div>
-    </div>
+    <div class="section-label" data-lang="es">Precio</div>
+    <div class="section-label" data-lang="en">Price</div>
+    <div class="section-title" data-lang="es">Gratis. Entera.</div>
+    <div class="section-title" data-lang="en">Free. All of it.</div>
+    <p class="section-desc" style="margin:0 auto" data-lang="es">Hoy DJ Analyzer es gratis en todas sus plataformas y con todas sus funciones: analizar, la memoria colectiva, Escuchar, exportar a Rekordbox, Traktor y VirtualDJ y sincronizar entre tus aparatos.</p>
+    <p class="section-desc" style="margin:0 auto" data-lang="en">Today DJ Analyzer is free on every platform and with every feature: analysis, the collective memory, Listen, export to Rekordbox, Traktor and VirtualDJ, and sync across your devices.</p>
   </div>
 </section>
 
@@ -659,16 +663,16 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
         <span data-lang="en">On Mac, the direct download analyzes faster.</span>
       </p>
 
-      <!-- PRO EDITION en CTA inferior: misma seccion que en el hero -->
+      <!-- MOTOR LOCAL en CTA inferior: misma seccion que en el hero -->
       <div class="pro-section">
-        <div class="pro-label" data-lang="es">Pro Edition · Motor local · Gratis por ahora</div>
-        <div class="pro-label" data-lang="en">Pro Edition · Local engine · Free for now</div>
+        <div class="pro-label" data-lang="es">Descarga directa · Motor local</div>
+        <div class="pro-label" data-lang="en">Direct download · Local engine</div>
 
         <div class="pro-title" data-lang="es">¿Necesitas más velocidad?</div>
         <div class="pro-title" data-lang="en">Need more speed?</div>
 
-        <div class="pro-sub" data-lang="es">La edición Pro para Windows y macOS lleva el motor de análisis integrado, así que no esperas a la nube y funciona offline.</div>
-        <div class="pro-sub" data-lang="en">The Pro edition for Windows and macOS ships with the analysis engine embedded — no waiting on the cloud, fully offline.</div>
+        <div class="pro-sub" data-lang="es">La descarga directa de Windows y macOS lleva el motor de análisis integrado: no esperas a la nube y analiza sin conexión.</div>
+        <div class="pro-sub" data-lang="en">The direct download for Windows and macOS ships with the analysis engine embedded: no waiting on the cloud, and it analyzes offline.</div>
 
         <!-- Sin botones, igual que en el hero: los de arriba de esta misma
              seccion ya descargan el EXE y el DMG, que SON los que llevan
@@ -683,8 +687,11 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
   <div class="footer-inner">
     <div class="footer-links">
       <a href="#features">Features</a>
-      <a href="#pricing" data-lang="es">Precios</a><a href="#pricing" data-lang="en">Pricing</a>
+      <a href="#pricing" data-lang="es">Precio</a><a href="#pricing" data-lang="en">Price</a>
       <a href="manual.html">Manual</a>
+      <a href="vs-lexicon.html">vs Lexicon</a>
+      <a href="vs-mixed-in-key.html">vs Mixed In Key</a>
+      <a href="vs-rekordbox.html" data-lang="es">y Rekordbox</a><a href="vs-rekordbox.html?lang=en" data-lang="en">and Rekordbox</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="mailto:djanalyzerpro@gmail.com">Contact</a>
     </div>
@@ -693,28 +700,34 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
 </footer>
 
 <script>
+// Cada idioma es su página (`/` y `/en/`, auditoría W2, 2026-11-13): antes
+// los dos iban en el mismo HTML y Google solo veía el español (y, al
+// renderizar con el navegador en inglés, el inglés bajo la URL española).
+// `en/index.html` lo genera `Analyzer/scripts/build_web_en.py`: no lo edites
+// a mano.
+const PAGE_LANG = document.documentElement.lang;
 function setLang(lang) {
-  document.body.className = lang === 'en' ? 'en' : '';
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  if (lang !== PAGE_LANG) location.href = lang === 'en' ? '/en/' : '/';
 }
-// 1) URL ?lang=en wins (hreflang-friendly)
-const urlLang = new URLSearchParams(location.search).get('lang');
-if (urlLang === 'en' || urlLang === 'es') {
-  setLang(urlLang);
-} else {
-  // 2) Saved preference
-  const saved = localStorage.getItem('lang');
-  if (saved) {
-    setLang(saved);
-  } else {
-    // 3) Browser default
-    const browser = (navigator.language || 'es').slice(0, 2);
-    if (browser === 'en') setLang('en');
+(function () {
+  if (PAGE_LANG !== 'es') return;
+  const destino = '/en/' + location.hash;
+  // Los enlaces de antes (`?lang=en`).
+  if (new URLSearchParams(location.search).get('lang') === 'en') {
+    location.replace(destino);
+    return;
   }
-}
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  if (saved === 'en') { location.replace(destino); return; }
+  // Un navegador en inglés sin preferencia guardada va a la inglesa, pero
+  // nunca un buscador: indexaría la española como si no existiera.
+  const bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+  if (!saved && !bot && (navigator.language || 'es').slice(0, 2) === 'en') {
+    location.replace(destino);
+  }
+})();
 </script>
 
 <script>
