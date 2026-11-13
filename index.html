@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<title>DJ Analyzer - Professional DJ Music Analysis</title>
-<meta name="description" content="Analiza tu música como un pro: BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. Disponible en Windows, macOS, iOS y Android. La descarga directa de Windows y macOS trae el motor de análisis en el ordenador.">
+<title>DJ Analyzer — Análisis musical para DJs con memoria colectiva</title>
+<meta name="description" content="BPM, tonalidad, energía y Camelot, y una memoria colectiva: los cues y la rejilla de otros DJs con tu mismo tema te llegan aunque sea otro fichero. Ida y vuelta con Rekordbox, Traktor y VirtualDJ. Windows, macOS, iOS y Android.">
 <link rel="canonical" href="https://www.djanalyzerpro.com/">
 <link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/">
-<link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/?lang=en">
+<link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <!-- Open Graph / Twitter -->
-<meta property="og:title" content="DJ Analyzer - Professional DJ Music Analysis">
-<meta property="og:description" content="BPM, Key, Energy, Camelot Wheel, Flow Designer y Smart Collections. La app definitiva para DJs.">
+<meta property="og:title" content="DJ Analyzer — Análisis musical para DJs con memoria colectiva">
+<meta property="og:description" content="BPM, tonalidad, energía y Camelot, y los cues y la rejilla de otros DJs con tu mismo tema. Ida y vuelta con Rekordbox, Traktor y VirtualDJ.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.djanalyzerpro.com/">
 <meta property="og:image" content="https://www.djanalyzerpro.com/img/library.jpg">
@@ -24,7 +24,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="DJ Analyzer">
-<meta name="twitter:description" content="Professional DJ music analysis - BPM, Key, Energy & Session Planning">
+<meta name="twitter:description" content="BPM, tonalidad, energía y Camelot, y los cues y la rejilla de otros DJs con tu mismo tema.">
 <meta name="twitter:image" content="https://www.djanalyzerpro.com/img/library.jpg">
 
 <!-- Schema.org -->
@@ -51,8 +51,8 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format('woff2')}</style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -106,6 +106,9 @@ nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:b
 /* STORE BADGES */
 .store-grid{display:grid;grid-template-columns:repeat(2,minmax(200px,240px));gap:1rem;justify-content:center;margin-top:2rem}
 @media(min-width:900px){.store-grid{grid-template-columns:repeat(4,minmax(180px,220px))}}
+/* En un teléfono los dos botones por fila no caben con 200 px de mínimo:
+   la página tenía scroll horizontal (W2, 2026-11-13). */
+@media(max-width:480px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-left:16px;padding-right:16px}.store-btn{min-width:0}}
 .store-btn{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.1rem;border-radius:12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-align:left;transition:all .25s;position:relative}
 .store-btn:hover{border-color:var(--purple);background:var(--bg4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.15);color:#fff}
 .store-btn .store-icon{font-size:1.6rem;flex-shrink:0}
@@ -162,6 +165,7 @@ section{padding:6rem 2rem}
 .screenshot-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative}
 .screenshot-item:hover{border-color:var(--purple);transform:scale(1.02);box-shadow:0 12px 40px rgba(139,92,246,.15)}
 .screenshot-item img{width:100%;height:auto;display:block}
+picture{display:block}
 .screenshot-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1.5rem 1rem .75rem;font-size:.85rem;font-weight:600;color:#fff}
 
 /* MOBILE SHOWCASE */
@@ -252,8 +256,8 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     <h1 data-lang="es">Analiza. Mezcla.<br><span class="gradient">Domina tu sesión.</span></h1>
     <h1 data-lang="en">Analyze. Mix.<br><span class="gradient">Own your session.</span></h1>
 
-    <p data-lang="es">BPM, Key, Energy, Camelot, Waveform y Session Planning en una sola app. El arma secreta de los DJs que quieren ir un paso más allá.</p>
-    <p data-lang="en">BPM, Key, Energy, Camelot, Waveform and Session Planning in one app. The secret weapon for DJs who want to go beyond.</p>
+    <p data-lang="es">BPM, tonalidad, energía, Camelot y onda, y una memoria colectiva: si otro DJ ya preparó tu tema —aunque sea otro fichero—, sus cues y su rejilla te llegan. Va y vuelve con Rekordbox, Traktor y VirtualDJ.</p>
+    <p data-lang="en">BPM, key, energy, Camelot and waveform, plus a collective memory: if another DJ already prepared your track —even as a different file— their cues and beat grid reach you. Round-trips with Rekordbox, Traktor and VirtualDJ.</p>
 
     <div class="store-grid">
       <a href="DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows">
@@ -353,6 +357,81 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
   </div>
 </section>
 
+<!-- LO QUE NOS DISTINGUE (auditoría W2, 2026-11-13): lo que no hace
+     cualquiera. Lo genérico (BPM, Camelot, onda) va en Features, debajo. -->
+<section id="unique">
+  <div class="container">
+    <div class="section-label" data-lang="es">Solo aquí</div>
+    <div class="section-label" data-lang="en">Only here</div>
+    <div class="section-title" data-lang="es">Lo que no hace ninguna otra app</div>
+    <div class="section-title" data-lang="en">What no other app does</div>
+    <div class="features-grid" data-lang="es">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#129504;</div>
+        <h3>Memoria colectiva</h3>
+        <p>Dos DJs con el mismo tema —otro fichero, otro formato, otras etiquetas— comparten cues, rejilla y correcciones: la app los junta por cómo suenan, no por el nombre. Los puntos donde coinciden varios DJs los adoptas con un clic.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128260;</div>
+        <h3>Ida y vuelta con tu programa</h3>
+        <p>Importa de Rekordbox, Traktor y VirtualDJ tus cues, loops, rejilla y listas, y devuélvelos igual. Comprobado contra los programas de verdad, no contra nosotros mismos.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127897;</div>
+        <h3>Escuchar</h3>
+        <p>¿Qué está sonando? El móvil lo identifica y te dice si ya lo tienes en tu biblioteca, con su BPM y su tonalidad, y qué tienes tú que mezcle con él.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128101;</div>
+        <h3>Duplicados por el sonido</h3>
+        <p>Encuentra el mismo tema en dos ficheros distintos —el FLAC comprado y el MP3 de siempre— y te sugiere cuál quedarte sin perder tus cues.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127926;</div>
+        <h3>Las mezclas, aparte</h3>
+        <p>Una sesión grabada de una hora no se cuela en tu biblioteca como si fuera un tema: se aparta sola, suena con su onda y, en el Mac, saca su tracklist.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128194;</div>
+        <h3>Carpeta vigilada</h3>
+        <p>Elige tu carpeta de descargas y lo que caiga en ella entra solo en la biblioteca, analizado y en su carpeta.</p>
+      </div>
+    </div>
+    <div class="features-grid" data-lang="en">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#129504;</div>
+        <h3>Collective memory</h3>
+        <p>Two DJs with the same track —different file, format or tags— share cues, beat grid and corrections: the app matches them by how they sound, not by name. Where several DJs agree, you adopt their cues in one click.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128260;</div>
+        <h3>Round-trip with your DJ software</h3>
+        <p>Bring your cues, loops, beat grid and playlists in from Rekordbox, Traktor and VirtualDJ, and send them back the same way. Tested against the real programs, not just against ourselves.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127897;</div>
+        <h3>Listen</h3>
+        <p>What's playing? Your phone identifies it and tells you whether it's already in your library, with its BPM and key, and what you have that mixes with it.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128101;</div>
+        <h3>Duplicates by sound</h3>
+        <p>Finds the same track in two different files —the FLAC you bought and your old MP3— and suggests which one to keep without losing your cues.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127926;</div>
+        <h3>Mixes kept apart</h3>
+        <p>An hour-long recorded mix doesn't sneak into your library as a track: it's set aside on its own, plays with its waveform and, on Mac, gets its tracklist.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128194;</div>
+        <h3>Watched folder</h3>
+        <p>Pick your downloads folder and whatever lands in it joins your library on its own, analyzed and in its folder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section id="features">
   <div class="container">
@@ -447,19 +526,19 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     </div>
     <div class="screenshots-grid">
       <div class="screenshot-item">
-        <img src="img/library.jpg" alt="Library - Track Table" loading="lazy">
+        <picture><source srcset="img/library.webp" type="image/webp"><img src="img/library.jpg" alt="Library - Track Table" width="1200" height="634" decoding="async"></picture>
         <div class="screenshot-label">Library & Track Analysis</div>
       </div>
       <div class="screenshot-item">
-        <img src="img/camelot.png" alt="Camelot Wheel & Smart Suggest" loading="lazy">
+        <picture><source srcset="img/camelot.webp" type="image/webp"><img src="img/camelot.png" alt="Camelot Wheel & Smart Suggest" width="1200" height="632" loading="lazy" decoding="async"></picture>
         <div class="screenshot-label">Camelot Wheel & Smart Suggest</div>
       </div>
       <div class="screenshot-item">
-        <img src="img/flow.jpg" alt="Flow Designer" loading="lazy">
+        <picture><source srcset="img/flow.webp" type="image/webp"><img src="img/flow.jpg" alt="Flow Designer" width="1200" height="631" loading="lazy" decoding="async"></picture>
         <div class="screenshot-label">Flow Designer - Session Planning</div>
       </div>
       <div class="screenshot-item">
-        <img src="img/smart-collections.jpg" alt="Smart Collections" loading="lazy">
+        <picture><source srcset="img/smart-collections.webp" type="image/webp"><img src="img/smart-collections.jpg" alt="Smart Collections" width="1200" height="636" loading="lazy" decoding="async"></picture>
         <div class="screenshot-label">Smart Collections</div>
       </div>
     </div>
@@ -480,15 +559,15 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
     <p class="section-desc" style="margin:0 auto" data-lang="en">Sync with desktop and take all your analyzed music to the venue. Available on Google Play and the App Store.</p>
     <div class="mobile-grid">
       <div class="mobile-item">
-        <img src="img/mobile-home.jpg" alt="Mobile Home Screen" loading="lazy">
+        <picture><source srcset="img/mobile-home.webp" type="image/webp"><img src="img/mobile-home.jpg" alt="Mobile Home Screen" width="600" height="1213" loading="lazy" decoding="async"></picture>
         <div class="mobile-label">Home</div>
       </div>
       <div class="mobile-item">
-        <img src="img/mobile-library.jpg" alt="Mobile Library" loading="lazy">
+        <picture><source srcset="img/mobile-library.webp" type="image/webp"><img src="img/mobile-library.jpg" alt="Mobile Library" width="600" height="1226" loading="lazy" decoding="async"></picture>
         <div class="mobile-label">Library</div>
       </div>
       <div class="mobile-item">
-        <img src="img/mobile-session.jpg" alt="Mobile Session" loading="lazy">
+        <picture><source srcset="img/mobile-session.webp" type="image/webp"><img src="img/mobile-session.jpg" alt="Mobile Session" width="600" height="1196" loading="lazy" decoding="async"></picture>
         <div class="mobile-label">Session</div>
       </div>
     </div>
@@ -696,28 +775,34 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
 </footer>
 
 <script>
+// Cada idioma es su página (`/` y `/en/`, auditoría W2, 2026-11-13): antes
+// los dos iban en el mismo HTML y Google solo veía el español (y, al
+// renderizar con el navegador en inglés, el inglés bajo la URL española).
+// `en/index.html` lo genera `Analyzer/scripts/build_web_en.py`: no lo edites
+// a mano.
+const PAGE_LANG = document.documentElement.lang;
 function setLang(lang) {
-  document.body.className = lang === 'en' ? 'en' : '';
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  if (lang !== PAGE_LANG) location.href = lang === 'en' ? '/en/' : '/';
 }
-// 1) URL ?lang=en wins (hreflang-friendly)
-const urlLang = new URLSearchParams(location.search).get('lang');
-if (urlLang === 'en' || urlLang === 'es') {
-  setLang(urlLang);
-} else {
-  // 2) Saved preference
-  const saved = localStorage.getItem('lang');
-  if (saved) {
-    setLang(saved);
-  } else {
-    // 3) Browser default
-    const browser = (navigator.language || 'es').slice(0, 2);
-    if (browser === 'en') setLang('en');
+(function () {
+  if (PAGE_LANG !== 'es') return;
+  const destino = '/en/' + location.hash;
+  // Los enlaces de antes (`?lang=en`).
+  if (new URLSearchParams(location.search).get('lang') === 'en') {
+    location.replace(destino);
+    return;
   }
-}
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  if (saved === 'en') { location.replace(destino); return; }
+  // Un navegador en inglés sin preferencia guardada va a la inglesa, pero
+  // nunca un buscador: indexaría la española como si no existiera.
+  const bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+  if (!saved && !bot && (navigator.language || 'es').slice(0, 2) === 'en') {
+    location.replace(destino);
+  }
+})();
 </script>
 
 <script>

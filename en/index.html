@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!-- GENERADO por Analyzer/scripts/build_web_en.py desde index.html. No lo edites a mano. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>DJ Analyzer — DJ music analysis with a collective memory</title>
+<meta name="description" content="BPM, key, energy and Camelot, plus a collective memory: cues and beat grids from other DJs with the same track reach you, even as a different file. Round-trips with Rekordbox, Traktor and VirtualDJ. Windows, macOS, iOS and Android.">
+<link rel="canonical" href="https://www.djanalyzerpro.com/en/">
+<link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/">
+<link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/">
+<link rel="icon" type="image/png" href="../favicon.png">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="DJ Analyzer — DJ music analysis with a collective memory">
+<meta property="og:description" content="BPM, key, energy and Camelot, plus cues and beat grids from other DJs with the same track. Round-trips with Rekordbox, Traktor and VirtualDJ.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.djanalyzerpro.com/en/">
+<meta property="og:image" content="https://www.djanalyzerpro.com/img/library.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DJ Analyzer">
+<meta name="twitter:description" content="BPM, key, energy and Camelot, plus cues and beat grids from other DJs with the same track. Round-trips with Rekordbox, Traktor and VirtualDJ.">
+<meta name="twitter:image" content="https://www.djanalyzerpro.com/img/library.jpg">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DJ Analyzer",
+  "operatingSystem": "Windows, Android, iOS, macOS",
+  "applicationCategory": "MultimediaApplication",
+  "softwareVersion": "2.10.3",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "url": "https://www.djanalyzerpro.com/",
+  "description": "Professional DJ music analysis app: BPM, Key, Energy, Camelot Wheel, Flow Designer, Smart Collections.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DJ Analyzer",
+    "email": "djanalyzerpro@gmail.com"
+  }
+}
+</script>
+
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format('woff2')}</style>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg2:#0A0A0A;--bg3:#0E0E0E;--bg4:#141414;
+  --purple:#8B5CF6;--purple-dim:#6D45D0;--purple-light:#A78BFA;
+  --cyan:#06B6D4;--green:#22C55E;--amber:#F59E0B;--red:#EF4444;
+  --text:#E8E8E8;--text2:#AAAAAA;--text3:#777777;
+  --border:#1E1E1E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--purple-light);text-decoration:none}
+a:hover{color:var(--purple)}
+
+/* LANG TOGGLE */
+.lang-toggle{display:flex;gap:2px;background:var(--bg3);border-radius:8px;padding:2px;margin-left:1rem}
+.lang-btn{padding:.35rem .65rem;border-radius:6px;font-size:.75rem;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--text3);transition:all .2s}
+.lang-btn.active{background:var(--purple);color:#fff}
+[data-lang="en"]{display:none !important}
+body.en [data-lang="en"]{display:revert !important}
+body.en [data-lang="es"]{display:none !important}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(8,8,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:100;padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-size:1.1rem;font-weight:800;letter-spacing:1px}
+.nav-logo span{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text2);font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--purple);color:#fff;padding:.5rem 1.25rem;border-radius:8px;font-size:.875rem;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--purple-light);color:#fff;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 30%,rgba(139,92,246,.08) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;color:var(--text2);margin-bottom:2rem}
+.hero-badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-1px}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2rem;color:var(--text2);max-width:600px;margin:0 auto 2.5rem}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.85rem 2rem;border-radius:12px;font-size:1rem;font-weight:600;border:none;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-dim));color:#fff;box-shadow:0 4px 24px rgba(139,92,246,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(139,92,246,.4);color:#fff}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--purple);background:var(--bg4);color:#fff;transform:translateY(-2px)}
+
+/* STORE BADGES */
+.store-grid{display:grid;grid-template-columns:repeat(2,minmax(200px,240px));gap:1rem;justify-content:center;margin-top:2rem}
+@media(min-width:900px){.store-grid{grid-template-columns:repeat(4,minmax(180px,220px))}}
+/* En un teléfono los dos botones por fila no caben con 200 px de mínimo:
+   la página tenía scroll horizontal (W2, 2026-11-13). */
+@media(max-width:480px){.store-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-left:16px;padding-right:16px}.store-btn{min-width:0}}
+.store-btn{display:flex;align-items:center;gap:.75rem;padding:.85rem 1.1rem;border-radius:12px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-align:left;transition:all .25s;position:relative}
+.store-btn:hover{border-color:var(--purple);background:var(--bg4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.15);color:#fff}
+.store-btn .store-icon{font-size:1.6rem;flex-shrink:0}
+.store-btn .store-text{display:flex;flex-direction:column;line-height:1.2}
+.store-btn .store-line1{font-size:.7rem;color:var(--text3);font-weight:500}
+.store-btn .store-line2{font-size:.95rem;font-weight:700}
+.store-btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
+.store-note{max-width:620px;margin:1.1rem auto 0;font-size:.82rem;line-height:1.5;color:var(--text2);text-align:center}
+.store-note a{color:var(--text2);text-decoration:underline;text-underline-offset:2px}
+.store-note strong{color:var(--text)}
+.store-btn.disabled .badge-soon{position:absolute;top:-8px;right:8px;background:var(--amber);color:#000;font-size:.6rem;font-weight:700;padding:.15rem .5rem;border-radius:100px;letter-spacing:.5px}
+/* --- PRO EDITION (motor local Win/Mac DMG) --- */
+.pro-section{margin-top:3rem;padding:2rem 1.5rem;border-radius:18px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(34,211,238,.05));border:1px solid rgba(139,92,246,.25);max-width:680px;margin-left:auto;margin-right:auto}
+.pro-section .pro-label{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.6rem}
+.pro-section .pro-label::before{content:"";width:5px;height:5px;background:var(--purple);border-radius:50%}
+.pro-section .pro-title{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:.5rem;line-height:1.2}
+.pro-section .pro-sub{color:var(--text2);font-size:.95rem;margin-bottom:1.5rem;line-height:1.5}
+.pro-section .pro-grid{display:grid;grid-template-columns:1fr;gap:.75rem}
+@media(min-width:600px){.pro-section .pro-grid{grid-template-columns:1fr 1fr}}
+.pro-section .pro-features{margin-top:1.25rem;display:flex;flex-direction:column;gap:.45rem}
+.pro-section .pro-feat{font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:.5rem}
+.pro-section .pro-feat::before{content:"\2713";color:var(--green);font-weight:700}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .label{font-size:.8rem;color:var(--text3);margin-top:.25rem}
+
+/* SECTIONS */
+section{padding:6rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--purple);margin-bottom:.75rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;letter-spacing:-.5px}
+.section-desc{color:var(--text2);font-size:1.05rem;max-width:600px}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;margin-top:3rem}
+.feature-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.feature-card:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 12px 40px rgba(139,92,246,.1)}
+.feature-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--cyan));opacity:0;transition:opacity .3s}
+.feature-card:hover::after{opacity:1}
+.feature-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem}
+.feature-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.feature-card p{color:var(--text2);font-size:.9rem;line-height:1.6}
+.fi-purple{background:rgba(139,92,246,.15);color:var(--purple)}
+.fi-cyan{background:rgba(6,182,212,.15);color:var(--cyan)}
+.fi-green{background:rgba(34,197,94,.15);color:var(--green)}
+.fi-amber{background:rgba(245,158,11,.15);color:var(--amber)}
+.fi-red{background:rgba(239,68,68,.15);color:var(--red)}
+.fi-blue{background:rgba(59,130,246,.15);color:#3B82F6}
+
+/* SCREENSHOTS */
+.screenshots-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.screenshots-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.screenshot-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative}
+.screenshot-item:hover{border-color:var(--purple);transform:scale(1.02);box-shadow:0 12px 40px rgba(139,92,246,.15)}
+.screenshot-item img{width:100%;height:auto;display:block}
+picture{display:block}
+.screenshot-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1.5rem 1rem .75rem;font-size:.85rem;font-weight:600;color:#fff}
+
+/* MOBILE SHOWCASE */
+.mobile-grid{display:flex;gap:1.5rem;margin-top:3rem;justify-content:center;flex-wrap:wrap}
+.mobile-item{width:220px;border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all .3s;position:relative}
+.mobile-item:hover{border-color:var(--purple);transform:scale(1.03);box-shadow:0 12px 40px rgba(139,92,246,.15)}
+.mobile-item img{width:100%;height:auto;display:block}
+.mobile-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:1.5rem .75rem .5rem;font-size:.8rem;font-weight:600;color:#fff;text-align:center}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+.step{text-align:center;padding:2rem}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-dim));color:#fff;font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;box-shadow:0 4px 20px rgba(139,92,246,.3)}
+.step h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.step p{color:var(--text2);font-size:.9rem}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto}
+.price-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative}
+.price-card.featured{border-color:var(--purple);box-shadow:0 0 40px rgba(139,92,246,.15)}
+.price-card.featured::before{content:'POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--cyan));color:#fff;font-size:.7rem;font-weight:700;padding:.3rem 1rem;border-radius:100px;letter-spacing:1px}
+.price-name{font-size:1rem;font-weight:600;color:var(--text2);margin-bottom:.5rem}
+.price-amount{font-size:2.5rem;font-weight:900;margin-bottom:.25rem}
+.price-amount span{font-size:1rem;font-weight:500;color:var(--text3)}
+.price-desc{color:var(--text3);font-size:.85rem;margin-bottom:2rem}
+.price-features{list-style:none;margin-bottom:2rem}
+.price-features li{padding:.5rem 0;font-size:.9rem;color:var(--text2);display:flex;align-items:center;gap:.5rem}
+.check{color:var(--green);font-weight:700}
+.price-btn{display:block;width:100%;padding:.85rem;border-radius:12px;font-size:.95rem;font-weight:600;border:none;cursor:pointer;text-align:center;transition:all .25s}
+.price-btn-primary{background:var(--purple);color:#fff}
+.price-btn-primary:hover{background:var(--purple-light);color:#fff}
+.price-btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.price-btn-secondary:hover{border-color:var(--purple);color:#fff}
+
+/* CTA */
+.cta-section{text-align:center}
+.cta-box{background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(6,182,212,.05));border:1px solid rgba(139,92,246,.2);border-radius:24px;padding:4rem 2rem;max-width:800px;margin:0 auto}
+.cta-box h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1rem}
+.cta-box p{color:var(--text2);margin-bottom:2rem;font-size:1.05rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-links{display:flex;gap:2rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap}
+.footer-links a{color:var(--text3);font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{color:var(--text3);font-size:.8rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero-stats{flex-direction:column;gap:1.5rem}
+  .features-grid{grid-template-columns:1fr}
+  .screenshots-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+  section{padding:4rem 1.25rem}
+}
+</style>
+</head>
+<body class="en">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><span>DJ Analyzer</span></div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#features" data-lang="en">Features</a></li>
+        <li><a href="#screenshots" data-lang="en">Screenshots</a></li>
+        <li><a href="#pricing" data-lang="en">Pricing</a></li>
+        <li><a href="../manual.html">Manual</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn" onclick="setLang('es')" aria-label="Español" lang="es">ES</button>
+        <button class="lang-btn active" onclick="setLang('en')" aria-label="English" lang="en">EN</button>
+      </div>
+      <a href="#download" class="nav-cta" data-lang="en">Download Free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> v2.10.3 · Windows · Android · iOS · macOS</div>
+
+    <h1 data-lang="en">Analyze. Mix.<br><span class="gradient">Own your session.</span></h1>
+
+    <p data-lang="en">BPM, key, energy, Camelot and waveform, plus a collective memory: if another DJ already prepared your track —even as a different file— their cues and beat grid reach you. Round-trips with Rekordbox, Traktor and VirtualDJ.</p>
+
+    <div class="store-grid">
+      <a href="../DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows">
+        <span class="store-icon">&#127911;</span>
+        <span class="store-text">
+          <span class="store-line1" data-lang="en">Direct download</span>
+          <span class="store-line2">Windows</span>
+        </span>
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" data-store="play" target="_blank" rel="noopener">
+        <span class="store-icon">&#9654;</span>
+        <span class="store-text">
+          <span class="store-line1">Google Play</span>
+          <span class="store-line2">Android</span>
+        </span>
+      </a>
+      <a href="https://apps.apple.com/app/id6763842357" class="store-btn" data-store="appstore_ios" target="_blank" rel="noopener">
+        <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
+        <span class="store-text">
+          <span class="store-line1">App Store</span>
+          <span class="store-line2">iPhone · iPad</span>
+        </span>
+      </a>
+      <a href="../DJAnalyzerPro.dmg" class="store-btn" data-store="dmg">
+        <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
+        <span class="store-text">
+          <span class="store-line1" data-lang="en">Direct download</span>
+          <span class="store-line2">macOS</span>
+        </span>
+      </a>
+    </div>
+    <!-- UNA linea, y solo el porque. Aqui habia cuatro renglones sobre el
+         sandbox de Apple y la huella de sonido, en el hero, antes de que el
+         usuario supiera que hace la app. Lo unico accionable es que en Mac hay
+         dos sitios de donde bajarla y uno analiza mas rapido. -->
+    <p class="store-note">
+      <span data-lang="en">On Mac, the direct download analyzes faster.</span>
+    </p>
+
+    <!-- MOTOR LOCAL (Windows + macOS DMG). Hasta el 2026-11-13 se llamaba «Pro
+         Edition» / «Edición Pro»: el motor local depende del CANAL de descarga,
+         no de la licencia (CLAUDE.md, «Motor local»), y comprar Pro no se lo
+         dará a nadie del Mac App Store ni del móvil. No vuelvas a llamarlo Pro. -->
+    <div class="pro-section">
+      <div class="pro-label" data-lang="en">Direct download · Local engine</div>
+
+      <div class="pro-title" data-lang="en">Instant analysis, no waiting, offline</div>
+
+      <div class="pro-sub" data-lang="en">The direct download for Windows and macOS ships with the analysis engine inside: your tracks are analyzed on your computer. Built for large libraries.</div>
+
+      <!-- SIN BOTONES A PROPOSITO. Los de «Descarga directa Windows» y
+           «Descarga directa macOS» de arriba apuntan a ESTOS MISMOS ficheros
+           (DJAnalyzerPro-Setup.zip y DJAnalyzerPro.dmg): el EXE y el DMG YA
+           llevan el motor dentro. Duplicarlos aqui con la etiqueta «· Pro»
+           hacia pensar que habia dos descargas distintas y que la de arriba
+           era la capada. Esta seccion EXPLICA que trae ese canal; descargarlo
+           se hace arriba. -->
+
+      <div class="pro-features" data-lang="en">
+        <div class="pro-feat">Local analysis up to 10× faster than cloud</div>
+        <div class="pro-feat">Works fully offline</div>
+        <div class="pro-feat">Perfect for libraries over 1000 tracks</div>
+        <!-- Ver la nota del bloque en castellano: el bullet de la huella se
+             cayo porque no era cierto. Las dos builds la generan. -->
+        <div class="pro-feat">macOS signed &amp; notarized by Apple. Windows as ZIP (extract and run)</div>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">400+</div><div class="label" data-lang="en">Subgenres</div></div>
+      <div class="hero-stat"><div class="num">24</div><div class="label">Camelot Keys</div></div>
+      <div class="hero-stat"><div class="num">12K</div><div class="label">Waveform Frames</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="label" data-lang="en">Platforms</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUE NOS DISTINGUE (auditoría W2, 2026-11-13): lo que no hace
+     cualquiera. Lo genérico (BPM, Camelot, onda) va en Features, debajo. -->
+<section id="unique">
+  <div class="container">
+    <div class="section-label" data-lang="en">Only here</div>
+    <div class="section-title" data-lang="en">What no other app does</div>
+    <div class="features-grid" data-lang="en">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#129504;</div>
+        <h3>Collective memory</h3>
+        <p>Two DJs with the same track —different file, format or tags— share cues, beat grid and corrections: the app matches them by how they sound, not by name. Where several DJs agree, you adopt their cues in one click.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128260;</div>
+        <h3>Round-trip with your DJ software</h3>
+        <p>Bring your cues, loops, beat grid and playlists in from Rekordbox, Traktor and VirtualDJ, and send them back the same way. Tested against the real programs, not just against ourselves.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127897;</div>
+        <h3>Listen</h3>
+        <p>What's playing? Your phone identifies it and tells you whether it's already in your library, with its BPM and key, and what you have that mixes with it.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128101;</div>
+        <h3>Duplicates by sound</h3>
+        <p>Finds the same track in two different files —the FLAC you bought and your old MP3— and suggests which one to keep without losing your cues.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127926;</div>
+        <h3>Mixes kept apart</h3>
+        <p>An hour-long recorded mix doesn't sneak into your library as a track: it's set aside on its own, plays with its waveform and, on Mac, gets its tracklist.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#128194;</div>
+        <h3>Watched folder</h3>
+        <p>Pick your downloads folder and whatever lands in it joins your library on its own, analyzed and in its folder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+
+    <div class="section-title" data-lang="en">Everything you need for the perfect session</div>
+
+    <p class="section-desc" data-lang="en">Professional audio analysis with cutting-edge technology.</p>
+
+    <!-- ES features -->
+
+    <!-- EN features -->
+    <div class="features-grid" data-lang="en">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">&#127925;</div>
+        <h3>BPM, Key & Energy</h3>
+        <p>Automatic BPM, key, Camelot notation and energy level (1-10) detection. Sources: audio analysis, your tags, what you bring from Rekordbox, Traktor or VirtualDJ, and Discogs and MusicBrainz for genre.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">&#127912;</div>
+        <h3>Camelot Wheel</h3>
+        <p>Interactive Camelot wheel for harmonic mixing. Instantly visualize track compatibility and plan perfect transitions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">&#127911;</div>
+        <h3>Spectral Waveform</h3>
+        <p>Rekordbox-style waveform with 3-band FFT analysis. 12,000 frames of resolution with spectral colors by frequency.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-amber">&#128640;</div>
+        <h3>Flow Designer</h3>
+        <p>Visually plan your sessions. Drag tracks, view energy curves, evaluate transitions and export to Rekordbox, Traktor or VirtualDJ.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-red">&#128293;</div>
+        <h3>Smart Collections</h3>
+        <p>Dynamic playlists with rules: BPM, key, energy, genre, track type. Presets like "Peak Time Bangers" ready to use.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-blue">&#9729;</div>
+        <h3>Cloud Sync</h3>
+        <p>Sync your library between desktop and mobile. Link devices with a 6-character code. Analyze on PC, take your data to the venue on your phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots-section" id="screenshots">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-label" data-lang="en">Screenshots</div>
+      <div class="section-title" data-lang="en">Professional interface, no compromise</div>
+      <p class="section-desc" style="margin:0 auto" data-lang="en">Multi-panel workspace, spectral waveform, flow designer and more.</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-item">
+        <picture><source srcset="../img/library.webp" type="image/webp"><img src="../img/library.jpg" alt="Library - Track Table" width="1200" height="634" decoding="async"></picture>
+        <div class="screenshot-label">Library & Track Analysis</div>
+      </div>
+      <div class="screenshot-item">
+        <picture><source srcset="../img/camelot.webp" type="image/webp"><img src="../img/camelot.png" alt="Camelot Wheel & Smart Suggest" width="1200" height="632" loading="lazy" decoding="async"></picture>
+        <div class="screenshot-label">Camelot Wheel & Smart Suggest</div>
+      </div>
+      <div class="screenshot-item">
+        <picture><source srcset="../img/flow.webp" type="image/webp"><img src="../img/flow.jpg" alt="Flow Designer" width="1200" height="631" loading="lazy" decoding="async"></picture>
+        <div class="screenshot-label">Flow Designer - Session Planning</div>
+      </div>
+      <div class="screenshot-item">
+        <picture><source srcset="../img/smart-collections.webp" type="image/webp"><img src="../img/smart-collections.jpg" alt="Smart Collections" width="1200" height="636" loading="lazy" decoding="async"></picture>
+        <div class="screenshot-label">Smart Collections</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE APP -->
+<section id="mobile">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Mobile App</div>
+    <div class="section-title" data-lang="en">Your library in your pocket</div>
+    <!-- iOS lleva publicado desde hace meses (App Store id 6763842357). Esta
+         linea decia «proximamente» y estaba echando para atras a la mitad del
+         parque movil sin que nadie lo viera: el usuario de iPhone leia que su
+         plataforma no existia todavia y no llegaba a buscarla en la tienda. -->
+    <p class="section-desc" style="margin:0 auto" data-lang="en">Sync with desktop and take all your analyzed music to the venue. Available on Google Play and the App Store.</p>
+    <div class="mobile-grid">
+      <div class="mobile-item">
+        <picture><source srcset="../img/mobile-home.webp" type="image/webp"><img src="../img/mobile-home.jpg" alt="Mobile Home Screen" width="600" height="1213" loading="lazy" decoding="async"></picture>
+        <div class="mobile-label">Home</div>
+      </div>
+      <div class="mobile-item">
+        <picture><source srcset="../img/mobile-library.webp" type="image/webp"><img src="../img/mobile-library.jpg" alt="Mobile Library" width="600" height="1226" loading="lazy" decoding="async"></picture>
+        <div class="mobile-label">Library</div>
+      </div>
+      <div class="mobile-item">
+        <picture><source srcset="../img/mobile-session.webp" type="image/webp"><img src="../img/mobile-session.jpg" alt="Mobile Session" width="600" height="1196" loading="lazy" decoding="async"></picture>
+        <div class="mobile-label">Session</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="container" style="text-align:center">
+    <div class="section-label" data-lang="en">How It Works</div>
+    <div class="section-title" data-lang="en">From your folder to your session in 3 steps</div>
+
+    <!-- ES steps -->
+
+    <!-- EN steps -->
+    <div class="steps" data-lang="en">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Import your tracks</h3>
+        <p>Drag folders or files (MP3, WAV, FLAC, M4A). Import from Rekordbox or Traktor with one click.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Automatic analysis</h3>
+        <p>BPM, Key, Energy, Genre, Structure and Waveform. Everything processed in seconds with our cloud backend.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Plan and mix</h3>
+        <p>Use the Flow Designer, Camelot Wheel and Smart Collections to create the perfect session. Export and play.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="section-label" data-lang="en">Pricing</div>
+    <div class="section-title" data-lang="en">Start free, upgrade when you're ready</div>
+    <p class="section-desc" style="margin:0 auto" data-lang="en">No tricks. No artificial limits.</p>
+
+    <!-- ES pricing -->
+
+    <!-- EN pricing -->
+    <div class="pricing-grid" data-lang="en">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-amount">0 &euro;</div>
+        <div class="price-desc">Forever</div>
+        <ul class="price-features">
+          <li><span class="check">&#10003;</span> BPM, Key, Energy analysis</li>
+          <li><span class="check">&#10003;</span> Camelot Wheel</li>
+          <li><span class="check">&#10003;</span> Smart Collections</li>
+          <li><span class="check">&#10003;</span> Spectral Waveform</li>
+          <li><span class="check">&#10003;</span> Basic Import/Export</li>
+          <li><span class="check">&#10003;</span> Cloud Sync (1 device)</li>
+        </ul>
+        <a href="#download" class="price-btn price-btn-secondary">Download Free</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Pro</div>
+        <div class="price-amount">4.99 &euro; <span>/ month</span></div>
+        <div class="price-desc">For professional DJs</div>
+        <ul class="price-features">
+          <li><span class="check">&#10003;</span> Everything in Free</li>
+          <li><span class="check">&#10003;</span> Full Flow Designer</li>
+          <li><span class="check">&#10003;</span> Export Rekordbox / Traktor / VirtualDJ</li>
+          <li><span class="check">&#10003;</span> Advanced Analytics</li>
+          <li><span class="check">&#10003;</span> Unlimited Cloud Sync</li>
+          <li><span class="check">&#10003;</span> Priority Support</li>
+        </ul>
+        <a href="#download" class="price-btn price-btn-primary">Coming Soon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="download">
+  <div class="container">
+    <div class="cta-box">
+      <h2 data-lang="en">Ready to analyze your music?</h2>
+      <p data-lang="en">Download DJ Analyzer for free and start preparing sessions like a professional.</p>
+      <div class="store-grid">
+        <a href="../DJAnalyzerPro-Setup.zip" class="store-btn" data-store="windows">
+          <span class="store-icon">&#127911;</span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="en">Direct download</span>
+            <span class="store-line2">Windows</span>
+          </span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.djanalyzerpro.app" class="store-btn" data-store="play" target="_blank" rel="noopener">
+          <span class="store-icon">&#9654;</span>
+          <span class="store-text">
+            <span class="store-line1">Google Play</span>
+            <span class="store-line2">Android</span>
+          </span>
+        </a>
+        <a href="https://apps.apple.com/app/id6763842357" class="store-btn" data-store="appstore_ios" target="_blank" rel="noopener">
+          <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
+          <span class="store-text">
+            <span class="store-line1">App Store</span>
+            <span class="store-line2">iPhone · iPad</span>
+          </span>
+        </a>
+        <a href="../DJAnalyzerPro.dmg" class="store-btn" data-store="dmg">
+          <span class="store-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="vertical-align:middle"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
+          <span class="store-text">
+            <span class="store-line1" data-lang="en">Direct download</span>
+            <span class="store-line2">macOS</span>
+          </span>
+        </a>
+      </div>
+      <p class="store-note">
+        <span data-lang="en">On Mac, the direct download analyzes faster.</span>
+      </p>
+
+      <!-- MOTOR LOCAL en CTA inferior: misma seccion que en el hero -->
+      <div class="pro-section">
+        <div class="pro-label" data-lang="en">Direct download · Local engine</div>
+
+        <div class="pro-title" data-lang="en">Need more speed?</div>
+
+        <div class="pro-sub" data-lang="en">The direct download for Windows and macOS ships with the analysis engine embedded: no waiting on the cloud, and it analyzes offline.</div>
+
+        <!-- Sin botones, igual que en el hero: los de arriba de esta misma
+             seccion ya descargan el EXE y el DMG, que SON los que llevan
+             motor. Ver la nota del hero. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#pricing" data-lang="en">Pricing</a>
+      <a href="../manual.html">Manual</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="mailto:djanalyzerpro@gmail.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 DJ Analyzer. Built with Flutter & FastAPI.</div>
+  </div>
+</footer>
+
+<script>
+// Cada idioma es su página (`/` y `/en/`, auditoría W2, 2026-11-13): antes
+// los dos iban en el mismo HTML y Google solo veía el español (y, al
+// renderizar con el navegador en inglés, el inglés bajo la URL española).
+// `en/index.html` lo genera `Analyzer/scripts/build_web_en.py`: no lo edites
+// a mano.
+const PAGE_LANG = document.documentElement.lang;
+function setLang(lang) {
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  if (lang !== PAGE_LANG) location.href = lang === 'en' ? '/en/' : '/';
+}
+(function () {
+  if (PAGE_LANG !== 'es') return;
+  const destino = '/en/' + location.hash;
+  // Los enlaces de antes (`?lang=en`).
+  if (new URLSearchParams(location.search).get('lang') === 'en') {
+    location.replace(destino);
+    return;
+  }
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  if (saved === 'en') { location.replace(destino); return; }
+  // Un navegador en inglés sin preferencia guardada va a la inglesa, pero
+  // nunca un buscador: indexaría la española como si no existiera.
+  const bot = /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent);
+  if (!saved && !bot && (navigator.language || 'es').slice(0, 2) === 'en') {
+    location.replace(destino);
+  }
+})();
+</script>
+
+<script>
+// ============================================================================
+// MEDICION DEL EMBUDO WEB (visita -> descarga).
+// ============================================================================
+// Hasta ahora el embudo del producto empezaba en `app_opened`: TODO lo anterior
+// (visita a la web -> clic en descargar -> instalacion) era invisible. Con la
+// adquisicion como cuello de botella, ese tramo es justo el que hay que ver.
+//
+// Se manda al PROPIO backend (/client-event, el mismo pipe que usa la app), NO
+// a Google Analytics ni a ningun tercero. Consecuencias buenas de eso:
+//   - Sin cookies, sin identificadores, sin fingerprinting, sin PII.
+//   - Nada sale de la infraestructura propia -> sin transferencias a terceros
+//     que declarar.
+//   - Los datos caen en la misma tabla `events` y se leen con /admin/funnel.
+//
+// Solo se cuentan AGREGADOS: cuantas visitas y cuantos clics por tienda. No se
+// puede reconstruir quien hizo que (no se manda device_id).
+//
+// Fire-and-forget y defensivo: si el backend esta caido o el navegador bloquea
+// la peticion, la web funciona igual. Nunca bloquea ni rompe nada.
+//
+// OJO al interpretar: esto cuenta VISITAS DE NAVEGADOR, bots incluidos. Sirve
+// para tendencia y para la razon visita->clic, no como censo exacto.
+(function () {
+  var API = 'https://dj-analyzer-api.onrender.com/client-event';
+
+  function track(name, props) {
+    try {
+      var body = JSON.stringify({
+        event_name: name,
+        props: props || null,
+        platform: 'web'
+      });
+      // sendBeacon sobrevive a la navegacion (clave al pulsar un enlace que
+      // se lleva al usuario a otra pagina); fetch como respaldo.
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(API, new Blob([body], {type: 'application/json'}));
+      } else {
+        fetch(API, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: body,
+          keepalive: true
+        }).catch(function () {});
+      }
+    } catch (e) { /* la medicion jamas debe romper la web */ }
+  }
+
+  track('web_visit');
+
+  // Que tienda/fichero eligio. Deducido del href, sin tocar el HTML de cada
+  // boton (hay 20) para no ensuciar el marcado.
+  function storeOf(a) {
+    // `data-store` primero: el App Store de iOS y el Mac App Store comparten
+    // URL (mismo id de app), asi que deducir por href los mete en el mismo
+    // cubo — y entonces no se puede saber si el empujon al DMG funciona.
+    var marcado = a && a.getAttribute && a.getAttribute('data-store');
+    if (marcado) return marcado;
+    var href = a && a.getAttribute ? a.getAttribute('href') : a;
+    if (!href) return 'unknown';
+    if (href.indexOf('play.google.com') !== -1) return 'play';
+    if (href.indexOf('apps.apple.com') !== -1) return 'appstore';
+    if (href.indexOf('.dmg') !== -1) return 'dmg';
+    if (href.indexOf('.exe') !== -1 || href.indexOf('Setup') !== -1) return 'windows';
+    return 'other';
+  }
+
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+    if (!a) return;
+    // Cuentan los botones Y cualquier enlace con `data-store`: el del Mac App
+    // Store vive en la nota bajo la rejilla, no es un `.store-btn`, y es
+    // EXACTAMENTE el numero que hay que comparar contra el del DMG.
+    var esDescarga = (a.className && a.className.indexOf('store-btn') !== -1) ||
+                     (a.getAttribute && a.getAttribute('data-store'));
+    if (!esDescarga) return;
+    track('web_download_click', {store: storeOf(a)});
+  }, true);
+})();
+</script>
+
+</body>
+</html>
