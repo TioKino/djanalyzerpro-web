@@ -41,70 +41,79 @@ body.en [data-lang="es"]{display:none}
 
 <!-- ES -->
 <div data-lang="es">
-<h1>Politica de Privacidad</h1>
-<p class="updated">Ultima actualizacion: 13 de noviembre de 2026</p>
+<h1>Política de privacidad</h1>
+<p class="updated">Última actualización: 13 de noviembre de 2026</p>
 
-<h2>1. Informacion que recopilamos</h2>
-<p>DJ Analyzer recopila los datos minimos necesarios para que la aplicacion funcione:</p>
+<h2>1. Información que recopilamos</h2>
+<p>DJ Analyzer recopila los datos mínimos necesarios para que la aplicación funcione:</p>
 <ul>
-<li><strong>Identificador de dispositivo:</strong> un ID anonimo generado aleatoriamente que se usa para sincronizar tu biblioteca entre tus dispositivos. No esta vinculado a tu identidad personal.</li>
-<li><strong>Metadatos de audio:</strong> titulos de pista, artistas, BPM, key y otros datos de analisis que decides sincronizar. Los archivos de audio completos nunca se suben a la nube.</li>
-<li><strong>Datos de uso:</strong> analiticas basicas de la app (plataforma, version) para mejorar el servicio. No se incluye informacion personal.</li>
+<li><strong>Identificador de dispositivo:</strong> un ID anónimo generado al azar que se usa para sincronizar tu biblioteca entre tus dispositivos. No está vinculado a tu identidad: la app no pide correo, nombre ni contraseña.</li>
+<li><strong>Datos del análisis y de tu biblioteca:</strong> títulos, artistas, BPM, tonalidad y el resto del análisis de tus temas, y tu organización (carpetas, sesiones, cues, valoraciones), que se sincronizan entre tus dispositivos.</li>
+<li><strong>El audio que se analiza:</strong> para analizar un tema (o para calcular su huella acústica, si lo pides en Ajustes), la app sube el fichero de audio a nuestro servidor por HTTPS. Se analiza y se borra al terminar: del audio solo se guardan un fragmento de 6 segundos (la preescucha) y la portada. Con el motor local (la descarga directa para Windows y macOS) el análisis se hace en tu ordenador y el fichero no se sube; solo se suben esos 6 segundos, la portada y los datos del análisis.</li>
+<li><strong>Datos de uso:</strong> analíticas básicas de la app (plataforma, versión) para mejorar el servicio. No se incluye información personal.</li>
 </ul>
 
-<h2>2. Como usamos tus datos</h2>
+<h2>2. Cómo usamos tus datos</h2>
 <ul>
-<li>Para sincronizar tu biblioteca musical entre tus dispositivos (escritorio y movil).</li>
-<li>Para ofrecer analisis de audio en la nube (BPM, key, energia, deteccion de genero).</li>
+<li>Para sincronizar tu biblioteca musical entre tus dispositivos (escritorio y móvil).</li>
+<li>Para analizar tu audio (BPM, tonalidad, energía, género) e identificar temas.</li>
+<li>Para la memoria colectiva: reconocer el mismo tema por su sonido en las bibliotecas de distintos DJs (ver el punto 4).</li>
 <li>Para mejorar la experiencia de la app y corregir errores.</li>
 </ul>
 
 <h2>3. Almacenamiento de datos</h2>
-<p>Tus datos de analisis se guardan localmente en tu dispositivo y, opcionalmente, se sincronizan con nuestro servidor en la nube para acceder desde varios dispositivos. Los datos en la nube se almacenan en servidores seguros (Render) y se asocian unicamente a tu ID de dispositivo anonimo.</p>
+<p>Tus datos de análisis se guardan en tu dispositivo y, opcionalmente, se sincronizan con nuestro servidor para acceder desde varios dispositivos. Los datos en la nube se almacenan en servidores seguros (Render) y se asocian únicamente a tu ID de dispositivo anónimo.</p>
 
 <h2>4. Compartir datos</h2>
-<p>No vendemos, intercambiamos ni compartimos tus datos personales con terceros. Las funciones comunitarias (cue points, correcciones de beat grid) se comparten de forma anonima entre todos los usuarios.</p>
+<p>No vendemos, intercambiamos ni compartimos tus datos personales con terceros. La memoria colectiva comparte entre todos los usuarios, sin decir nunca de quién viene, lo que se sabe de cada tema por su sonido: las zonas de cues, las rejillas corregidas, las notas, la media de las valoraciones, el BPM, la tonalidad y la rejilla que traen las bibliotecas de Rekordbox, Traktor o VirtualDJ, el nombre que identificó Shazam, y la preescucha de 6 segundos y la portada del tema.</p>
 
 <h2>5. Servicios de terceros</h2>
-<p>La app utiliza los siguientes servicios externos para identificacion de audio y metadatos:</p>
+<p>La app utiliza los siguientes servicios externos para identificación de audio y metadatos:</p>
 <ul>
-<li><strong>AudD</strong> (reconocimiento de audio): se usa de forma manual cuando pulsas "Identificar" en una pista o usas el modo de deteccion en vivo en movil. Adicionalmente, durante el analisis automatico (<code>/analyze</code>), si los metadatos ID3 del archivo no permiten identificar artista y titulo, el backend puede enviar automaticamente un fragmento de 20 segundos del audio a AudD para reconocimiento. Este disparo automatico esta limitado a 100 llamadas/dia globales y 7 dias de cooldown por pista para minimizar el envio de datos.</li>
-<li><strong>Discogs</strong> (metadatos de release y label).</li>
+<li><strong>ShazamKit (Apple)</strong>: en el iPhone, en Android y en el Mac, para identificar lo que suena (Escuchar y Grabar set) y los temas de tus ficheros (Identificar tu biblioteca por el sonido, Limpiar metadata y las mezclas). La app calcula en tu dispositivo una firma del sonido, que no es el audio, y Apple la compara con el catálogo de Shazam.</li>
+<li><strong>AudD</strong> (reconocimiento de audio): se usa cuando pulsas «Identificar» en una pista o usas Escuchar en el móvil y Shazam no reconoce el tema. Además, durante el análisis automático (<code>/analyze</code>), si los metadatos ID3 del archivo no permiten identificar artista y título, el servidor puede enviar automáticamente un fragmento de 20 segundos del audio a AudD para reconocerlo. Este envío automático está limitado a 100 llamadas al día en total y a una vez cada 7 días por pista.</li>
+<li><strong>Discogs</strong> (metadatos de release y sello).</li>
 <li><strong>MusicBrainz</strong> (metadatos abiertos).</li>
-<li><strong>Last.fm</strong> (caratulas como fallback).</li>
-<li><strong>Tipografia</strong>: desde el 13 de noviembre de 2026 esta web sirve la tipografia Inter desde su propio dominio; ya no se carga desde Google Fonts y ningun tercero recibe tu direccion IP al abrirla.</li>
+<li><strong>Búsqueda de iTunes (Apple)</strong> y <strong>Last.fm</strong> (portadas, con el artista y el título del tema).</li>
+<li><strong>Tipografía</strong>: desde el 13 de noviembre de 2026 esta web sirve la tipografía Inter desde su propio dominio; ya no se carga desde Google Fonts y ningún tercero recibe tu dirección IP al abrirla.</li>
 </ul>
-<p>Cada servicio tiene su propia politica de privacidad. No se comparten datos personales con ellos, solo huellas o fragmentos de audio cortos y metadatos de pista.</p>
+<p>Cada servicio tiene su propia política de privacidad. No se comparten datos personales con ellos: solo firmas del sonido, fragmentos cortos de audio y metadatos de pista.</p>
 
-<h2>5b. Diagnostico y uso de la app</h2>
-<p>Para detectar fallos y entender que funciones se usan, la app envia a nuestro servidor:</p>
+<h2>5b. Diagnóstico y uso de la app</h2>
+<p>Para detectar fallos y entender qué funciones se usan, la app envía a nuestro servidor:</p>
 <ul>
-<li><strong>Errores</strong>: tipo de error, mensaje y traza de la pila (truncados), plataforma y version de la app. Los nombres de archivo se envian ya hasheados; nunca se guardan rutas ni nombres legibles.</li>
-<li><strong>Eventos de uso</strong>: acciones anonimas como abrir la app, completar el onboarding o terminar una importacion, con la plataforma y la version.</li>
+<li><strong>Errores</strong>: tipo de error, mensaje y traza de la pila (truncados), plataforma y versión de la app. Los nombres de archivo se envían ya hasheados; nunca se guardan rutas ni nombres legibles.</li>
+<li><strong>Eventos de uso</strong>: acciones anónimas como abrir la app, completar el onboarding o terminar una importación, con la plataforma y la versión.</li>
 </ul>
-<p>Ambos se asocian unicamente a tu ID de dispositivo anonimo, nunca a tu identidad. Los eventos de uso se borran automaticamente a los 90 dias y los errores a los 180. No usamos analitica de terceros ni publicidad.</p>
-<p><strong>Cuentas sin uso.</strong> Si ninguno de tus aparatos se conecta a la sincronizacion durante 24 meses, borramos del servidor tu copia personal: tu biblioteca sincronizada, tus detecciones y tus sets. Lo que aportaste a la memoria colectiva (analisis, cues y rejillas compartidos, valoraciones y notas), que va asociado a un identificador anonimo de aparato y no a ti, se conserva para el resto de DJs; si quieres que se borre tambien, usa "Borrar mis datos de la nube". Lo que tienes en tus aparatos no se toca. Guardamos ademas una copia de seguridad semanal de las bases de datos del servidor, que se sustituye por la siguiente (como mucho, las dos ultimas).</p>
-<p><strong>Notas de la comunidad.</strong> Las notas que publicas en un tema son publicas: las ve cualquier DJ que tenga ese tema. No pueden llevar enlaces, cualquiera puede denunciarlas desde la app (con tres denuncias dejan de verse) y las revisamos y borramos si incumplen estas normas.</p>
+<p>Ambos se asocian únicamente a tu ID de dispositivo anónimo, nunca a tu identidad. Los eventos de uso se borran automáticamente a los 90 días y los errores a los 180. No usamos analítica de terceros ni publicidad.</p>
+
+<p><strong>Esta web</strong> cuenta también, en total, las visitas y los clics en los botones de descarga (qué tienda o qué fichero se eligió). Se envía a nuestro propio servidor &mdash;nunca a Google Analytics ni a terceros&mdash; y <strong>no lleva cookies, identificadores ni ID de dispositivo</strong>: es un contador, y las visitas no se pueden relacionar entre sí ni con una persona. Se borra a los 90 días, como el resto de eventos de uso.</p>
+
+<p><strong>Cuentas sin uso.</strong> Si ninguno de tus aparatos se conecta a la sincronización durante 24 meses, borramos del servidor tu copia personal: tu biblioteca sincronizada, tus detecciones y tus sets. Lo que aportaste a la memoria colectiva (análisis, cues y rejillas compartidos, valoraciones y notas), que va asociado a un identificador anónimo de aparato y no a ti, se conserva para el resto de DJs; si quieres que se borre también, usa «Borrar mis datos de la nube». Lo que tienes en tus aparatos no se toca. Guardamos además una copia de seguridad semanal de las bases de datos del servidor, que se sustituye por la siguiente (como mucho, las dos últimas).</p>
+<p><strong>Notas de la comunidad.</strong> Las notas que publicas en un tema son públicas: las ve cualquier DJ que tenga ese tema. No pueden llevar enlaces, cualquiera puede denunciarlas desde la app (con tres denuncias dejan de verse) y las revisamos y borramos si incumplen estas normas.</p>
 
 <h2>6. Permisos</h2>
 <ul>
-<li><strong>Microfono (movil):</strong> se utiliza unicamente para deteccion de pistas tipo Shazam. El audio se procesa en local y mediante AudD para identificacion. Nunca se almacena ni se graba.</li>
-<li><strong>Almacenamiento:</strong> para leer tus archivos de musica y analizarlos.</li>
-<li><strong>Internet:</strong> para sincronizacion en la nube, analisis de audio y obtencion de metadatos.</li>
-<li><strong>Notificaciones (Android 13+):</strong> para alertas de procesos en segundo plano (sincronizacion, analisis).</li>
+<li><strong>Micrófono (móvil):</strong> solo mientras pulsas Escuchar o grabas un set. De lo que oye se saca una firma que se compara con el catálogo de Shazam; si Shazam no reconoce el tema, un fragmento de unos segundos va a nuestro servidor para identificarlo con AudD y se borra al terminar. Sin conexión, la captura se guarda en el teléfono hasta que vuelve la red (como mucho 7 días) y se borra al identificarla. La app no guarda grabaciones.</li>
+<li><strong>Almacenamiento:</strong> para leer tus archivos de música y analizarlos.</li>
+<li><strong>Internet:</strong> para la sincronización, el análisis de audio y la obtención de metadatos.</li>
+<li><strong>Notificaciones (Android 13+):</strong> para avisos de procesos en segundo plano (sincronización, análisis).</li>
 </ul>
 
-<h2>7. Eliminacion de datos</h2>
-<p>Puedes eliminar todos tus datos sincronizados en cualquier momento desde los ajustes de la app. Esto borra tus datos tanto del dispositivo local como de nuestros servidores en la nube.</p>
+<h2 id="borrar">7. Eliminación de datos</h2>
+<p><strong>Lo que guardamos en nuestros servidores lo borras tú, desde la app:</strong> <em>Ajustes &rarr; Zona peligrosa &rarr; Borrar mis datos de la nube</em> (desde la versión 2.11.0, en el ordenador y en el móvil). Borra todo lo de tu cuenta, en todos tus dispositivos vinculados: la biblioteca sincronizada (análisis, carpetas, sesiones, colecciones, favoritos, cues y ediciones), tus detecciones y sets grabados, lo que aportaste a la memoria colectiva (cues, rejillas, votos, notas y valoraciones) y los eventos de uso y errores de esos dispositivos. Del registro de identificaciones de audio queda cada llamada sin el ID del dispositivo, para saber lo que cuesta el servicio.</p>
+<p>Lo que es de cada canción y no de nadie &mdash;su análisis, su preescucha de 6 segundos y su portada&mdash; se queda en el servidor, sin nada que lo relacione contigo.</p>
+<p><strong>Lo que hay en tu dispositivo</strong> lo borras desde sus ajustes (&laquo;Resetear este dispositivo&raquo; en el ordenador, &laquo;Borrar todos los datos&raquo; en el móvil). Ese borrado es solo del dispositivo: no toca el servidor.</p>
+<p>Si no puedes hacerlo desde la app, escríbenos a <a href="mailto:djanalyzerpro@gmail.com">djanalyzerpro@gmail.com</a> y lo borramos nosotros.</p>
 
 <h2>8. Privacidad de menores</h2>
-<p>DJ Analyzer no esta dirigido a menores de 13 anos. No recopilamos datos de menores de forma intencionada.</p>
+<p>DJ Analyzer no está dirigido a menores de 13 años. No recopilamos datos de menores de forma intencionada.</p>
 
-<h2>9. Cambios en esta politica</h2>
-<p>Podemos actualizar esta politica cada cierto tiempo. Los cambios se publicaran en esta pagina con la fecha actualizada.</p>
+<h2>9. Cambios en esta política</h2>
+<p>Podemos actualizar esta política cada cierto tiempo. Los cambios se publicarán en esta página con la fecha actualizada.</p>
 
 <h2>10. Contacto</h2>
-<p>Si tienes preguntas sobre esta politica de privacidad, escribenos a <a href="mailto:djanalyzerpro@gmail.com">djanalyzerpro@gmail.com</a>.</p>
+<p>Si tienes preguntas sobre esta política de privacidad, escríbenos a <a href="mailto:djanalyzerpro@gmail.com">djanalyzerpro@gmail.com</a>.</p>
 
 <a href="index.html" class="back">&larr; Volver a DJ Analyzer</a>
 </div>
@@ -117,15 +126,17 @@ body.en [data-lang="es"]{display:none}
 <h2>1. Information We Collect</h2>
 <p>DJ Analyzer collects minimal data necessary for the app to function:</p>
 <ul>
-<li><strong>Device identifier:</strong> A randomly generated anonymous ID used for cloud sync between your devices. This is not linked to your personal identity.</li>
-<li><strong>Audio metadata:</strong> Track titles, artists, BPM, key, and other analysis data that you choose to sync. Full audio files are never uploaded.</li>
+<li><strong>Device identifier:</strong> A randomly generated anonymous ID used for cloud sync between your devices. It is not linked to your personal identity: the app asks for no email, name or password.</li>
+<li><strong>Analysis and library data:</strong> Track titles, artists, BPM, key and the rest of each track's analysis, and your organization (folders, sessions, cues, ratings), synced between your devices.</li>
+<li><strong>The audio being analyzed:</strong> To analyze a track (or to compute its acoustic fingerprint, if you ask for it in Settings), the app uploads the audio file to our server over HTTPS. It is analyzed and deleted when done: only a 6-second excerpt (the preview) and the artwork are kept. With the local engine (the direct download for Windows and macOS) the analysis runs on your computer and the file is not uploaded; only those 6 seconds, the artwork and the analysis data are.</li>
 <li><strong>Usage data:</strong> Basic app analytics (platform, app version) to improve the service. No personal information is included.</li>
 </ul>
 
 <h2>2. How We Use Your Data</h2>
 <ul>
 <li>To sync your music library between your devices (desktop and mobile).</li>
-<li>To provide cloud-based audio analysis (BPM, key, energy, genre detection).</li>
+<li>To analyze your audio (BPM, key, energy, genre) and identify tracks.</li>
+<li>For the shared memory: recognizing the same track by its sound across different DJs' libraries (see section 4).</li>
 <li>To improve the app experience and fix bugs.</li>
 </ul>
 
@@ -133,18 +144,19 @@ body.en [data-lang="es"]{display:none}
 <p>Your analysis data is stored locally on your device and optionally synced to our cloud server for cross-device access. Cloud data is stored on secure servers (Render) and is associated only with your anonymous device ID.</p>
 
 <h2>4. Data Sharing</h2>
-<p>We do not sell, trade, or share your personal data with third parties. Community features (cue points, beat grid corrections) are shared anonymously among all users.</p>
+<p>We do not sell, trade, or share your personal data with third parties. The shared memory shares among all users, without ever saying who it comes from, what is known about each track by its sound: cue zones, corrected beat grids, notes, the average rating, the BPM, key and beat grid that Rekordbox, Traktor or VirtualDJ libraries bring in, the name Shazam identified, and the track's 6-second preview and artwork.</p>
 
 <h2>5. Third-Party Services</h2>
 <p>The app uses the following third-party services for audio identification and metadata:</p>
 <ul>
-<li><strong>AudD</strong> (audio recognition): used manually when you press "Identify" on a track or use the live detection mode on mobile. Additionally, during automatic analysis (<code>/analyze</code>), if a file's ID3 metadata does not allow identifying artist and title, the backend may automatically send a 20-second audio snippet to AudD for recognition. This automatic trigger is rate-limited to 100 calls/day globally and a 7-day cooldown per track to minimize data sent.</li>
+<li><strong>ShazamKit (Apple)</strong>: on iPhone, Android and Mac, to identify what's playing (Listen and Record a set) and the tracks in your files (Identify your library by its sound, Fix metadata and mixes). The app computes a signature of the sound on your device, which is not the audio, and Apple matches it against the Shazam catalog.</li>
+<li><strong>AudD</strong> (audio recognition): used when you press "Identify" on a track, or use Listen on mobile and Shazam doesn't recognize the track. Additionally, during automatic analysis (<code>/analyze</code>), if a file's ID3 metadata does not allow identifying artist and title, the backend may automatically send a 20-second audio snippet to AudD for recognition. This automatic trigger is rate-limited to 100 calls/day globally and a 7-day cooldown per track to minimize data sent.</li>
 <li><strong>Discogs</strong> (release and label metadata).</li>
 <li><strong>MusicBrainz</strong> (open metadata).</li>
-<li><strong>Last.fm</strong> (artwork fallback).</li>
+<li><strong>iTunes Search (Apple)</strong> and <strong>Last.fm</strong> (artwork, using the track's artist and title).</li>
 <li><strong>Typeface</strong>: since 13 November 2026 this website serves the Inter typeface from its own domain; it is no longer loaded from Google Fonts and no third party receives your IP address when you open it.</li>
 </ul>
-<p>Each service has its own privacy policy. No personal data is shared with them &mdash; only audio fingerprints or short audio snippets and track metadata.</p>
+<p>Each service has its own privacy policy. No personal data is shared with them &mdash; only sound signatures, short audio snippets and track metadata.</p>
 
 <h2>5b. Diagnostics and usage</h2>
 <p>To detect failures and understand which features are used, the app sends our server:</p>
@@ -160,14 +172,17 @@ body.en [data-lang="es"]{display:none}
 
 <h2>6. Permissions</h2>
 <ul>
-<li><strong>Microphone (mobile):</strong> Used only for Shazam-like track detection. Audio is processed locally and via AudD for identification. It is never stored or recorded.</li>
+<li><strong>Microphone (mobile):</strong> Only while you press Listen or record a set. A signature is taken from what it hears and matched against the Shazam catalog; if Shazam doesn't recognize the track, a few seconds go to our server to identify it with AudD and are deleted when done. Offline, the capture is kept on the phone until you're back online (7 days at most) and deleted once identified. The app keeps no recordings.</li>
 <li><strong>Storage:</strong> To read your music files for analysis.</li>
 <li><strong>Internet:</strong> For cloud sync, audio analysis, and metadata retrieval.</li>
 <li><strong>Notifications (Android 13+):</strong> For background process alerts (sync, analysis).</li>
 </ul>
 
-<h2>7. Data Deletion</h2>
-<p>You can delete all your synced data at any time from the app settings. This removes your data from both the local device and our cloud servers.</p>
+<h2 id="delete">7. Data Deletion</h2>
+<p><strong>What we keep on our servers, you delete yourself from the app:</strong> <em>Settings &rarr; Danger zone &rarr; Delete my cloud data</em> (from version 2.11.0, on desktop and mobile). It deletes everything in your account, on all your linked devices: the synced library (analyses, folders, sessions, collections, favorites, cues and edits), your detections and recorded sets, what you contributed to the shared memory (cues, grids, votes, notes and ratings), and the usage events and errors of those devices. The log of audio identifications keeps each call without the device ID, so we know what the service costs.</p>
+<p>What belongs to each song and to nobody &mdash; its analysis, its 6-second preview and its artwork &mdash; stays on the server, with nothing linking it to you.</p>
+<p><strong>What's on your device</strong> you delete from its settings (&ldquo;Reset this device&rdquo; on desktop, &ldquo;Clear all data&rdquo; on mobile). That deletion is local only: it does not touch the server.</p>
+<p>If you can't do it from the app, email us at <a href="mailto:djanalyzerpro@gmail.com">djanalyzerpro@gmail.com</a> and we'll delete it.</p>
 
 <h2>8. Children's Privacy</h2>
 <p>DJ Analyzer is not directed at children under 13. We do not knowingly collect data from children.</p>
@@ -191,8 +206,11 @@ function setLang(lang){
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang;
 }
+// ?lang=en manda (los enlaces en inglés de la web), luego lo que eligió.
+const urlLang = new URLSearchParams(location.search).get('lang');
 const saved = localStorage.getItem('lang');
-if (saved) setLang(saved);
+if (urlLang === 'en' || urlLang === 'es') setLang(urlLang);
+else if (saved) setLang(saved);
 </script>
 
 </body>

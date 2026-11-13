@@ -26,6 +26,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.djanalyzerpro.com/vs-lexicon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/vs-lexicon.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/vs-lexicon.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/vs-lexicon.html"/>
+  </url>
+  <url>
+    <loc>https://www.djanalyzerpro.com/vs-mixed-in-key.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/vs-mixed-in-key.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/vs-mixed-in-key.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/vs-mixed-in-key.html"/>
+  </url>
+  <url>
+    <loc>https://www.djanalyzerpro.com/vs-rekordbox.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.djanalyzerpro.com/vs-rekordbox.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.djanalyzerpro.com/vs-rekordbox.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.djanalyzerpro.com/vs-rekordbox.html"/>
+  </url>
+  <url>
     <loc>https://www.djanalyzerpro.com/privacy.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
