@@ -182,23 +182,7 @@ picture{display:block}
 .step h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
 .step p{color:var(--text2);font-size:.9rem}
 
-/* PRICING */
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem;max-width:800px;margin-left:auto;margin-right:auto}
-.price-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative}
-.price-card.featured{border-color:var(--purple);box-shadow:0 0 40px rgba(139,92,246,.15)}
-.price-card.featured::before{content:'POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--purple),var(--cyan));color:#fff;font-size:.7rem;font-weight:700;padding:.3rem 1rem;border-radius:100px;letter-spacing:1px}
-.price-name{font-size:1rem;font-weight:600;color:var(--text2);margin-bottom:.5rem}
-.price-amount{font-size:2.5rem;font-weight:900;margin-bottom:.25rem}
-.price-amount span{font-size:1rem;font-weight:500;color:var(--text3)}
-.price-desc{color:var(--text3);font-size:.85rem;margin-bottom:2rem}
-.price-features{list-style:none;margin-bottom:2rem}
-.price-features li{padding:.5rem 0;font-size:.9rem;color:var(--text2);display:flex;align-items:center;gap:.5rem}
 .check{color:var(--green);font-weight:700}
-.price-btn{display:block;width:100%;padding:.85rem;border-radius:12px;font-size:.95rem;font-weight:600;border:none;cursor:pointer;text-align:center;transition:all .25s}
-.price-btn-primary{background:var(--purple);color:#fff}
-.price-btn-primary:hover{background:var(--purple-light);color:#fff}
-.price-btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
-.price-btn-secondary:hover{border-color:var(--purple);color:#fff}
 
 /* CTA */
 .cta-section{text-align:center}
@@ -235,7 +219,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
       <ul class="nav-links">
         <li><a href="#features" data-lang="es">Funciones</a><a href="#features" data-lang="en">Features</a></li>
         <li><a href="#screenshots" data-lang="es">Capturas</a><a href="#screenshots" data-lang="en">Screenshots</a></li>
-        <li><a href="#pricing" data-lang="es">Precios</a><a href="#pricing" data-lang="en">Pricing</a></li>
+        <li><a href="#pricing" data-lang="es">Precio</a><a href="#pricing" data-lang="en">Price</a></li>
         <li><a href="manual.html">Manual</a></li>
       </ul>
       <div class="lang-toggle" role="group" aria-label="Idioma / Language">
@@ -622,79 +606,17 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRECIO (W1, 2026-11-13): hubo una tabla «Free / Pro 4,99 €/mes» con un
+     reparto por funciones que nadie había decidido (PAYWALL.md dice otra
+     cosa). Hasta que el precio exista, solo esto: hoy es gratis entera. -->
 <section id="pricing" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container" style="text-align:center">
-    <div class="section-label" data-lang="es">Precios</div>
-    <div class="section-label" data-lang="en">Pricing</div>
-    <div class="section-title" data-lang="es">Empieza gratis, crece cuando quieras</div>
-    <div class="section-title" data-lang="en">Start free, upgrade when you're ready</div>
-    <p class="section-desc" style="margin:0 auto" data-lang="es">Sin trucos. Sin límites artificiales.</p>
-    <p class="section-desc" style="margin:0 auto" data-lang="en">No tricks. No artificial limits.</p>
-
-    <!-- ES pricing -->
-    <div class="pricing-grid" data-lang="es">
-      <div class="price-card">
-        <div class="price-name">Free</div>
-        <div class="price-amount">0 &euro;</div>
-        <div class="price-desc">Para siempre</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> Análisis BPM, Key, Energy</li>
-          <li><span class="check">&#10003;</span> Camelot Wheel</li>
-          <li><span class="check">&#10003;</span> Smart Collections</li>
-          <li><span class="check">&#10003;</span> Waveform espectral</li>
-          <li><span class="check">&#10003;</span> Import/Export básico</li>
-          <li><span class="check">&#10003;</span> Cloud Sync (1 dispositivo)</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-secondary">Descargar Gratis</a>
-      </div>
-      <div class="price-card featured">
-        <div class="price-name">Pro</div>
-        <div class="price-amount">4.99 &euro; <span>/ mes</span></div>
-        <div class="price-desc">Para DJs profesionales</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> Todo lo de Free</li>
-          <li><span class="check">&#10003;</span> Flow Designer completo</li>
-          <li><span class="check">&#10003;</span> Export Rekordbox / Traktor / VirtualDJ</li>
-          <li><span class="check">&#10003;</span> Analytics avanzados</li>
-          <li><span class="check">&#10003;</span> Cloud Sync ilimitado</li>
-          <li><span class="check">&#10003;</span> Soporte prioritario</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-primary">Próximamente</a>
-      </div>
-    </div>
-
-    <!-- EN pricing -->
-    <div class="pricing-grid" data-lang="en">
-      <div class="price-card">
-        <div class="price-name">Free</div>
-        <div class="price-amount">0 &euro;</div>
-        <div class="price-desc">Forever</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> BPM, Key, Energy analysis</li>
-          <li><span class="check">&#10003;</span> Camelot Wheel</li>
-          <li><span class="check">&#10003;</span> Smart Collections</li>
-          <li><span class="check">&#10003;</span> Spectral Waveform</li>
-          <li><span class="check">&#10003;</span> Basic Import/Export</li>
-          <li><span class="check">&#10003;</span> Cloud Sync (1 device)</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-secondary">Download Free</a>
-      </div>
-      <div class="price-card featured">
-        <div class="price-name">Pro</div>
-        <div class="price-amount">4.99 &euro; <span>/ month</span></div>
-        <div class="price-desc">For professional DJs</div>
-        <ul class="price-features">
-          <li><span class="check">&#10003;</span> Everything in Free</li>
-          <li><span class="check">&#10003;</span> Full Flow Designer</li>
-          <li><span class="check">&#10003;</span> Export Rekordbox / Traktor / VirtualDJ</li>
-          <li><span class="check">&#10003;</span> Advanced Analytics</li>
-          <li><span class="check">&#10003;</span> Unlimited Cloud Sync</li>
-          <li><span class="check">&#10003;</span> Priority Support</li>
-        </ul>
-        <a href="#download" class="price-btn price-btn-primary">Coming Soon</a>
-      </div>
-    </div>
+    <div class="section-label" data-lang="es">Precio</div>
+    <div class="section-label" data-lang="en">Price</div>
+    <div class="section-title" data-lang="es">Gratis. Entera.</div>
+    <div class="section-title" data-lang="en">Free. All of it.</div>
+    <p class="section-desc" style="margin:0 auto" data-lang="es">Hoy DJ Analyzer es gratis en todas sus plataformas y con todas sus funciones: analizar, la memoria colectiva, Escuchar, exportar a Rekordbox, Traktor y VirtualDJ y sincronizar entre tus aparatos.</p>
+    <p class="section-desc" style="margin:0 auto" data-lang="en">Today DJ Analyzer is free on every platform and with every feature: analysis, the collective memory, Listen, export to Rekordbox, Traktor and VirtualDJ, and sync across your devices.</p>
   </div>
 </section>
 
@@ -765,7 +687,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
   <div class="footer-inner">
     <div class="footer-links">
       <a href="#features">Features</a>
-      <a href="#pricing" data-lang="es">Precios</a><a href="#pricing" data-lang="en">Pricing</a>
+      <a href="#pricing" data-lang="es">Precio</a><a href="#pricing" data-lang="en">Price</a>
       <a href="manual.html">Manual</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="mailto:djanalyzerpro@gmail.com">Contact</a>
