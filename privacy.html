@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - DJ Analyzer</title>
 <meta name="description" content="Politica de privacidad de DJ Analyzer / DJ Analyzer privacy policy.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format('woff2')}</style>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',system-ui,sans-serif;background:#080808;color:#E8E8E8;line-height:1.8;padding:2rem}
@@ -42,7 +42,7 @@ body.en [data-lang="es"]{display:none}
 <!-- ES -->
 <div data-lang="es">
 <h1>Política de privacidad</h1>
-<p class="updated">Última actualización: 12 de noviembre de 2026</p>
+<p class="updated">Última actualización: 13 de noviembre de 2026</p>
 
 <h2>1. Información que recopilamos</h2>
 <p>DJ Analyzer recopila los datos mínimos necesarios para que la aplicación funcione:</p>
@@ -75,7 +75,7 @@ body.en [data-lang="es"]{display:none}
 <li><strong>Discogs</strong> (metadatos de release y sello).</li>
 <li><strong>MusicBrainz</strong> (metadatos abiertos).</li>
 <li><strong>Búsqueda de iTunes (Apple)</strong> y <strong>Last.fm</strong> (portadas, con el artista y el título del tema).</li>
-<li><strong>Google Fonts</strong>: esta web (no la app) carga la tipografía Inter desde los servidores de Google, que reciben tu dirección IP al servirla.</li>
+<li><strong>Tipografía</strong>: desde el 13 de noviembre de 2026 esta web sirve la tipografía Inter desde su propio dominio; ya no se carga desde Google Fonts y ningún tercero recibe tu dirección IP al abrirla.</li>
 </ul>
 <p>Cada servicio tiene su propia política de privacidad. No se comparten datos personales con ellos: solo firmas del sonido, fragmentos cortos de audio y metadatos de pista.</p>
 
@@ -85,9 +85,12 @@ body.en [data-lang="es"]{display:none}
 <li><strong>Errores</strong>: tipo de error, mensaje y traza de la pila (truncados), plataforma y versión de la app. Los nombres de archivo se envían ya hasheados; nunca se guardan rutas ni nombres legibles.</li>
 <li><strong>Eventos de uso</strong>: acciones anónimas como abrir la app, completar el onboarding o terminar una importación, con la plataforma y la versión.</li>
 </ul>
-<p>Ambos se asocian únicamente a tu ID de dispositivo anónimo, nunca a tu identidad. Los eventos de uso se borran automáticamente a los 90 días y los errores resueltos a los 180. No usamos analítica de terceros ni publicidad.</p>
+<p>Ambos se asocian únicamente a tu ID de dispositivo anónimo, nunca a tu identidad. Los eventos de uso se borran automáticamente a los 90 días y los errores a los 180. No usamos analítica de terceros ni publicidad.</p>
 
 <p><strong>Esta web</strong> cuenta también, en total, las visitas y los clics en los botones de descarga (qué tienda o qué fichero se eligió). Se envía a nuestro propio servidor &mdash;nunca a Google Analytics ni a terceros&mdash; y <strong>no lleva cookies, identificadores ni ID de dispositivo</strong>: es un contador, y las visitas no se pueden relacionar entre sí ni con una persona. Se borra a los 90 días, como el resto de eventos de uso.</p>
+
+<p><strong>Cuentas sin uso.</strong> Si ninguno de tus aparatos se conecta a la sincronización durante 24 meses, borramos del servidor tu copia personal: tu biblioteca sincronizada, tus detecciones y tus sets. Lo que aportaste a la memoria colectiva (análisis, cues y rejillas compartidos, valoraciones y notas), que va asociado a un identificador anónimo de aparato y no a ti, se conserva para el resto de DJs; si quieres que se borre también, usa «Borrar mis datos de la nube». Lo que tienes en tus aparatos no se toca. Guardamos además una copia de seguridad semanal de las bases de datos del servidor, que se sustituye por la siguiente (como mucho, las dos últimas).</p>
+<p><strong>Notas de la comunidad.</strong> Las notas que publicas en un tema son públicas: las ve cualquier DJ que tenga ese tema. No pueden llevar enlaces, cualquiera puede denunciarlas desde la app (con tres denuncias dejan de verse) y las revisamos y borramos si incumplen estas normas.</p>
 
 <h2>6. Permisos</h2>
 <ul>
@@ -118,7 +121,7 @@ body.en [data-lang="es"]{display:none}
 <!-- EN -->
 <div data-lang="en">
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: November 12, 2026</p>
+<p class="updated">Last updated: November 13, 2026</p>
 
 <h2>1. Information We Collect</h2>
 <p>DJ Analyzer collects minimal data necessary for the app to function:</p>
@@ -151,7 +154,7 @@ body.en [data-lang="es"]{display:none}
 <li><strong>Discogs</strong> (release and label metadata).</li>
 <li><strong>MusicBrainz</strong> (open metadata).</li>
 <li><strong>iTunes Search (Apple)</strong> and <strong>Last.fm</strong> (artwork, using the track's artist and title).</li>
-<li><strong>Google Fonts</strong>: this website (not the app) loads the Inter typeface from Google's servers, which receive your IP address when serving it.</li>
+<li><strong>Typeface</strong>: since 13 November 2026 this website serves the Inter typeface from its own domain; it is no longer loaded from Google Fonts and no third party receives your IP address when you open it.</li>
 </ul>
 <p>Each service has its own privacy policy. No personal data is shared with them &mdash; only sound signatures, short audio snippets and track metadata.</p>
 
@@ -161,7 +164,9 @@ body.en [data-lang="es"]{display:none}
 <li><strong>Errors</strong>: error type, message and stack trace (truncated), platform and app version. Filenames are hashed before being sent; readable names and paths are never stored.</li>
 <li><strong>Usage events</strong>: anonymous actions such as opening the app, completing onboarding or finishing an import, with platform and version.</li>
 </ul>
-<p>Both are tied only to your anonymous device ID, never to your identity. Usage events are deleted automatically after 90 days and resolved errors after 180. We use no third-party analytics and no advertising.</p>
+<p>Both are tied only to your anonymous device ID, never to your identity. Usage events are deleted automatically after 90 days and errors after 180. We use no third-party analytics and no advertising.</p>
+<p><strong>Unused accounts.</strong> If none of your devices connects to sync for 24 months, we delete your personal copy from the server: your synced library, your detections and your sets. What you contributed to the collective memory (analyses, shared cues and beat grids, ratings and notes), which is tied to an anonymous device ID rather than to you, is kept for the other DJs; if you want it deleted too, use "Delete my cloud data". Nothing on your devices is touched. We also keep a weekly backup of the server databases, replaced by the next one (at most the last two).</p>
+<p><strong>Community notes.</strong> Notes you post on a track are public: any DJ who has that track sees them. They can't contain links, anyone can report them from the app (after three reports they are hidden) and we review and delete them if they break these rules.</p>
 
 <p><strong>This website</strong> also counts, in aggregate, page visits and clicks on the download buttons (which store or file was chosen). This is sent to our own server &mdash; never to Google Analytics or any third party &mdash; and carries <strong>no cookies, no identifiers and no device ID</strong>: it is a plain counter, and individual visits cannot be linked to each other or to a person. Same 90-day deletion as the rest of usage events.</p>
 
