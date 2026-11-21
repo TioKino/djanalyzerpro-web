@@ -93,6 +93,57 @@
     <description>Auto-update feed para builds desktop distribuibles (Windows + macOS DMG).</description>
     <language>en</language>
 
+    <!-- 2.11.0 build 47 macOS DMG — Sat, 21 Nov 2026 16:23:11 +0000 -->
+    <item>
+      <title>DJ Analyzer Pro 2.11.0</title>
+      <pubDate>Sat, 21 Nov 2026 16:23:11 +0000</pubDate>
+      <sparkle:version>47</sparkle:version>
+      <sparkle:shortVersionString>2.11.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h3>v2.11.0</h3>
+        <ul>
+          <li>Las mezclas, aparte: un fichero con una sesi&oacute;n entera, o partida en pistas, ya no entra como un tema; va a MEZCLAS, en el historial, y suena en la app, y en el Mac saca su lista de temas</li>
+          <li>Carpeta vigilada: lo que cae en una carpeta (tus descargas, lo que compras) entra solo en la biblioteca, analizado</li>
+          <li>La tonalidad, medida de otra manera: coincide m&aacute;s con la de tu programa de DJ, y la que midi&oacute; la app en tu biblioteca se pone al d&iacute;a sola</li>
+          <li>Los cues y la rejilla de un MP3 caen donde suenan al pasar entre Rekordbox, Traktor y VirtualDJ</li>
+          <li>En el Mac, identifica tu biblioteca por el sonido, y Limpiar metadata pregunta antes a Shazam</li>
+          <li>Adopta con un clic los cues que pusieron otros DJs en el mismo golpe</li>
+          <li>Al terminar de importar, el resumen dice lo que la app ya sab&iacute;a de tus temas</li>
+          <li>Editar varios a la vez: m&aacute;s campos, buscar y reemplazar y limpiezas de un clic</li>
+          <li>Smart Collections con m&aacute;s reglas, y Duplicados sugiere qu&eacute; copia quedarte</li>
+          <li>En Ajustes, borra del servidor los datos de tu cuenta</li>
+          <li>Si usas DJ Analyzer tambi&eacute;n en el m&oacute;vil, actual&iacute;zalo all&iacute;</li>
+          <li>Correcciones varias</li>
+          <li><strong>Requiere macOS 12 Monterey o superior</strong></li>
+        </ul>
+        <h3>English</h3>
+        <ul>
+          <li>Mixes go apart: a file with a whole session, or a session split into tracks, no longer comes in as a track; it goes to MIXES, in the history, and plays in the app, and on the Mac it gets its tracklist</li>
+          <li>Watch folder: whatever lands in a folder (your downloads, what you buy) comes into the library on its own, analyzed</li>
+          <li>Key, measured a new way: it matches your DJ software's more often, and the keys the app measured in your library update themselves</li>
+          <li>MP3 cues and beat grids land where they sound when moving between Rekordbox, Traktor and VirtualDJ</li>
+          <li>On the Mac, identify your library by its sound, and Fix metadata asks Shazam first</li>
+          <li>Adopt with one click the cues other DJs placed on the same beat</li>
+          <li>When an import finishes, the summary tells you what the app already knew about your tracks</li>
+          <li>Edit several tracks at once: more fields, find and replace and one-click clean-ups</li>
+          <li>Smart Collections with more rules, and Duplicates suggests which copy to keep</li>
+          <li>In Settings, delete your account's data from the server</li>
+          <li>If you also use DJ Analyzer on your phone, update it there too</li>
+          <li>Various fixes</li>
+          <li><strong>Requires macOS 12 Monterey or later</strong></li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/TioKino/djanalyzerpro-web/releases/download/2.8.0/DJAnalyzerPro-2.11.0.dmg"
+        sparkle:os="macos"
+        sparkle:version="47"
+        sparkle:shortVersionString="2.11.0"
+        length="161480801"
+        type="application/octet-stream"
+        sparkle:edSignature="hqMm5eRsId6McbXuGSuinaQq5zhTOI61PaVZclgVAnpdwfdyHqxnj8t6RKaBOqn82N/BfL8QAV0oQm447B1oAQ==" />
+    </item>
+
     <!-- 2.10.3 build 46 macOS DMG — Thu, 29 Oct 2026 12:38:52 +0000 -->
     <item>
       <title>DJ Analyzer Pro 2.10.3</title>
